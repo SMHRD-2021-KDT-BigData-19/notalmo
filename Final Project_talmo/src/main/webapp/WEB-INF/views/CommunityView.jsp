@@ -6,13 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>community</title>
+<title>Insert title here</title>
 </head>
 <body>
-	커뮤니티 목록 페이지
-	<br>
-	<a href="${cpath}/CommunityViewPage.do">게시물 글 확인 + 댓글</a>
-	<br><br>
-	<a href="${cpath}/PostUploadPage.do">게시물 등록</a>
+커뮤니티 글 보기 + 댓글 페이지
 </body>
 </html>

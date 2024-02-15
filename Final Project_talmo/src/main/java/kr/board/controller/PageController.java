@@ -33,10 +33,16 @@ public class PageController {
 		return "SignUp";
 	}
 
-	// 탈모 진단 페이지 요청
+	// 탈모 진단 전 안내 페이지 요청
 	@GetMapping("/TalmoTestPage.do")
 	public String TalmoTestPage() {
-		return "TalmoTest";
+		return "TalmoTestStartPage";
+	}
+
+	// 탈모 진단 후 결과 페이지 요청
+	@GetMapping("/TalmoTestResultPage.do")
+	public String TalmoTestResultPage() {
+		return "TalmoTestResultPage";
 	}
 
 	// 마이페이지 요청
@@ -61,6 +67,12 @@ public class PageController {
 	@GetMapping("/HospitalPage.do")
 	public String HospitalPage() {
 		return "Hospital";
+	}
+
+	// 게시글확인 페이지 요청
+	@GetMapping("/CommunityViewPage.do")
+	public String CommunityViewPage() {
+		return "CommunityView";
 	}
 
 	// 게시글등록 페이지 요청
