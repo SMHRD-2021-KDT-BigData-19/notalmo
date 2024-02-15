@@ -1,0 +1,71 @@
+package kr.board.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class PageController {
+//	@Autowired
+//	private BoardMapper mapper;
+	// 기존에 사용했던 생성자 주입보다 조금 더 유연성이 높은 의존성 주입(Dependency Injection)
+
+	// boardAjaxMain.do 요청을 받아서 basic.jsp를 실행시키는 메소드 작성
+	// url 가져오는 방식을 기본으로 get방식 사용
+
+	// 메인페이지 요청
+	@GetMapping("/MainPage.do")
+	public String MainPage() {
+		// return의 용도
+		// 1) jsp이름 돌려주기
+		// 2) redirect:/ 다른요청으로 보내기
+		return "MainPage";
+	}
+
+	// 로그인 페이지 요청
+	@GetMapping("/LoginPage.do")
+	public String LoginPage() {
+		return "Login";
+	}
+
+	// 회원가입 페이지 요청
+	@GetMapping("/SignupPage.do")
+	public String SignupPage() {
+		return "SignUp";
+	}
+
+	// 탈모 진단 페이지 요청
+	@GetMapping("/TalmoTestPage.do")
+	public String TalmoTestPage() {
+		return "TalmoTest";
+	}
+
+	// 마이페이지 요청
+	@GetMapping("/MyPage.do")
+	public String MyPage() {
+		return "MyPage";
+	}
+
+	// 커뮤니티 페이지 요청
+	@GetMapping("/CommunityPage.do")
+	public String CommunityPage() {
+		return "Community";
+	}
+
+	// 제품 페이지 요청
+	@GetMapping("/ProductPage.do")
+	public String ProductPage() {
+		return "Product";
+	}
+
+	// 병원 페이지 요청
+	@GetMapping("/HospitalPage.do")
+	public String HospitalPage() {
+		return "Hospital";
+	}
+
+	// 게시글등록 페이지 요청
+	@GetMapping("/PostUploadPage.do")
+	public String PostUploadPage() {
+		return "PostUpload";
+	}
+}

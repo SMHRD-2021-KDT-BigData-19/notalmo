@@ -1,0 +1,13 @@
+package kr.board.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.board.entity.Member;
+
+@Mapper
+public interface MemberMapper {
+	
+	public void memberSignup(Member mvo);
+	public Member memberLogin(Member mvo);
+	
+}
