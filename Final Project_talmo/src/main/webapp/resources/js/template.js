@@ -185,7 +185,7 @@
     });
   });
 
-  // Fileset
+  // Community Fileset
   const filesetElements = document.querySelectorAll(".fileset");
   filesetElements.forEach((filesetElement) => {
     const filesetInput = filesetElement.querySelector(".fileset-input");

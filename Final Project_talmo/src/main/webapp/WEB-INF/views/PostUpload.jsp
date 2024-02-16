@@ -26,50 +26,72 @@
 <link rel="stylesheet" href="${cpath}/resources/css/common.css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
 
-<link rel="stylesheet"
-	href="${cpath}/resources/postupload/css/style.css">
-<link rel="stylesheet"
-	href="${cpath}/resources/postupload/css/plugin.css">
-<link rel="stylesheet"
-	href="${cpath}/resources/postupload/css/template.css">
+<link rel="stylesheet" href="${cpath}/resources/postupload/css/style.css">
+<link rel="stylesheet" href="${cpath}/resources/postupload/css/plugin.css">
+<link rel="stylesheet" href="${cpath}/resources/postupload/css/template.css">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+<style>
+        .post_img_li { list-style: none; }
+
+        .post_img_img { width: 200px; height: 200px; }
+
+        .real-upload { display: none; }
+
+        .upload { width: 200px; height: 200px; background-color: antiquewhite; }
+
+        .image-preview {
+        	max-height: 300px; /* 원하는 높이로 조절 */
+        	max-width: 950px;
+    		height: auto;
+    		display: flex;
+    		gap: 10px;
+    		overflow-x: auto; /* 세로 스크롤이 필요한 경우 */
+    		
+		}
+</style>
 
 </head>
 
 <body>
 	<script>
-		function insertPost() {
-			// var title = ${"#title"}.val();
-			// 너무 일일이 가져오는 번거로움
-			// form태그에 담긴 내용을 직렬화 하는 js 함수
-			// 필수 입력 필드 검증
-			var titleValue = $("#Title").val().trim();
-			var contentValue = $("#Inquiry").val().trim();
+	/* function insertPost() {
+	    var titleValue = $("#Title").val().trim();
+	    var contentValue = $("#Inquiry").val().trim();
+	    //var imageFiles = document.getElementById('postImg').files;
 
-			if (titleValue === "" || contentValue === "") {
-				alert("제목과 내용을 모두 입력해주세요.");
-				return false;
-			}
+	    if (titleValue === "" || contentValue === "") {
+	        alert("제목과 내용을 모두 입력해주세요.");
+	        return false;
+	    }
+	    
+	    var formData = new FormData($('#frm')[0]);
+	 	// 여러 이미지 파일을 FormData에 추가
+        var imageFiles = $('#postImg')[0].files;
+        for (var i = 0; i < imageFiles.length; i++) {
+            formData.append('images', imageFiles[i]);
+        }
+        let test = $('#frm').serialize();
+	    console.log(formData);
+	    console.log(imageFiles);
+	    console.log(test);
 
-			var fData = $("#frm").serialize();
-			console.log(fData);
-
-			$.ajax({
-				url : "${cpath}/PostUpload.do",
-				type : "post", // 내용이 길 떄, 생성시킬 때 사용
-				data : fData,
-				// 가져올값 없음 dataType X
-				// 통신이 끝나고 나면 다시 게시글 목록이 뜨기
-				// boardList() js 함수에 이미 만듦
-				success : function() {
-					alert("성공~~");
-				},
-				error : function() {
-					alert("글쓰기 실패ㅜ");
-				}
-			}); // END ajax
-
-		} // END insertPost()
+	    $.ajax({
+	        url: "${cpath}/PostUpload.do",
+	        type: "post",
+	        data: formData,
+	        contentType: false,
+            processData: false,
+	        success: function () {
+	            alert("성공~~");
+	        },
+	        error: function () {
+	            alert("글쓰기 실패ㅜ");
+	        }
+	    });
+	} */
 	</script>
 
 	<!--------------------------------------------상단 메뉴2------------------------------------------->
@@ -134,7 +156,7 @@
 				</div>
 			</div>
 		</div>
-		</div>
+
 
 		<div class="header-fullmenu fullmenu-top">
 			<div class="fullmenu-head container-lg">
@@ -194,10 +216,9 @@
 					</div>
 					<div class="contents-form tableset">
 						<!-- 게시물 등록 -->
-						<form id="frm">
-							<input type="hidden" name="user_id"
-								value="${loginMember.user_id}"> <input type="hidden"
-								name="category" id="categoryHiddenInput" value="자유게시판">
+						<form id="frm" action="${cpath}/PostUpload.do" method="post" enctype="multipart/form-data">
+							<input type="hidden" name="user_id" value="${loginMember.user_id}">
+							<input type="hidden" name="category" id="category" value="자유게시판">
 							<div class="tableset-inner">
 								<table class="tableset-table table">
 									<colgroup>
@@ -279,12 +300,10 @@
 													<label>
 														<div class="fileset-body">
 															<div class="fileset-group">
-																<input type="file" class="fileset-input"
-																	accept="image/jpeg, image/png" id="fileInput">
-																<button class="fileset-cancel"></button>
+																<input type="file" class="real-upload" accept="image/*" id="postImg" name="postImg" required multiple>
+																<div class="upload"></div>
 															</div>
-															<span
-																class="btnset btnset-line btnset-mono btnset-lg btnset-rect fileset-upload">파일첨부</span>
+															<span class="btnset btnset-line btnset-mono btnset-lg btnset-rect fileset-upload">파일첨부</span>
 														</div>
 													</label>
 												</div>
@@ -295,37 +314,72 @@
 											</td>
 										</tr>
 										<tr>
-											<th><span class="label">미리 보기</span></th>
+											<th><span class="label">이미지 미리 보기</span></th>
 											<td colspan="3">
-												<div id="imagePreview"></div>
+												<button type="button" class="btn btn-secondary btn-lg" onclick="resetImages()">이미지 삭제</button>
+												<ul class="image-preview"></ul>
 											</td>
 										</tr>
 
 										<script>
-											// 이미지 미리 보기 함수
-											function previewImage() {
-												const fileInput = document.getElementById('fileInput');
-												const imagePreview = document.getElementById('imagePreview');
+										// 이미지 리셋 함수
+										function resetImages() {
+										    const imagePreview = document.querySelector('.image-preview');
 
-												if (fileInput.files && fileInput.files[0]) {
-													const reader = new FileReader();
+										    // 이미지 미리보기 영역 초기화
+										    imagePreview.innerHTML = "";
+										}
+										// 이미지 선택 후 미리보기 함수
+										function getImageFiles(e) {
+								            const uploadFiles = [];
+								            const files = e.currentTarget.files;
+								            const imagePreview = document.querySelector('.image-preview');
+								            const docFrag = new DocumentFragment();
 
-													reader.onload = function(e) {
-														// 이미지를 미리 보여주는 엘리먼트에 설정
-														imagePreview.innerHTML = '<img src="' + e.target.result + '" alt="미리 보기">';
-													};
+								            // 파일 타입 검사
+								            [...files].forEach(file => {
+								                if (!file.type.match("image/.*")) {
+								                    alert('이미지 파일만 업로드가 가능합니다.');
+								                    return;
+								                }
 
-													reader.readAsDataURL(fileInput.files[0]);
-												}
-											}
+								                uploadFiles.push(file);
+								                const reader = new FileReader();
+								                reader.onload = (e) => {
+								                    const preview = createElement(e, file);
+								                    imagePreview.appendChild(preview);
+								                };
+								                reader.readAsDataURL(file);
+								            });
+								        }
+										// 이미지 선택 후 li 태그 추가 함수
+										function createElement(e, file) {
+								            const li = document.createElement('li');
+								            const img = document.createElement('img');
+								            
+								        	 // 클래스 추가
+								            li.classList.add('post_img_li');
+								            img.classList.add('post_img_img');
+								            
+								            img.setAttribute('src', e.target.result);
+								            img.setAttribute('data-file', file.name);
+								            li.appendChild(img);
+
+								            return li;
+								        }
+										
+											const realUpload = document.querySelector('.real-upload');
+								        	const upload = document.querySelector('.upload');
+
+								        	upload.addEventListener('click', () => realUpload.click());
+
+								        	realUpload.addEventListener('change', getImageFiles);
 										</script>
-
-
-
 									</tbody>
 								</table>
 								<a href="${cpath}/CommunityPage.do">취소</a>
 								<button type="button" class="btn btn-secondary btn-lg" onclick="insertPost()">등록</button>
+								<button type="submit" class="btn btn-secondary btn-lg">등록</button>
 							</div>
 
 						</form>
@@ -400,9 +454,5 @@
 	<script src="${cpath}/resources/js/template.js"></script>
 	<script src="${cpath}/resources/js/common.js"></script>
 	<script src="${cpath}/resources/js/script.js"></script>
-
-	<script src="${cpath}/resources/postupload/js/setting.js"></script>
-	<script src="${cpath}/resources/postupload/js/plugin.js"></script>
-	<%-- <script src="${cpath}/resources/postupload/js/template.js"></script> --%>
 
 </body>

@@ -1,7 +1,7 @@
 package kr.board.entity;
 
 public class Member {
-	private String user_id;
+	private int user_id;
 	private String id;
 	private String pw;
 	private String nick;
@@ -11,11 +11,11 @@ public class Member {
 	
 	
 	
-	public String getUser_id() {
+	public int getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(String user_id) {
+	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
 
