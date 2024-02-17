@@ -11,7 +11,6 @@
 </head>
 <body>
     탈모 진단 전 사진 안내 페이지
-    
     <br>
     <%-- 탈모진단 결과페이지 링크 나중에 지우기 --%>
     <button onclick="location.href='${cpath}/TalmoTestResultPage.do'">탈모 진단 결과 페이지 </button>>
