@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* 화면 높이의 50%로 설정합니다. */
+    padding: 0 12.5%; /* 가로 여백을 조절하여 화면의 75%를 차지하도록 합니다. */
+}
+

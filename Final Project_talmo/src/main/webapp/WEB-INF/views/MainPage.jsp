@@ -45,7 +45,7 @@
 			<div class="header-container container-lg">
 				<div class="header-left">
 					<h1 class="header-title">
-						<a class="header-logo" href="${cpath}/MainPage.do" title="hooms"></a>
+						<a class="header-logo" href="${cpath}/MainPage.do" title="full fill"></a>
 					</h1>
 				</div>
 				<div class="header-center">
@@ -147,26 +147,24 @@
 							<div class="contents-backimg img-pc" alt="배너 PC 이미지"
 								style="background-color: orange;"></div>
 							<div class="contents-slide-group">
-								<h2 class="contents-title">HOOMS</h2>
+								<h2 class="contents-title">Full Fill</h2>
 								<p class="contents-text">
-									훔스만의 독자적인 기술로 완성된 포켓스프링 <br> 흔들리지 않는 편안함, 그 아름다운 휴식
-									Beautyrest
+									Full Fill만의 독자적인 기능 <br> AI가 진단해주는 나의 탈모 진행율은?
+									Test
 								</p>
-								<a class="contents-link" href="javascript:void(0)">Learn
-									more</a>
+								<a class="contents-link" href="javascript:void(0)">AI 탈모 진단 받기</a>
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="contents-backimg img-pc" alt="배너 PC 이미지"
 								style="background-color: deepskyblue;"></div>
 							<div class="contents-slide-group">
-								<h2 class="contents-title">HOOMS</h2>
+								<h2 class="contents-title">Full Fill</h2>
 								<p class="contents-text">
-									훔스만의 독자적인 기술로 완성된 포켓스프링 <br> 흔들리지 않는 편안함, 그 아름다운 휴식
-									Beautyrest
+									Full Fill만의 독자적인 기능 <br> 추천 두피 샴푸
+									product
 								</p>
-								<a class="contents-link" href="javascript:void(0)">Learn
-									more</a>
+								<a class="contents-link" href="javascript:void(0)">제품 보러가기</a>
 							</div>
 						</div>
 						<div class="swiper-slide">
@@ -247,7 +245,7 @@
 			<div class="contents-inner">
 				<div class="contents-container container-md">
 					<div class="textset textset-span">
-						<span class="textset-tit">풀뿌리 최신글</span>
+						<span class="textset-tit">풀필 최신글</span>
 					</div>
 					<div class="tabset tabset-brick">
 						<ul class="tabset-list tabset-sm tabset-fill">
