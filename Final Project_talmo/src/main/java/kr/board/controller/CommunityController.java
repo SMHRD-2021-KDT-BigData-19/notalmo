@@ -60,7 +60,6 @@ public class CommunityController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 		}
 		
 		// 게시물 이미지 DB에 저장
