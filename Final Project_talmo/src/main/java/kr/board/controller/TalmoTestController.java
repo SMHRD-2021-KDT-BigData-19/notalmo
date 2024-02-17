@@ -7,9 +7,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class TalmoTestController {
 
-    @GetMapping("/saveCheckboxCount")
-    public String saveCheckboxCount(HttpSession session, int count) {
-        session.setAttribute("checkboxCount", count);
-        return "redirect:/nextPage";
-    }
+
 }
