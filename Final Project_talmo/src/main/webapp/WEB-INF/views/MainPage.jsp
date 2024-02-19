@@ -29,7 +29,8 @@
 <link rel="stylesheet" href="${cpath}/resources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/css/common.css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -56,7 +57,7 @@
 									</a>
 								</c:when>
 								<c:otherwise>
-									<a class="header-gnblink" href="${cpath}/TalmoTestPage.do">
+									<a class="header-gnblink" href="${cpath}/TalmoTestStartPage.do">
 										<span>탈모진단</span>
 									</a>
 								</c:otherwise>
@@ -116,7 +117,7 @@
 							<c:when test="${empty loginMember}">
 								<a class="fullmenu-gnblink" href="${cpath}/LoginPage.do"> <span>탈모진단</span> </a> </c:when>
 							<c:otherwise>
-								<a class="fullmenu-gnblink" href="${cpath}/TalmoTestPage.do">
+								<a class="fullmenu-gnblink" href="${cpath}/TalmoTestStartPage.do">
 									<span>탈모진단</span> </a> </c:otherwise>
 						</c:choose>
 					</li>
@@ -152,7 +153,7 @@
 									Full Fill만의 독자적인 기능 <br> AI가 진단해주는 나의 탈모 진행율은?
 									Test
 								</p>
-								<a class="contents-link" href="javascript:void(0)">AI 탈모 진단 받기</a>
+								<a class="contents-link" href="${cpath}/TalmoTestStartPage.do">AI 탈모 진단 받기</a>
 							</div>
 						</div>
 						<div class="swiper-slide">

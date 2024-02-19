@@ -1,0 +1,40 @@
+@charset "utf-8"; 
+
+/* hooms-N5 [ZflspsbyQb] */
+.hooms-N5 { overflow: hidden; }
+.hooms-N5 .contents-container { position: relative; display: flex; justify-content: flex-end; align-items: center; padding: 10rem 2.4rem; height: 90rem; }
+.hooms-N5 .contents-left { position: absolute; top: 10rem; left: -32rem; width: calc(50% + 32rem); height: 70rem; }
+.hooms-N5 .contents-left img { width: 100%; height: 100%; object-fit: cover; }
+.hooms-N5 .textset.textset-h2 { width: 100%; margin-bottom: 4.2rem; font-family: var(--ff-ko2); }
+.hooms-N5 .contents-right { width: 50%; padding-left: 10rem; }
+.hooms-N5 .textset-desc { margin-right: 10rem; }
+@media (max-width: 1200px) {
+ .hooms-N5 .contents-container { flex-direction: column; height: auto; padding: 6rem 2.4rem; }
+ .hooms-N5 .contents-left { position: relative; top: 0; left: 0; width: calc(100% + 4.8rem); max-width: calc(100% + 4.8rem); height: 30rem; }
+ .hooms-N5 .textset.textset-h2 { margin-bottom: 2.4rem; }
+ .hooms-N5 .contents-right { width: 100%; margin-top: 2.4rem; padding-left: 0; }
+ .hooms-N5 .textset-desc { margin-right: 0; }
+}
+
+/* hooms-N8 [FIlSpsbz3I] */
+.hooms-N8 { position: relative; width: 100%; }
+.hooms-N8 .contents-inner { padding: 10rem 2.4rem; }
+.hooms-N8 .textset { margin-top: 0; margin-bottom: 4rem; }
+.hooms-N8 .contents-cardgroup { display: flex; justify-content: center; }
+.hooms-N8 .cardset { width: calc(100% / 3); }
+.hooms-N8 .cardset+.cardset { margin-left: 4rem; }
+.hooms-N8 .cardset-figure { display: inline-block; width: 100%; height: 40rem; }
+.hooms-N8 .contents-aboutname { display: inline-block; width: 100%; margin-top: 2.4rem; font-size: var(--fs-h3); }
+.hooms-N8 .contents-abouttext { margin-top: 1.2rem; font-size: var(--fs-p1); color: var(--text-color2); }
+@media (max-width: 992px) {
+ .hooms-N8 .contents-inner { padding: 6rem 2.4rem; }
+ .hooms-N8 .contents-cardgroup { flex-direction: column; }
+ .hooms-N8 .cardset { width: 100%; }
+ .hooms-N8 .cardset+.cardset { margin-left: 0; margin-top: 4rem; }
+ .hooms-N8 .contents-aboutname { margin-top: 1.4rem; }
+ .hooms-N8 .contents-abouttext { margin-top: 0.8rem; }
+}
+@media (max-width: 768px) {
+ .hooms-N8 .textset.textset-h2 { margin-bottom: 2.4rem; }
+ .hooms-N8 .cardset-figure { height: 23.2rem; }
+}

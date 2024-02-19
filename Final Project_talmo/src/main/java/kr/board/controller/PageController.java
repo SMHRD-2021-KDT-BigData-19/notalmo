@@ -34,9 +34,15 @@ public class PageController {
 	}
 
 	// 탈모 진단 전 안내 페이지 요청
-	@GetMapping("/TalmoTestPage.do")
-	public String TalmoTestPage() {
+	@GetMapping("/TalmoTestStartPage.do")
+	public String TalmoTestStartPage() {
 		return "TalmoTestStartPage";
+	}
+	
+	// 탈모 진단 페이지 요청
+	@GetMapping("/TalmoTest.do")
+	public String TalmoTestPage() {
+		return "TalmoTest";
 	}
 
 	// 탈모 진단 후 결과 페이지 요청
@@ -57,7 +63,7 @@ public class PageController {
 		return "Community";
 	}
 
-	// 제품 페이지 요청
+	// 제품추천 페이지 요청
 	@GetMapping("/ProductPage.do")
 	public String ProductPage() {
 		return "Product";
