@@ -2,7 +2,7 @@ package kr.board.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import kr.board.entity.ImageDAO;
+import kr.board.entity.PostImageDTO;
 import kr.board.entity.PostUploadDAO;
 
 
@@ -10,6 +10,6 @@ import kr.board.entity.PostUploadDAO;
 public interface CommunityMapper {
 	
 	public void PostUploadmapper(PostUploadDAO vo);
-	public void PostImgUploadmapper(ImageDAO vo);
+	public void PostImgUploadmapper(PostImageDTO Ivo);
 	
 }

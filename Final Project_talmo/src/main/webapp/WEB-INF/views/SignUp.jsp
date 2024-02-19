@@ -151,9 +151,10 @@
 										<label>
 											<h6 class="inputset-tit">
 												성별<span>*</span>
-											</h6> <input type="radio" name="gender" value="male" required>남성
-											&nbsp;&nbsp; <input type="radio" name="gender" value="female"
-											required>여성
+											</h6>
+											<input type="radio" name="gender" value="male" required>남성
+											&nbsp;&nbsp;
+											<input type="radio" name="gender" value="female" required>여성
 										</label>
 									</div>
 
@@ -161,7 +162,8 @@
 										<label>
 											<h6 class="inputset-tit">
 												아이디<span>*</span>
-											</h6> <input type="text" class="inputset-input form-control"
+											</h6>
+											<input type="text" class="inputset-input form-control"
 											placeholder="사용하실 아이디를 입력해 주세요." aria-label="내용"
 											required="아이디를 입력해 주세요." id="id" name="id">
 										</label>
@@ -172,7 +174,8 @@
 										<label>
 											<h6 class="inputset-tit">
 												비밀번호<span>*</span>
-											</h6> <input id="password" type="password"
+											</h6>
+											<input id="password" type="password"
 											class="inputset-input form-control"
 											placeholder="사용하실 비밀번호를 입력해 주세요." aria-label="내용"
 											required="비밀번호를 입력해 주세요.">
@@ -183,38 +186,33 @@
 										<label>
 											<h6 class="inputset-tit">
 												비밀번호 재확인<span>*</span>
-											</h6> <input id="confirmPassword" type="password"
+											</h6>
+											<input id="confirmPassword" type="password"
 											class="inputset-input form-control"
 											placeholder="사용하실 비밀번호를 다시 입력해 주세요." aria-label="내용"
-											required="비밀번호를 다시 입력해 주세요." id="pw" name="pw">
+											required="비밀번호를 다시 입력해 주세요." name="pw">
 										</label>
-										<p id="passwordMatchStatus" class="password-not-match">비밀번호가
-											일치하지 않습니다.</p>
+										<p id="passwordMatchStatus" class="password-not-match">비밀번호가 일치하지 않습니다.</p>
 									</div>
 
 									<script>
-										var passwordInput = document
-												.getElementById('password');
-										var confirmPasswordInput = document
-												.getElementById('confirmPassword');
-										var passwordMatchStatus = document
-												.getElementById('passwordMatchStatus');
+										var passwordInput = document .getElementById('password');
+										var confirmPasswordInput = document.getElementById('confirmPassword');
+										var passwordMatchStatus = document.getElementById('passwordMatchStatus');
 
-										confirmPasswordInput
-												.addEventListener(
-														'input',
-														function() {
-															var password = passwordInput.value;
-															var confirmPassword = this.value;
+										confirmPasswordInput.addEventListener('input',
+											function() {
+												var password = passwordInput.value;
+												var confirmPassword = this.value;
 
-															if (password === confirmPassword) {
-																passwordMatchStatus.textContent = '비밀번호가 일치합니다.';
-																passwordMatchStatus.className = 'password-match';
-															} else {
-																passwordMatchStatus.textContent = '비밀번호가 일치하지 않습니다.';
-																passwordMatchStatus.className = 'password-not-match';
-															}
-														});
+												if (password === confirmPassword) {
+													passwordMatchStatus.textContent = '비밀번호가 일치합니다.';
+													passwordMatchStatus.className = 'password-match';
+												} else {
+													passwordMatchStatus.textContent = '비밀번호가 일치하지 않습니다.';
+													passwordMatchStatus.className = 'password-not-match';
+												}
+										});
 									</script>
 
 									<br>
@@ -233,7 +231,8 @@
 										<label>
 											<h6 class="inputset-tit">
 												휴대폰 번호<span>*</span>
-											</h6> <input type="tel" class="inputset-input form-control"
+											</h6>
+											<input type="tel" class="inputset-input form-control"
 											placeholder="- 없이 입력해주세요." aria-label="내용"
 											required="휴대폰 번호를 입력해 주세요." id="phone" name="phone">
 										</label>
@@ -242,7 +241,8 @@
 										<label>
 											<h6 class="inputset-tit">
 												이메일<span>*</span>
-											</h6> <input type="email" class="inputset-input form-control"
+											</h6>
+											<input type="email" class="inputset-input form-control"
 											placeholder="사용하실 이메일을 입력해 주세요." aria-label="내용"
 											required="이메일을 입력해 주세요." id="email" name="email">
 										</label>
@@ -275,10 +275,11 @@
 									</div>
 
 									<div class="inputset inputset-lg inputset-label">
-										<label> <input type="tel"
-											class="inputset-input form-control"
-											placeholder="발송된 인증번호를 입력해주세요." aria-label="내용"
-											required="발송된 인증번호를 입력해주세요.">
+										<label>
+											<input type="tel"
+												class="inputset-input form-control"
+												placeholder="발송된 인증번호를 입력해주세요." aria-label="내용"
+												required="발송된 인증번호를 입력해주세요.">
 										</label>
 										<button class="btnset btnset-line btnset-lg">확인</button>
 									</div>
@@ -287,7 +288,8 @@
 										<label>
 											<h6 class="inputset-tit">
 												닉네임<span>*</span>
-											</h6> <input type="text" class="inputset-input form-control"
+											</h6>
+											<input type="text" class="inputset-input form-control"
 											placeholder="사용하실 닉네임을 입력해 주세요." aria-label="내용"
 											required="닉네임을 입력해 주세요." id="nick" name="nick">
 										</label>

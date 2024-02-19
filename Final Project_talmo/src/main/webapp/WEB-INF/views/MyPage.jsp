@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
@@ -18,12 +19,17 @@
 <meta property="og:description" content="웹사이트입니다">
 <meta property="og:image" content="https://웹사이트/images/opengraph.png">
 <meta property="og:url" content="https://웹사이트">
-<title>마이페이지 | 실전프로젝트</title>
+<title>마이페이지 | 13245689</title>
 <link rel="stylesheet" href="${cpath}/resources/css/setting.css">
 <link rel="stylesheet" href="${cpath}/resources/css/plugin.css">
 <link rel="stylesheet" href="${cpath}/resources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/css/common.css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
+
+<link rel="stylesheet" href="${cpath}/resources/mypageResources/css/setting.css">
+<link rel="stylesheet" href="${cpath}/resources/mypageResources/css/plugin.css">
+<link rel="stylesheet" href="${cpath}/resources/mypageResources/css/template.css">
+<link rel="stylesheet" href="${cpath}/resources/mypageResources/css/style.css">
 </head>
 
 <body>
@@ -89,7 +95,7 @@
 				</div>
 			</div>
 		</div>
-		</div>
+
 
 		<div class="header-fullmenu fullmenu-top">
 			<div class="fullmenu-head container-lg">
@@ -127,45 +133,50 @@
 	</header>
 	<!-- [E]hooms-N55 -->
 	<!-------------------------------------------------------------------------------------------->
-
 	<main class="th-layout-main ">
-		<div class="hooms-N46" data-bid="WgLS88Y5X3" id="">
+
+		<!-- [S]hooms-N46 -->
+		<div class="hooms-N46" data-bid="RRlSS6RTd9" id="">
 			<div class="contents-inner">
 				<div class="contents-container container-md">
 					<div class="textset textset-h2">
-						<h2 class="textset-tit">마이페이지</h2>
+						<h2 class="textset-tit">My Page</h2>
 					</div>
 					<div class="contents-top">
 						<div class="contents-tit">
 							<h3>
-								<strong>홍길동</strong>님 안녕하세요!&nbsp;&nbsp;&nbsp;오늘도 좋은 하루 보내시길
-								바랍니다♥
-								<div class=""></div>
+								<strong>${loginMember.nick}</strong>님 안녕하세요!
 							</h3>
-
-							<div class="contents-icons">
-								<span class="contents-icon"> <img
-									src="${cpath}/resources/images/papers.png" alt="글">
-								</span> <span class="contents-icon"> <img
-									src="${cpath}/resources/images/speech-bubble.png" alt="문의사항">
-								</span> <span class="contents-icon"> <img
-									src="${cpath}/resources/images/document.png" alt="공지사항">
-								</span> <span class="contents-icon"> <img
-									src="${cpath}/resources/images/cogwheel.png" alt="개인정보수정">
-								</span>
-							</div>
-
+						</div>
+					</div>
+					<div class="contents-bottom">
+						<ul class="contents-list">
+							<li class="contents-item"><strong>아이디</strong> <span>${loginMember.id}</span>
+							</li>
+							<li class="contents-item"><strong>생년월일</strong> <span>${loginMember.birthday}</span>
+							</li>
+							<li class="contents-item"><strong>휴대폰 번호</strong> <span>${loginMember.phone}</span>
+							</li>
+							<li class="contents-item"><strong>이메일</strong> <span>${loginMember.email}</span>
+							</li>
+							<li class="contents-item"><strong>닉네임</strong> <span>${loginMember.nick}</span>
+							</li>
+						</ul>
+						<div class="contents-btn">
+							<a class="btnset" href="${cpath}/Update.do">회원수정</a> <a
+								class="btnset btnset-ghost" href="${cpath}/Delete.do">회원탈퇴</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<div class="hooms-N47" data-bid="Zvls88y63f">
+		<!-- [E]hooms-N46 -->
+		<!-- [S]hooms-N47 -->
+		<div class="hooms-N47" data-bid="calSs6rtlC" id="">
 			<div class="contents-inner">
 				<div class="contents-container container-md">
 					<div class="textset">
-						<p class="textset-tit">최근 3개월 사진 저장 내역</p>
+						<p class="textset-tit">최근 3개월 주문내역</p>
 					</div>
 					<div class="tableset tableset-receipt">
 						<table class="tableset-table table">
@@ -178,26 +189,30 @@
 							</colgroup>
 							<thead class="thead-light thead-border-top">
 								<tr>
-									<th scope="col">진단 사진 결과</th>
-									<th scope="col">저장일자</th>
+									<th scope="col">상품명</th>
+									<th scope="col">주문번호</th>
+									<th scope="col">주문일자</th>
+									<th scope="col">상태</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="tableset-tit td-border-bottom"></td>
-
-									<td class="tableset-dark"><strong>저장일자</strong> 2023-04-01
-										<br class="tableset-mobile"> 09:00:00</td>
-
-
-								</tr>
-								<tr>
-									<td class="tableset-tit td-border-bottom"></td>
-
+									<td class="tableset-tit td-border-bottom">Beautyrest
+										Collection Zalmon &amp; Derfel</td>
+									<td class="tableset-dark"><strong>주문번호</strong>
+										20230401-0123456</td>
 									<td class="tableset-dark"><strong>주문일자</strong> 2023-04-01
 										<br class="tableset-mobile"> 09:00:00</td>
-
-
+									<td class="tableset-mobile"><strong>상태</strong> 상품준비중</td>
+								</tr>
+								<tr>
+									<td class="tableset-tit td-border-bottom">Beautyrest
+										Collection Zalmon &amp; Derfel</td>
+									<td class="tableset-dark"><strong>주문번호</strong>
+										20230401-0123456</td>
+									<td class="tableset-dark"><strong>주문일자</strong> 2023-04-01
+										<br class="tableset-mobile"> 09:00:00</td>
+									<td class="tableset-mobile"><strong>상태</strong> 배송완료</td>
 								</tr>
 							</tbody>
 						</table>
@@ -205,8 +220,9 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="hooms-N48" data-bid="ydLs88Y674" id="">
+		<!-- [E]hooms-N47 -->
+		<!-- [S]hooms-N48 -->
+		<div class="hooms-N48" data-bid="DrLsS6RTPl" id="">
 			<div class="contents-inner">
 				<div class="contents-container container-md">
 					<div class="textset">
@@ -225,8 +241,7 @@
 							</colgroup>
 							<thead class="thead-light thead-border-top">
 								<tr>
-									<th scope="col">문의유형</th>
-									<th scope="col">구분</th>
+									<th scope="col">문의유형.</th>
 									<th scope="col">제목</th>
 									<th scope="col">등록일</th>
 									<th scope="col">등록자</th>
@@ -237,12 +252,11 @@
 							<tbody>
 								<tr>
 									<td class="tableset-mobile">Q&amp;A</td>
-									<td class="tableset-category tableset-order03">탈모 상담</td>
 									<td class="tableset-tit tableset-order02"><a
 										href="javascript:void(0)"> <span>안녕하세요. 문의드립니다.</span>
 									</a></td>
 									<td class="tableset-order05">2023.01.01</td>
-									<td class="tableset-order04">정**</td>
+									<td class="tableset-order04">홍**</td>
 									<td class="tableset-order01">
 										<div class="badgeset">대기</div>
 									</td>
@@ -250,38 +264,11 @@
 								</tr>
 								<tr>
 									<td class="tableset-mobile">1:1 상담</td>
-									<td class="tableset-category tableset-order03">서비스 상담</td>
 									<td class="tableset-tit tableset-order02"><a
 										href="javascript:void(0)"> <span>안녕하세요. 문의드립니다.</span>
 									</a></td>
 									<td class="tableset-order05">2023.01.01</td>
-									<td class="tableset-order04">유**</td>
-									<td class="tableset-order01">
-										<div class="badgeset">대기</div>
-									</td>
-									<td class="tableset-mobile">166</td>
-								</tr>
-								<tr>
-									<td class="tableset-mobile">1:1 상담</td>
-									<td class="tableset-category tableset-order03">서비스 상담</td>
-									<td class="tableset-tit tableset-order02"><a
-										href="javascript:void(0)"> <span>안녕하세요. 문의드립니다.</span>
-									</a></td>
-									<td class="tableset-order05">2023.01.01</td>
-									<td class="tableset-order04">오**</td>
-									<td class="tableset-order01">
-										<div class="badgeset badgeset-active">답변완료</div>
-									</td>
-									<td class="tableset-mobile">166</td>
-								</tr>
-								<tr>
-									<td class="tableset-mobile">1:1 상담</td>
-									<td class="tableset-category tableset-order03">서비스 상담</td>
-									<td class="tableset-tit tableset-order02"><a
-										href="javascript:void(0)"> <span>안녕하세요. 문의드립니다.</span>
-									</a></td>
-									<td class="tableset-order05">2023.01.01</td>
-									<td class="tableset-order04">곽**</td>
+									<td class="tableset-order04">홍**</td>
 									<td class="tableset-order01">
 										<div class="badgeset badgeset-active">답변완료</div>
 									</td>
@@ -294,35 +281,8 @@
 			</div>
 		</div>
 		<!-- [E]hooms-N48 -->
-		<!-- [S]hooms-N9 -->
-		<div class="hooms-N9" data-bid="vWlS88Y6Bb">
-			<div class="contents-container">
-				<img class="contents-backimg"
-					src="${cpath}/	resources/images/img_banner_bg.png" alt="배너 이미지">
-				<ul class="contents-list container-lg">
-					<li class="contents-item"><a class="contents-link"
-						href="javascript:void(0)"> <strong class="contents-name">
-								<span class="contents-icon"> <img
-									src="${cpath}/resources/icons/ico_notice_black.svg" alt="아이콘">
-							</span> 공지사항
-						</strong>
-							<p class="contents-text">HOOMS에 대한 최신 내용을 알려드립니다.</p>
-					</a></li>
-					<li class="contents-item"><a class="contents-link"
-						href="javascript:void(0)"> <strong class="contents-name">
-								<span class="contents-icon"> <img
-									src="${cpath}/resources/icons/ico_map_black.svg" alt="아이콘">
-							</span> 찾아오시는 길
-						</strong>
-							<p class="contents-text">HOOMS 매장 찾아오시는 길을 안내해 드립니다.</p>
-					</a></li>
-
-				</ul>
-			</div>
-		</div>
-		<!-- [E]hooms-N9 -->
-	</main>
-	<!-----------------------------하단 푸터----------------------------->
+		
+			<!-----------------------------하단 푸터----------------------------->
 	<!-- [S]hooms-N57 -->
 	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">
@@ -347,24 +307,17 @@
 					</a></li>
 				</ul>
 				<ul class="footer-snslist">
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_instagram_lightgrey.svg"
-							alt="인스타그램">
+					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
+						<img src="${cpath}/resources/icons/ico_instagram_lightgrey.svg" alt="인스타그램">
 					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_youtube_lightgrey.svg"
-							alt="유튜브">
+					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
+						<img src="${cpath}/resources/icons/ico_youtube_lightgrey.svg" alt="유튜브">
 					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_facebook_lightgrey.svg"
-							alt="페이스북">
+					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
+						<img src="${cpath}/resources/icons/ico_facebook_lightgrey.svg" alt="페이스북">
 					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
+					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
+						<img src="${cpath}/resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
 					</a></li>
 				</ul>
 			</div>
@@ -375,17 +328,20 @@
 						<span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span>
 					</p>
 				</div>
-				<!-- <div class="footer-txt">
-          <p>2022 BY TEMPLATEHOUSE. ALL RIGHTS RESEVED</p>
-        </div> -->
 			</div>
 		</div>
 	</footer>
 	<!-- [E]hooms-N57 -->
-
+	</main>
+	
 	<script src="${cpath}/resources/js/setting.js"></script>
 	<script src="${cpath}/resources/js/plugin.js"></script>
 	<script src="${cpath}/resources/js/template.js"></script>
 	<script src="${cpath}/resources/js/common.js"></script>
 	<script src="${cpath}/resources/js/script.js"></script>
+	
+	<script src="${cpath}/resources/mypageResources/js/setting.js"></script>
+	<script src="${cpath}/resources/mypageResources/js/plugin.js"></script>
+	<script src="${cpath}/resources/mypageResources/js/template.js"></script>
+	<script src="${cpath}/resources/mypageResources/js/script.js"></script>
 </body>

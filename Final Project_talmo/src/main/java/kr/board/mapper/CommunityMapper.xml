@@ -12,8 +12,8 @@
 	
 	
 	<!-- 게시물(이미지) 등록 -->
-	<insert id="PostImgUploadmapper" parameterType="kr.board.entity.ImageDAO">
-	    insert into pictures (user_id,title,content,category) values(#{user_id}, #{title}, #{content}, #{category})
+	<insert id="PostImgUploadmapper" parameterType="kr.board.entity.PostImageDTO">
+	    insert into pictures (post_id,folder,file_name) values(#{post_id}, #{folder}, #{file_name})
 	</insert>
 
 </mapper>

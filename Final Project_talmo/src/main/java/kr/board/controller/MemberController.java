@@ -47,6 +47,14 @@ public class MemberController {
 		System.out.println(session);
 		return "redirect:/MainPage.do";
 	}
+	
+	// 회원수정
+	@PostMapping("/Update.do")
+	public String memUpdate(Member mvo) {
+		mmapper.memberUpdate(mvo);
+		System.out.println("회원수정 완료");
+		return "redirect:/MyPage.do";
+	}
 
 	// 로그아웃
 	@RequestMapping("/Logout.do")

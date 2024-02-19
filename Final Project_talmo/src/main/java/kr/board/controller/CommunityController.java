@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import kr.board.entity.PostUploadDAO;
+import kr.board.entity.PostImageDTO;
 import kr.board.mapper.CommunityMapper;
 
 @Controller
@@ -60,9 +61,17 @@ public class CommunityController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
+			// 게시물 이미지 DB에 저장
+			// picture_id = i+1, post_id = post_id, folder = uploadFolder, file_name = fileRealName
+			PostImageDTO Ivo = new PostImageDTO(post_id, uploadFolder, fileRealName);
+			System.out.println(Ivo.toString());
+			
+			cmapper.PostImgUploadmapper(Ivo);
+			
 		}
 		
-		// 게시물 이미지 DB에 저장
+		
 		
 		
 	}

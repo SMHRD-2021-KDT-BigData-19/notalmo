@@ -1,12 +1,18 @@
 package kr.board.entity;
 
-public class ImageDAO {
+public class PostImageDTO {
 	private int picture_id;
-	private String t_name;
-	private int t_id;
+	private int post_id;
 	private String folder;
 	private String file_name;
 	private String create_date;
+	
+	public PostImageDTO(int post_id, String folder, String file_name) {
+		super();
+		this.post_id = post_id;
+		this.folder = folder;
+		this.file_name = file_name;
+	}
 	
 	public int getPicture_id() {
 		return picture_id;
@@ -14,17 +20,11 @@ public class ImageDAO {
 	public void setPicture_id(int picture_id) {
 		this.picture_id = picture_id;
 	}
-	public String getT_name() {
-		return t_name;
+	public int getPost_id() {
+		return post_id;
 	}
-	public void setT_name(String t_name) {
-		this.t_name = t_name;
-	}
-	public int getT_id() {
-		return t_id;
-	}
-	public void setT_id(int t_id) {
-		this.t_id = t_id;
+	public void setPost_id(int post_id) {
+		this.post_id = post_id;
 	}
 	public String getFolder() {
 		return folder;
@@ -44,11 +44,10 @@ public class ImageDAO {
 	public void setCreate_date(String create_date) {
 		this.create_date = create_date;
 	}
-	
 	@Override
 	public String toString() {
-		return "ImageDAO [picture_id=" + picture_id + ", t_name=" + t_name + ", t_id=" + t_id + ", folder=" + folder
-				+ ", file_name=" + file_name + ", create_date=" + create_date + "]";
+		return "ImageDTO [post_id=" + post_id + ", folder="
+				+ folder + ", file_name=" + file_name + ", create_date=" + create_date + "]";
 	}
 	
 	
