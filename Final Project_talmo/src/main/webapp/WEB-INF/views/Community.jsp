@@ -23,9 +23,9 @@
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/style.css">
 
-<link rel="stylesheet" href="${cpath}/resources/css/template.css">
+<%-- <link rel="stylesheet" href="${cpath}/resources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/css/common.css">
-<link rel="stylesheet" href="${cpath}/resources/css/style.css">
+<link rel="stylesheet" href="${cpath}/resources/css/style.css"> --%>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
 	/* $(document).ready(function(){
@@ -57,7 +57,7 @@
 </head>
 
 <body>
-	<!--------------------------------------------상단 메뉴2------------------------------------------->
+	<%-- <!--------------------------------------------상단 메뉴2------------------------------------------->
 	<!-- [S]hooms-N55 -->
 	<header class="hooms-N55" data-bid="bFLS88Lpv5" id="">
 		<div class="header-container container-lg">
@@ -156,7 +156,8 @@
 		<div class="header-dim"></div>
 	</header>
 	<!-- [E]hooms-N55 -->
-	<!-------------------------------------------------------------------------------------------->
+	<!--------------------------------------------------------------------------------------------> --%>
+	<%@ include file="Header.jsp" %>
 	
   <main class="th-layout-main ">
     <!-- [S]hooms-N36 -->
@@ -327,7 +328,7 @@
   </main>
   
   
-  <!-----------------------------하단 푸터----------------------------->
+<%--   <!-----------------------------하단 푸터----------------------------->
 	<!-- [S]hooms-N57 -->
 	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">
@@ -376,8 +377,9 @@
 			</div>
 		</div>
 	</footer>
-	<!-- [E]hooms-N57 -->
-
+	<!-- [E]hooms-N57 --> --%>
+	<%@ include file="Footer.jsp" %>
+	
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const pagisetLinks = document.querySelectorAll('.pagiset-link');
@@ -393,10 +395,10 @@
     });
   </script>
 
-	<script src="${cpath}/resources/js/plugin.js"></script>
-	<%-- <script src="${cpath}/resources/js/template.js"></script> --%>
+<%-- 	<script src="${cpath}/resources/js/plugin.js"></script>
+	<script src="${cpath}/resources/js/template.js"></script>
 	<script src="${cpath}/resources/js/common.js"></script>
-	<script src="${cpath}/resources/js/script.js"></script>
+	<script src="${cpath}/resources/js/script.js"></script> --%>
 	
 
 	<script src="${cpath}/resources/communityListResources/js/setting.js"></script>
