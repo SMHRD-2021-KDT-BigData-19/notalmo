@@ -6,7 +6,7 @@
 <mapper namespace="kr.board.mapper.CommunityMapper">
     
 	<!-- 게시물(작성자,카테고리,제목,내용) 등록 -->
-	<insert id="PostUploadmapper" parameterType="kr.board.entity.PostUploadDAO" keyProperty="post_id" useGeneratedKeys="true">
+	<insert id="PostUploadmapper" parameterType="kr.board.entity.PostContentDTO" keyProperty="post_id" useGeneratedKeys="true">
 	    insert into posts (user_id,title,content,category) values(#{user_id}, #{title}, #{content}, #{category})
 	</insert>
 	
@@ -15,5 +15,15 @@
 	<insert id="PostImgUploadmapper" parameterType="kr.board.entity.PostImageDTO">
 	    insert into pictures (post_id,folder,file_name) values(#{post_id}, #{folder}, #{file_name})
 	</insert>
+	
+	<!-- 게시물 모두 가져오기 -->
+	<select id="PostGetList" resultType="kr.board.entity.PostContentDTO">
+        select * from posts
+    </select>
+    
+	<!-- 게시물 내용 가져오기 -->
+	<select id="CommunityText" parameterType="int" resultType="kr.board.entity.PostContentDTO">
+        select * from posts where post_id=#{post_id}
+    </select>
 
 </mapper>

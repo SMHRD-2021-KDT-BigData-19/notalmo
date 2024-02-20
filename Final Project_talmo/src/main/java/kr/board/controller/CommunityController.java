@@ -6,11 +6,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import kr.board.entity.PostUploadDAO;
+import kr.board.entity.PostContentDTO;
 import kr.board.entity.PostImageDTO;
 import kr.board.mapper.CommunityMapper;
 
@@ -19,10 +22,11 @@ public class CommunityController {
 	
 	@Autowired
 	private CommunityMapper cmapper;
+	
 
 	// 게시물 업로드 요청
 	@PostMapping("/PostUpload.do")
-	public void PostUpload(PostUploadDAO vo, MultipartHttpServletRequest postImg) {
+	public void PostUpload(PostContentDTO vo, MultipartHttpServletRequest postImg) {
 		
 		// user_id, category, title, content DB에 업로드
 		cmapper.PostUploadmapper(vo);
@@ -70,9 +74,16 @@ public class CommunityController {
 			cmapper.PostImgUploadmapper(Ivo);
 			
 		}
+	}
+	
+	@RequestMapping("/CommunityView.do/{post_id}")
+	public String boardContent(@PathVariable("post_id") int post_id, Model model) {
+		PostContentDTO vo = cmapper.CommunityText(post_id);
+		//PostImageDTO Ivo = cmapper.CommunityImg(post_id);
 		
+		model.addAttribute("vo", vo);
+		//model.addAttribute("Ivo", Ivo);
 		
-		
-		
+		return "CommunityView";
 	}
 }

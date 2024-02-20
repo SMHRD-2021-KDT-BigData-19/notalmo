@@ -1,11 +1,12 @@
 package kr.board.entity;
 
-public class PostUploadDAO {
+public class PostContentDTO {
 	private int post_id;
 	private int user_id;
 	private String title;
 	private String content;
 	private String category;
+	private String create_date;
 	
 	public int getPost_id() {
 		return post_id;
@@ -37,12 +38,18 @@ public class PostUploadDAO {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
+	public String getCreate_date() {
+		return create_date;
+	}
+	public void setCreate_date(String create_date) {
+		this.create_date = create_date;
+	}
 	@Override
 	public String toString() {
-		return "PostUploadDAO [post_id=" + post_id + ", user_id=" + user_id + ", title=" + title + ", content="
-				+ content + ", category=" + category + "]";
+		return "PostContentDTO [post_id=" + post_id + ", user_id=" + user_id + ", title=" + title + ", content="
+				+ content + ", category=" + category + ", create_date=" + create_date + "]";
 	}
-	
 	
 	
 }
