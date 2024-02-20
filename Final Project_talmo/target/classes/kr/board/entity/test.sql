@@ -14,4 +14,6 @@ create table product_ex(
 
 select * from product_ex;
 
+select * from result;
+
 

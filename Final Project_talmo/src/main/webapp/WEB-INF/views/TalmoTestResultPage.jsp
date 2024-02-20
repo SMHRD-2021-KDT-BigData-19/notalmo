@@ -29,7 +29,7 @@
 <body>
   <div class="hooms-N13" data-bid="txlSpTE580" id="">
     <div class="contents-container">
-      <img class="contents-backimg" src="/api/t-a/56/1708156800/resources/images/img_banner_bg.png" alt="배너 이미지">
+      <img class="contents-backimg" src="${cpath}/resources/talmotest/images/img_banner_bg.png" alt="배너 이미지">
       <div class="contents-body">
         <h2 class="contents-tit">진단 결과</h2>
         <p class="contents-desc">
@@ -53,10 +53,10 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="/api/t-a/56/1708156800/resources/images/img_frame_01_1.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
                 </div>
                 <div class="contents-price">
-                  Beautyrest Zalmon &amp; Derfel
+                  1단계
                   <span>
                     개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
                   </span>
@@ -66,10 +66,10 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="/api/t-a/56/1708156800/resources/images/img_frame_01_1.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/img_frame_02.png" alt="이미지">
                 </div>
                 <div class="contents-price">
-                  Beautyrest Zalmon &amp; Derfel
+                  2단계
                   <span>
                     개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
                   </span>
@@ -79,10 +79,10 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="/api/t-a/56/1708156800/resources/images/img_frame_01_1.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/img_frame_03.png" alt="이미지">
                 </div>
                 <div class="contents-price">
-                  Beautyrest Zalmon &amp; Derfel
+                  3단계
                   <span>
                     개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
                   </span>
@@ -92,10 +92,10 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="/api/t-a/56/1708156800/resources/images/img_frame_01_1.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
                 </div>
                 <div class="contents-price">
-                  Beautyrest Zalmon &amp; Derfel
+                  4단계
                   <span>
                     개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
                   </span>
@@ -105,10 +105,10 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="/api/t-a/56/1708156800/resources/images/img_frame_01_1.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
                 </div>
                 <div class="contents-price">
-                  Beautyrest Zalmon &amp; Derfel
+                  5단계
                   <span>
                     개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
                   </span>
@@ -118,10 +118,10 @@
             <div class="swiper-slide contents-slide">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="/api/t-a/56/1708156800/resources/images/img_frame_01_2.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
                 </div>
                 <div class="contents-price">
-                  Beautyrest Zalmon &amp; Derfel
+                  6단계
                   <span>
                     개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
                   </span>
@@ -131,10 +131,10 @@
             <div class="swiper-slide contents-slide">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="/api/t-a/56/1708156800/resources/images/img_frame_01_3.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
                 </div>
                 <div class="contents-price">
-                  Beautyrest Zalmon &amp; Derfel
+                  7단계
                   <span>
                     개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
                   </span>
@@ -160,7 +160,7 @@
   <div class="hooms-N11" data-bid="OclSpu3SRf" id="">
     <div class="contents-container">
       <div class="contents-top">
-        <img class="contents-backimg" src="/api/t-a/56/1708156800/resources/images/img_philosophy2_bg.png" alt="배경 이미지">
+        <img class="contents-backimg" src="${cpath}/resources/talmotest/images/testproduct.jpg" alt="배경 이미지">
         <div class="contents-topinner container-md">
           <div class="textset textset-h2">
             <h2 class="textset-tit">제품을​​<br>추천해 드릴게요.</h2>
@@ -229,7 +229,7 @@
         </div>
       </div>
       <div class="textset contents-link container-md">
-        <a class="textset-link btnset btnset-mono" href="javascript:void(0)">View more</a>
+        <a class="textset-link btnset btnset-mono" href="ProductPage.do">View more</a>
       </div>
     </div>
   </div>

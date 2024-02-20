@@ -31,7 +31,7 @@
   <div class="hooms-N5" data-bid="mVlSpSfSNJ">
     <div class="contents-container container-md">
       <div class="contents-left">
-        <img src="/api/t-a/56/1708153200/resources/images/img_product_02.png" alt="메인이미지">
+        <img src="${cpath}/resources/talmotest/images/IntroAI.png" alt="메인이미지">
       </div>
       <div class="contents-right">
         <div class="textset textset-h2">

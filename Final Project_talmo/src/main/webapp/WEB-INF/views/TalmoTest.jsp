@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>TalmoTest</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,9 +30,16 @@
 </head>
 
 <body>
+<%-- <%
+  // 세션 확인
+  HttpSession session = request.getSession(false);
+  if (session == null || session.getAttribute("user_id") == null) {
+    response.sendRedirect("Talmo"); // 로그인 페이지 주소로 이동
+  }
+%> --%>
   <div class="hooms-N25" data-bid="kqlSPsJe0f" id="">
     <div class="contents-container">
-      <img class="contents-backimg" src="/api/t-a/56/1708156800/resources/images/img_banner_bg2.png" alt="배너 이미지">
+      <img class="contents-backimg" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="배너 이미지">
       <div class="contents-body container-md">
         <h2 class="contents-title">AI 탈모 진단</h2>
       </div>
@@ -65,29 +73,22 @@
         <div class="textset">
           <h2 class="textset-tit">다음 중, 해당 사항에 체크하세요.</h2>
         </div>
-        <div class="contents-price">
-          <div class="checkset">
-            <input id="checkset-a-1-1" class="checkset-input input-fill" type="checkbox" value="">
-            <label class="checkset-label" for="checkset-a-1-1"></label>
-            <span class="checkset-text">위 내용을 읽었으며, 내용에 동의합니다. (필수)</span>
-          </div>
-        </div>
-        <div class="contents-group">
-          <div class="tabset tabset-brick">
-            <ul class="tabset-list tabset-sm tabset-fill">
-              <li class="tabset-item">
-                <a class="tabset-link" >
-                  <span>여성</span>
-                </a>
-              </li>
-              <li class="tabset-item">
-                <a class="tabset-link" >
-                  <span>남성</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+		<div id="app">
+		    <div class="contents-price">
+		        <table>
+		            <tr v-for="(item, index) in checkpoint" :key="index">
+		                <td>
+		                    <div class="checkset">
+		                        <input :id="'checkset-a-1-' + (index + 1)" class="checkset-input input-fill" type="checkbox" value="">
+		                        <label class="checkset-label" :for="'checkset-a-1-' + (index + 1)"></label>
+		                        <span class="checkset-text" id="talmocheck">{{ item }}</span>
+		                    </div>
+		                </td>
+		            </tr>
+		        </table>
+		    </div>
+		</div>
+
         <div class="contents-btn">
           <a href="javascript:void(0)" class="btnset btnset-lg">확인</a>
         </div>
@@ -105,7 +106,7 @@
         <div class="contents-cardgroup">
           <div class="cardset">
             <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_more_01.png" alt="이미지">
+              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
             </figure>
             <div class="cardset-body">
               <h5 class="cardset-tit">사진을 레이어에 맞춰주세요.</h5>
@@ -114,7 +115,7 @@
           </div>
           <div class="cardset">
             <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_more_02.png" alt="이미지">
+              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
             </figure>
             <div class="cardset-body">
               <h5 class="cardset-tit">머리에 손, 사물 등은 올리지 마세요.</h5>
@@ -123,7 +124,7 @@
           </div>
           <div class="cardset">
             <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_more_03.png" alt="이미지">
+              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
             </figure>
             <div class="cardset-body">
               <h5 class="cardset-tit">주의점</h5>
@@ -152,7 +153,7 @@
               </p>
             </div>
             <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_vision_01.png" alt="이미지">
+              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
             </figure>
           </div>
           <div class="cardset">
@@ -164,7 +165,7 @@
               </p>
             </div>
             <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_vision_02.png" alt="이미지">
+              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
             </figure>
           </div>
         </div>
@@ -182,8 +183,7 @@
           <div class="contents-form-middle">
             <div class="fileset fileset-lg fileset-label">
               <label>
-                <h6 class="fileset-tit">
-                  첨부파일</h6>
+                <h6 class="fileset-tit">첨부파일</h6>
                 <div class="fileset-body">
                   <div class="fileset-group">
                     <input type="file" class="fileset-input">
@@ -212,8 +212,8 @@
               </label>
             </div>
             <div class="checkset">
-              <input id="checkset-a-1-1" class="checkset-input input-fill" type="checkbox" value="">
-              <label class="checkset-label" for="checkset-a-1-1"></label>
+              <input id="checkset-q-1-1" class="checkset-input input-fill" type="checkbox" value="">
+              <label class="checkset-label" for="checkset-q-1-1"></label>
               <span class="checkset-text">위 내용을 읽었으며, 내용에 동의합니다. (필수)</span>
             </div>
           </div>
@@ -244,13 +244,36 @@
     </div>
     <div class="modalset-dim"></div>
   </div>
+  
+  <script>
+  
+  new Vue({
+	    el: '#app',
+	    data: function() {
+	        return {
+	            checkpoint: [
+	                '1. 이마가 점점 넓어지는 느낌이 든다.',
+	                '2. 가늘고 힘없는 머리가 많이 빠진다.',
+	                '3. 머리카락이 하루에 100개 이상 빠진다.',
+	                '4. 비듬이 많아지거나 두피가 가렵다.',
+	                '5. 모발이 가늘고 부드러워졌다.',
+	                '6. 두피를 눌러보면 가벼운 통증이 느껴진다.',
+	                '7. 앞쪽과 뒤쪽 머리카락의 굵기 차이가 크다.',
+	                '8. 몸의 털이 갑자기 굵어졌다.',
+	                '9. 이마와 정수리 부분이 유난히 번들거린다.',
+	                '10. 두피에 피지량이 갑자기 늘어난 것 같다.'
+	            ]
+	        }
+	    }
+	});
+
+  </script>
   <!-- [E]hooms-N39 -->
   <script src="${cpath}/resources/talmotest/js/setting.js"></script>
   <script src="${cpath}/resources/talmotest/js/plugin.js"></script>
   <script src="${cpath}/resources/talmotest/js/template.js"></script>
   <script src="${cpath}/resources/talmotest/js/common.js"></script>
   <script src="${cpath}/resources/talmotest/js/script.js"></script>
-</body>
 </body>
 </html>
 <%@ include file="Footer.jsp" %>

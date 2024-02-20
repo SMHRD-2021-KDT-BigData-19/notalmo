@@ -44,7 +44,7 @@
                                 </a>
                             </c:when>
                             <c:otherwise>
-                                <a class="header-gnblink" href="${cpath}/TalmoTestPage.do">
+                                <a class="header-gnblink" href="${cpath}/TalmoTestStartPage.do">
                                     <span>탈모진단</span>
                                 </a>
                             </c:otherwise>
