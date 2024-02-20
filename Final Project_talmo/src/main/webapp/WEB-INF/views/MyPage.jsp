@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
@@ -163,8 +162,9 @@
 							</li>
 						</ul>
 						<div class="contents-btn">
-							<a class="btnset" href="${cpath}/Update.do">회원수정</a> <a
-								class="btnset btnset-ghost" href="${cpath}/Delete.do">회원탈퇴</a>
+							<a class="btnset btnset-ghost" href="${cpath}/UpdatePage.do">회원수정</a>
+							<a class="btnset btnset-ghost" href="${cpath}/PwUpdatePage.do">비밀번호 수정</a>
+							<a class="btnset" href="${cpath}/DeletePage.do">회원탈퇴</a>
 						</div>
 					</div>
 				</div>
@@ -281,6 +281,7 @@
 			</div>
 		</div>
 		<!-- [E]hooms-N48 -->
+		</main>
 		
 			<!-----------------------------하단 푸터----------------------------->
 	<!-- [S]hooms-N57 -->
@@ -332,7 +333,7 @@
 		</div>
 	</footer>
 	<!-- [E]hooms-N57 -->
-	</main>
+	
 	
 	<script src="${cpath}/resources/js/setting.js"></script>
 	<script src="${cpath}/resources/js/plugin.js"></script>
@@ -341,7 +342,6 @@
 	<script src="${cpath}/resources/js/script.js"></script>
 	
 	<script src="${cpath}/resources/mypageResources/js/setting.js"></script>
-	<script src="${cpath}/resources/mypageResources/js/plugin.js"></script>
 	<script src="${cpath}/resources/mypageResources/js/template.js"></script>
 	<script src="${cpath}/resources/mypageResources/js/script.js"></script>
 </body>

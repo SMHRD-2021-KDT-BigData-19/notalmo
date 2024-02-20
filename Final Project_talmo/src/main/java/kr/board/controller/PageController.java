@@ -1,12 +1,19 @@
 package kr.board.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import kr.board.entity.PostContentDTO;
+import kr.board.mapper.CommunityMapper;
 
 @Controller
 public class PageController {
-//	@Autowired
-//	private BoardMapper mapper;
+	@Autowired
+	private CommunityMapper cmapper;
 	// 기존에 사용했던 생성자 주입보다 조금 더 유연성이 높은 의존성 주입(Dependency Injection)
 
 	// boardAjaxMain.do 요청을 받아서 basic.jsp를 실행시키는 메소드 작성
@@ -31,6 +38,24 @@ public class PageController {
 	@GetMapping("/SignupPage.do")
 	public String SignupPage() {
 		return "SignUp";
+	}
+	
+	// 회원수정 페이지 요청
+	@GetMapping("/UpdatePage.do")
+	public String UpdatePage() {
+		return "UpdatePage";
+	}
+	
+	// 비번수정 페이지 요청
+	@GetMapping("/PwUpdatePage.do")
+	public String PwUpdatePage() {
+		return "PwUpdatePage";
+	}
+	
+	// 회원탈퇴 페이지 요청
+	@GetMapping("/DeletePage.do")
+	public String DeletePage() {
+		return "Delete";
 	}
 
 	// 탈모 진단 전 안내 페이지 요청
@@ -59,7 +84,12 @@ public class PageController {
 
 	// 커뮤니티 페이지 요청
 	@GetMapping("/CommunityPage.do")
-	public String CommunityPage() {
+	public String CommunityPage(Model model) {
+		List<PostContentDTO> PostList = cmapper.PostGetList();
+		
+		// request.setAttribute("이름", 데이터);
+		model.addAttribute("PostList", PostList);
+				
 		return "Community";
 	}
 
@@ -86,4 +116,5 @@ public class PageController {
 	public String PostUploadPage() {
 		return "PostUpload";
 	}
+	
 }

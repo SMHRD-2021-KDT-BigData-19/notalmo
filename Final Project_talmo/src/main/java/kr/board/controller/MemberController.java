@@ -48,11 +48,44 @@ public class MemberController {
 		return "redirect:/MainPage.do";
 	}
 	
-	// 회원수정
+	// 회원정보수정
 	@PostMapping("/Update.do")
-	public String memUpdate(Member mvo) {
+	public String memUpdate(Member mvo, HttpSession session) {
 		mmapper.memberUpdate(mvo);
-		System.out.println("회원수정 완료");
+		
+		// 현재 세션에서 로그인 멤버 정보를 가져옴
+	    Member updatedMember = (Member) session.getAttribute("loginMember");
+
+	    // 가져온 멤버 정보에 수정된 값 적용
+	    updatedMember.setNick(mvo.getNick());
+	    updatedMember.setEmail(mvo.getEmail());
+	    updatedMember.setPhone(mvo.getPhone());
+	    updatedMember.setBirthday(mvo.getBirthday());
+
+	    // 세션 속성을 변경
+	    session.setAttribute("loginMember", updatedMember);
+	    System.out.println("회원정보 수정 성공");
+	    System.out.println(updatedMember);
+		
+		return "redirect:/MyPage.do";
+	}
+	
+	// 비번수정
+	@PostMapping("/PwUpdate.do")
+	public String memPwUpdate(Member mvo, HttpSession session) {
+		mmapper.memberPwUpdate(mvo);
+		
+		// 현재 세션에서 로그인 멤버 정보를 가져옴
+	    Member PwupdatedMember = (Member) session.getAttribute("loginMember");
+
+	    // 가져온 멤버 정보에 수정된 값 적용
+	    PwupdatedMember.setPw(mvo.getPw());
+
+	    // 세션 속성을 변경
+	    session.setAttribute("loginMember", PwupdatedMember);
+	    System.out.println("비번 수정 성공");
+	    System.out.println(PwupdatedMember);
+		
 		return "redirect:/MyPage.do";
 	}
 
@@ -62,5 +95,14 @@ public class MemberController {
 		session.removeAttribute("loginMember");
 		System.out.println("로그아웃 완료");
 		return "redirect:/MainPage.do";
+	}
+	
+	// 회원탈퇴
+	@PostMapping("/Delete.do")
+	public String memDelete(Member mvo) {
+		System.out.println(mvo);
+		mmapper.memberDelete(mvo);
+		System.out.println("회원탈퇴 완료");
+		return "redirect:/Logout.do";
 	}
 }

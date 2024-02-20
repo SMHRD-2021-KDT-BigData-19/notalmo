@@ -14,4 +14,19 @@
         select * from users where id=#{id} and pw=#{pw}
     </select>
     
+    <!-- 회원정보 수정 -->
+    <update id="memberUpdate" parameterType="kr.board.entity.Member">
+        update users set nick=#{nick}, email=#{email}, phone=#{phone}, birthday=#{birthday} where user_id=#{user_id}
+    </update>
+    
+    <!-- 비번정보 수정 -->
+    <update id="memberPwUpdate" parameterType="kr.board.entity.Member">
+        update users set pw=#{pw} where user_id=#{user_id}
+    </update>
+    
+    <!-- 회원탈퇴 -->
+	<delete id="memberDelete" parameterType="kr.board.entity.Member">
+		delete from users where user_id=#{user_id}
+	</delete>
+    
 </mapper>
