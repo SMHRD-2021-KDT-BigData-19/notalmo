@@ -263,7 +263,7 @@
                       			<span>${b.title}</span>
                    			</a>
                  		<td class="tableset-order05">${b.create_date}</td>
-						<td class="tableset-order04">${b.user_id}</td>
+						<td class="tableset-order04">${b.nick}</td>
 						<td class="tableset-mobile">1234</td>
 					</tr>
 				</c:forEach>

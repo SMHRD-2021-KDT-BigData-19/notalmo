@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import kr.board.entity.PostContentDTO;
+import kr.board.entity.PostListGetDTO;
 import kr.board.mapper.CommunityMapper;
 
 @Controller
@@ -85,7 +86,7 @@ public class PageController {
 	// 커뮤니티 페이지 요청
 	@GetMapping("/CommunityPage.do")
 	public String CommunityPage(Model model) {
-		List<PostContentDTO> PostList = cmapper.PostGetList();
+		List<PostListGetDTO> PostList = cmapper.PostGetList();
 		
 		// request.setAttribute("이름", 데이터);
 		model.addAttribute("PostList", PostList);
@@ -105,20 +106,16 @@ public class PageController {
 		return "Hospital";
 	}
 
-	// 게시글확인 페이지 요청
-	@GetMapping("/CommunityViewPage.do")
-	public String CommunityViewPage() {
-		return "CommunityView";
-	}
+//	// 게시글확인 페이지 요청
+//	@GetMapping("/CommunityViewPage.do")
+//	public String CommunityViewPage() {
+//		return "CommunityView";
+//	}
 
 	// 게시글등록 페이지 요청
 	@GetMapping("/PostUploadPage.do")
 	public String PostUploadPage() {
 		return "PostUpload";
 	}
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> branch 'master' of https://github.com/SMHRD-2021-KDT-BigData-19/notalmo.git
 }

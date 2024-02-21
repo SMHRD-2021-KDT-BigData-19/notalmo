@@ -10,11 +10,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import kr.board.entity.CImgGetDTO;
+import kr.board.entity.CTextGetDTO;
+import kr.board.entity.CommentDTO;
 import kr.board.entity.PostContentDTO;
 import kr.board.entity.PostImageDTO;
+import kr.board.entity.PostListGetDTO;
 import kr.board.mapper.CommunityMapper;
 
 @Controller
@@ -78,12 +83,19 @@ public class CommunityController {
 	
 	@RequestMapping("/CommunityView.do/{post_id}")
 	public String boardContent(@PathVariable("post_id") int post_id, Model model) {
-		PostContentDTO vo = cmapper.CommunityText(post_id);
-		//PostImageDTO Ivo = cmapper.CommunityImg(post_id);
+		CTextGetDTO vo = cmapper.CTextGet(post_id);
+		List<CImgGetDTO> Ivo = cmapper.CImgGet(post_id);
+		List<CommentDTO> Cvo = cmapper.CommentGet(post_id);
 		
 		model.addAttribute("vo", vo);
-		//model.addAttribute("Ivo", Ivo);
-		
+		model.addAttribute("Ivo", Ivo);
+		model.addAttribute("Cvo", Cvo);
+
 		return "CommunityView";
+	}
+	
+	@PostMapping("/Comment.do")
+	public @ResponseBody void Comment(CommentDTO Cvo) {
+		cmapper.Comment(Cvo);
 	}
 }

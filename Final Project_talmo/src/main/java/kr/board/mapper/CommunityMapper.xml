@@ -16,14 +16,38 @@
 	    insert into pictures (post_id,folder,file_name) values(#{post_id}, #{folder}, #{file_name})
 	</insert>
 	
-	<!-- 게시물 모두 가져오기 -->
-	<select id="PostGetList" resultType="kr.board.entity.PostContentDTO">
-        select * from posts
+	<!-- 게시물 리스트 모두 가져오기 -->
+	<select id="PostGetList" resultType="kr.board.entity.PostListGetDTO">
+        SELECT posts.post_id, posts.user_id, posts.title, posts.category, posts.create_date, users.nick
+		FROM posts
+		JOIN users ON posts.user_id = users.user_id
+		ORDER BY posts.post_id DESC
     </select>
     
 	<!-- 게시물 내용 가져오기 -->
-	<select id="CommunityText" parameterType="int" resultType="kr.board.entity.PostContentDTO">
-        select * from posts where post_id=#{post_id}
+	<select id="CTextGet" parameterType="int" resultType="kr.board.entity.CTextGetDTO">
+        SELECT posts.*, users.nick
+        FROM posts
+		JOIN users ON posts.user_id = users.user_id
+		WHERE posts.post_id = #{post_id}
     </select>
+    
+	<!-- 게시물 사진 가져오기 -->
+	<select id="CImgGet" parameterType="int" resultType="kr.board.entity.CImgGetDTO">
+        SELECT picture_id, folder, file_name FROM pictures WHERE post_id=#{post_id}
+    </select>
+    
+	<!-- 댓글 가져오기 -->
+	<select id="CommentGet" parameterType="int" resultType="kr.board.entity.CommentDTO">
+	    SELECT comments.content, comments.create_date, users.nick
+	    FROM comments	
+	    JOIN users ON comments.user_id = users.user_id
+	    WHERE comments.post_id=#{post_id}
+	</select>
+    
+	<!-- 댓글 등록 -->
+	<insert id="Comment" parameterType="kr.board.entity.CommentDTO">
+	    insert into comments (post_id, user_id, content) values(#{post_id}, #{user_id}, #{content})
+	</insert>
 
 </mapper>

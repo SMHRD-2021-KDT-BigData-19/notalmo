@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
 <meta name="title" content="웹사이트">
-<meta name="descriptionㄴ" content="웹사이트입니다.">
+<meta name="description" content="웹사이트입니다.">
 <meta name="keywords" content="키워드,키워드,키워드">
 <meta property="og:title" content="웹사이트">
 <meta property="og:description" content="웹사이트입니다">
