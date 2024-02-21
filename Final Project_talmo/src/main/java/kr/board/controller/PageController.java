@@ -116,9 +116,11 @@ public class PageController {
 	public String PostUploadPage() {
 		return "PostUpload";
 	}
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> branch 'master' of https://github.com/SMHRD-2021-KDT-BigData-19/notalmo.git
-}
+	/*
+	 * <<<<<<< HEAD
+	 * 
+	 * =======
+	 * 
+	 * >>>>>>> branch 'master' of
+	 * https://github.com/SMHRD-2021-KDT-BigData-19/notalmo.git
+	 */}

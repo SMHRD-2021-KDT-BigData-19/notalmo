@@ -1,6 +1,6 @@
 package kr.board.entity;
 
-public class TalmolTestDAO {
+public class TalmoTestDTO {
 	
 	public int result_id;
 	public int user_id;
@@ -52,6 +52,20 @@ public class TalmolTestDAO {
 	}
 	public void setSelfcheck(int selfcheck) {
 		this.selfcheck = selfcheck;
+	}
+	
+	
+	// TalmoTest에서 받아오는 데이터 임시 저장
+	public void createTemp(int selfcheck, String frontpath, String toppath) {
+	    this.selfcheck = selfcheck;
+	    this.frontpath = frontpath;
+	    this.toppath = toppath;
+	}
+
+	// 딥러닝 후 받아오는 정보 최종 저장
+	public void update(int result, String createDate) {
+	    this.result = result;
+	    this.create_date = createDate;
 	}
 
 	
