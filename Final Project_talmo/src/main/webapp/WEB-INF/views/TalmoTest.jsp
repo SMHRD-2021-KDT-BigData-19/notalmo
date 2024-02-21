@@ -79,7 +79,8 @@
 		            <tr v-for="(item, index) in checkpoint" :key="index">
 		                <td>
 		                    <div class="checkset">
-		                        <input :id="'checkset-a-1-' + (index + 1)" class="checkset-input input-fill" type="checkbox" value="">
+		                        <input :id="'checkset-a-1-' + (index + 1)" class="checkset-input input-fill" 
+		                        type="checkbox" v-model="checks[index]" :disabled="!isEditable">
 		                        <label class="checkset-label" :for="'checkset-a-1-' + (index + 1)"></label>
 		                        <span class="checkset-text" id="talmocheck">{{ item }}</span>
 		                    </div>
@@ -88,166 +89,209 @@
 		        </table>
 		    </div>
 		</div>
-
-        <div class="contents-btn">
-          <a href="javascript:void(0)" class="btnset btnset-lg">확인</a>
-        </div>
       </div>
     </div>
   </div>
   <!-- [E]hooms-N45 -->
   <!-- [S]hooms-N8 -->
-  <div class="hooms-N8" data-bid="BqLSPSVqk7" id="">
-    <div class="contents-inner">
-      <div class="contents-container container-md">
-        <div class="textset textset-h2">
-          <h2 class="textset-tit">사진 업로드 시 주의</h2>
-        </div>
-        <div class="contents-cardgroup">
-          <div class="cardset">
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
-            </figure>
-            <div class="cardset-body">
-              <h5 class="cardset-tit">사진을 레이어에 맞춰주세요.</h5>
-              <p class="cardset-desc">정수리가 카메라 정면에 보이게 위치하도록 찍어주세요.</p>
-            </div>
-          </div>
-          <div class="cardset">
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
-            </figure>
-            <div class="cardset-body">
-              <h5 class="cardset-tit">머리에 손, 사물 등은 올리지 마세요.</h5>
-              <p class="cardset-desc">머리가 아닌 다른 부분은 AI가 인식을 못 할 수도 있습니다.</p>
-            </div>
-          </div>
-          <div class="cardset">
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
-            </figure>
-            <div class="cardset-body">
-              <h5 class="cardset-tit">주의점</h5>
-              <p class="cardset-desc">주의점주의점입니다. 주의점주의점입니다. 주의점주의점입니다. 주의점주의점입니다.&nbsp;</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- [E]hooms-N8 -->
-  <!-- [S]hooms-N15 -->
-  <div class="hooms-N15" data-bid="HQLSPSyJyF" id="">
-    <div class="contents-inner">
-      <div class="contents-container container-md">
-        <div class="textset textset-h2">
-          <h2 class="textset-tit textset-h2">올바른 사진</h2>
-        </div>
-        <div class="contents-group">
-          <div class="cardset">
-            <div class="cardset-body">
-              <p class="cardset-desc">
-                HOOMS 매장을 방문하셔서 재료를 시험해보세요.
-                당신은 친절한 오프라인 직원에게 맞는 가구를
-                찾을 수 있도록 상담받을 수 있습니다.
-              </p>
-            </div>
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
-            </figure>
-          </div>
-          <div class="cardset">
-            <div class="cardset-body">
-              <p class="cardset-desc">
-                HOOMS 매장을 방문하셔서 재료를 시험해보세요.
-                당신은 친절한 오프라인 직원에게 맞는 가구를
-                찾을 수 있도록 상담받을 수 있습니다.
-              </p>
-            </div>
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="이미지">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- [E]hooms-N15 -->
-  <!-- [S]hooms-N39 -->
-  <div class="hooms-N39" data-bid="hkLSPT0B60" id="">
-    <div class="contents-inner">
-      <div class="contents-container container-md">
-        <div class="textset textset-h2"> </div>
-        <div class="tabset tabset-brick"> </div>
-        <div class="contents-form">
-          <div class="contents-form-middle">
-            <div class="fileset fileset-lg fileset-label">
-              <label>
-                <h6 class="fileset-tit">첨부파일</h6>
-                <div class="fileset-body">
-                  <div class="fileset-group">
-                    <input type="file" class="fileset-input">
-                    <button class="fileset-cancel"></button>
-                  </div>
-                  <span class="btnset btnset-line btnset-lg fileset-upload">파일 첨부하기</span>
-                  <div class="fileset-group">
-                    <input type="file" class="fileset-input">
-                    <button class="fileset-cancel"></button>
-                  </div>
-                  <span class="btnset btnset-line btnset-lg fileset-upload">파일 첨부하기</span>
-                </div>
-              </label>
-            </div>
-          </div>
-          <div class="contents-form-bottom">
-            <div class="inputset inputset-lg inputset-label">
-              <label>
-                <h6 class="inputset-tit">개인정보수집 및 이용동의</h6>
-                <div class="inputset-board">
-                  - 수집하는 개인정보 항목 : 이메일 주소
-                  <br>
-                  <br>
-                  작성해주시는 개인 정보는 문의 접수 및 고객 불만 해결을 위해 5년간 보관됩니다. 이용자는 본 동의를 거부할 수 있으나, 미동의시 문의 접수가 불가능합니다.
-                </div>
-              </label>
-            </div>
-            <div class="checkset">
-              <input id="checkset-q-1-1" class="checkset-input input-fill" type="checkbox" value="">
-              <label class="checkset-label" for="checkset-q-1-1"></label>
-              <span class="checkset-text">위 내용을 읽었으며, 내용에 동의합니다. (필수)</span>
-            </div>
-          </div>
-          <div class="contents-sign">
-            <button class="btnset modalset-btn">등록하기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="modalSet1" class="modalset">
-      <div class="modal-header">
-        <h6 class="modal-title">진단 시작 안내</h6>
-      </div>
-      <div class="modal-body"><p>입력하신 내용으로 진단을 시작합니다.<br>계속 진행하시겠습니까?</p></div>
-      <div class="modal-footer">
-        <button type="button" class="btnset btnset-ghost modal-close">취소</button>
-        <button type="button" class="btnset btnset-confirm">확인</button>
-      </div>
-    </div>
-    <div id="modalSet2" class="modalset modalset2">
-      <div class="modal-header">
-        <h6 class="modal-title">진단 시작</h6>
-      </div>
-      <div class="modal-body"><p>성공적으로 내역을 등록했습니다.<br>조금만 기다려주세요.</p></div>
-      <div class="modal-footer">
-        <button type="button" class="btnset btnset-confirm" onclick="location.href='TalmoTestResultPage.do'">확인</button>
-      </div>
-    </div>
-    <div class="modalset-dim"></div>
-  </div>
+	<div class="hooms-N8" data-bid="BqLSPSVqk7" id="">
+		<div class="contents-inner">
+			<div class="contents-container container-md">
+				<div class="textset textset-h2">
+					<h2 class="textset-tit">사진 업로드 시 주의</h2>
+				</div>
+				<div class="contents-cardgroup">
+					<div class="cardset">
+						<figure class="cardset-figure">
+							<img class="cardset-img"
+								src="${cpath}/resources/talmotest/images/testBanner.jpg"
+								alt="이미지">
+						</figure>
+						<div class="cardset-body">
+							<h5 class="cardset-tit">사진을 레이어에 맞춰주세요.</h5>
+							<p class="cardset-desc">정수리가 카메라 정면에 보이게 위치하도록 찍어주세요.</p>
+						</div>
+					</div>
+					<div class="cardset">
+						<figure class="cardset-figure">
+							<img class="cardset-img"
+								src="${cpath}/resources/talmotest/images/testBanner.jpg"
+								alt="이미지">
+						</figure>
+						<div class="cardset-body">
+							<h5 class="cardset-tit">머리에 손, 사물 등은 올리지 마세요.</h5>
+							<p class="cardset-desc">머리가 아닌 다른 부분은 AI가 인식을 못 할 수도 있습니다.</p>
+						</div>
+					</div>
+					<div class="cardset">
+						<figure class="cardset-figure">
+							<img class="cardset-img"
+								src="${cpath}/resources/talmotest/images/testBanner.jpg"
+								alt="이미지">
+						</figure>
+						<div class="cardset-body">
+							<h5 class="cardset-tit">주의점</h5>
+							<p class="cardset-desc">주의점주의점입니다. 주의점주의점입니다. 주의점주의점입니다.
+								주의점주의점입니다.&nbsp;</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- [E]hooms-N8 -->
+	<!-- [S]hooms-N15 -->
+	<div class="hooms-N15" data-bid="HQLSPSyJyF" id="">
+		<div class="contents-inner">
+			<div class="contents-container container-md">
+				<div class="textset textset-h2">
+					<h2 class="textset-tit textset-h2">올바른 사진</h2>
+				</div>
+				<div class="contents-group">
+					<div class="cardset">
+						<div class="cardset-body">
+							<p class="cardset-desc">HOOMS 매장을 방문하셔서 재료를 시험해보세요. 당신은 친절한
+								오프라인 직원에게 맞는 가구를 찾을 수 있도록 상담받을 수 있습니다.</p>
+						</div>
+						<figure class="cardset-figure">
+							<img class="cardset-img"
+								src="${cpath}/resources/talmotest/images/testBanner.jpg"
+								alt="이미지">
+						</figure>
+					</div>
+					<div class="cardset">
+						<div class="cardset-body">
+							<p class="cardset-desc">HOOMS 매장을 방문하셔서 재료를 시험해보세요. 당신은 친절한
+								오프라인 직원에게 맞는 가구를 찾을 수 있도록 상담받을 수 있습니다.</p>
+						</div>
+						<figure class="cardset-figure">
+							<img class="cardset-img"
+								src="${cpath}/resources/talmotest/images/testBanner.jpg"
+								alt="이미지">
+						</figure>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- [E]hooms-N15 -->
+	<!-- [S]hooms-N39 -->
+	<div class="hooms-N39" data-bid="hkLSPT0B60" id="">
+		<div class="contents-inner">
+			<div class="contents-container container-md">
+				<div class="textset textset-h2"></div>
+				<div class="tabset tabset-brick"></div>
+				<form action="/upload" method="post" enctype="multipart/form-data">
+					<div class="contents-form">
+						<div class="contents-form-middle">
+							<div class="fileset fileset-lg fileset-label">
+								<label>
+									<h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
+									<div class="fileset-body">
+										<div class="fileset-group">
+											<input type="file" class="fileset-input" name="frontpath">
+											<button class="fileset-cancel"></button>
+										</div>
+										<span class="btnset btnset-line btnset-lg fileset-upload">파일
+											첨부하기</span>
+									</div>
+								</label>
+							</div>
+							<br><br>
+							<div class="fileset fileset-lg fileset-label">
+								<label>
+									<h6 class="fileset-tit">정면 사진을 올려주세요.</h6>
+									<div class="fileset-body">
+										<div class="fileset-group">
+											<input type="file" class="fileset-input" name="toppath">
+											<button class="fileset-cancel"></button>
+										</div>
+										<span class="btnset btnset-line btnset-lg fileset-upload">파일
+											첨부하기</span>
+									</div>
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+				<div class="contents-form-bottom">
+					<div class="inputset inputset-lg inputset-label">
+						<label>
+							<h6 class="inputset-tit">개인정보수집 및 이용동의</h6>
+							<div class="inputset-board">
+								- 수집하는 개인정보 항목 : 등록된 사진, 성별 <br> <br> 작성해주시는 개인 정보는 문의
+								접수 및 고객 불만 해결을 위해 5년간 보관됩니다. 이용자는 본 동의를 거부할 수 있으나, 미동의시 문의 접수가
+								불가능합니다.
+							</div>
+						</label>
+					</div>
+					<div class="checkset">
+						<input id="checkset-q-1-1" class="checkset-input input-fill"
+							type="checkbox" value=""> <label class="checkset-label"
+							for="checkset-q-1-1"></label> <span class="checkset-text">위
+							내용을 읽었으며, 내용에 동의합니다. (필수)</span>
+					</div>
+				</div>
+				<div class="contents-sign">
+					<button class="btnset modalset-btn" onclick="agreecheck">등록하기</button>
+				</div>
+				<div id="modalSet1" class="modalset">
+					<div class="modal-header">
+						<h6 class="modal-title">진단 시작 안내</h6>
+					</div>
+					<div class="modal-body">
+						<p>
+							입력하신 내용으로 진단을 시작합니다.<br>계속 진행하시겠습니까?
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btnset btnset-ghost modal-close">취소</button>
+						<button type="button" class="btnset btnset-confirm">확인</button>
+					</div>
+				</div>
+				<div id="modalSet2" class="modalset modalset2">
+					<div class="modal-header">
+						<h6 class="modal-title">진단 시작</h6>
+					</div>
+					<div class="modal-body">
+						<p>
+							성공적으로 내역을 등록했습니다.<br>조금만 기다려주세요.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btnset btnset-confirm"
+							onclick="location.href='TalmoTestResultPage.do'">확인</button>
+					</div>
+				</div>
+				<div class="modalset-dim"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
   
-  <script>
-  
-  new Vue({
+	const filesetElements = document.querySelectorAll(".fileset");
+	filesetElements.forEach((filesetElement) => {
+	  const filesetInputs = filesetElement.querySelectorAll(".fileset-input");
+	  const filesetCancels = filesetElement.querySelectorAll(".fileset-cancel");
+	  filesetInputs.forEach((filesetInput, index) => {
+	    const filesetCancel = filesetCancels[index];
+	    filesetInput.addEventListener("change", () => {
+	      filesetInput.classList.add("active");
+	      filesetCancel.style.display = "block";
+	    });
+	    filesetCancel.addEventListener("click", () => {
+	      filesetInput.value = "";
+	      filesetInput.classList.remove("active");
+	      filesetCancel.style.display = "none";
+	    });
+	  });
+	});
+	
+	
+  // 자가진단 항목의 체크된갯수 세기
+	window.app = new Vue({
 	    el: '#app',
 	    data: function() {
 	        return {
@@ -262,11 +306,25 @@
 	                '8. 몸의 털이 갑자기 굵어졌다.',
 	                '9. 이마와 정수리 부분이 유난히 번들거린다.',
 	                '10. 두피에 피지량이 갑자기 늘어난 것 같다.'
-	            ]
+	            ],
+	        	checks: Array(10).fill(false), // 체크박스 상태를 추적하는 배열
+	        	isEditable: true // 체크박스의 수정 가능 여부를 나타내는 속성
+	        }
+	    },
+	    computed: {
+	        selfcheck: function() {
+	            return this.checks.filter(Boolean).length; // 체크된 항목의 개수를 계산
+	        }
+	    },
+	    methods: {
+	        toggleEdit: function() {
+	          this.isEditable = !this.isEditable; // 수정 가능 여부를 토글
 	        }
 	    }
 	});
-
+  
+  
+  
   </script>
   <!-- [E]hooms-N39 -->
   <script src="${cpath}/resources/talmotest/js/setting.js"></script>

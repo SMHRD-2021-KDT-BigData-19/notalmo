@@ -155,7 +155,7 @@
           $(this).val($(this).val().substring(0, 4000));
         }
       });
-      // order File Cancel Button
+      // 선택하면 취소 버튼을 표시하고, 취소 버튼을 클릭하면 선택된 파일을 제거하는 기능을 수행
       $block.find('.order-form-file').each(function() {
         const $this = $(this);
         $this.find('.fileset-input').on('change', function() {
@@ -169,39 +169,7 @@
     });
   });
 })();;
-// hooms-N39 [hkLSPT0B60]
-(function() {
-  $(function() {
-    $(".hooms-N39").each(function() {
-      const $block = $(this);
-      // modalSet
-      modalSet(".modalset-dim", "#modalSet1", "#modalSet2");
 
-      function modalSet(dim, modalSet1, modalSet2) {
-        // Modal Show
-        $block.find('.modalset-btn').on('click', function() {
-          $block.find(modalSet1).addClass('modalset-active');
-          $block.find(dim).fadeIn();
-        });
-        // Modal Hide
-        $block.find('.modalset-dim, .modal-close').on('click', function() {
-          $block.find(modalSet1).removeClass('modalset-active');
-          $block.find(modalSet2).removeClass('modalset-active');
-          $block.find(dim).fadeOut();
-        });
-        $block.find(modalSet1).find('.btnset-confirm').on('click', function() {
-          $block.find(modalSet1).removeClass('modalset-active');
-          $block.find(modalSet2).addClass('modalset-active');
-        });
-        // Modal2 Show
-        $block.find(modalSet2).find('.btnset-confirm').on('click', function() {
-          $block.find(modalSet2).removeClass('modalset-active');
-          $block.find(dim).fadeOut();
-        });
-      };
-    });
-  });
-})();;
 // hooms-N27 [xMlspTfPMr]
 (function() {
   $(function() {
