@@ -160,8 +160,7 @@
 		<div class="header-dim"></div>
 	</header>
 	<!-- [E]hooms-N55 -->
-	<!-------------------------------------------------------------------------------------------->
- --%>
+	<!--------------------------------------------------------------------------------------------> --%>
 	
 	<main class="th-layout-main ">
 		<!-- [S]hooms-N32 -->
@@ -173,13 +172,17 @@
 					<p>${vo.nick}</p>
 					<p>${vo.create_date}</p>
 					<c:choose>
-						<c:when test="${empty loginMember}">
-						</c:when>
-						<c:otherwise>
-							<a href="${cpath}/"><strong>수정 /</strong></a>
-							<a href="${cpath}/"><strong>삭제 /</strong></a>
-							<a href="${cpath}/"><strong>신고</strong></a>
-						</c:otherwise>
+    					<c:when test="${empty loginMember}">
+        					<!-- 로그인 멤버가 비어있는 경우 처리 -->
+    					</c:when>
+					    <c:otherwise>
+					        <c:if test="${loginMember.user_id eq vo.user_id}">
+					            <!-- user_id가 post_id와 일치하는 경우에만 수정 및 삭제 링크를 표시 -->
+					            <a href="javascript:void(0)"><strong>수정 /</strong></a>
+					            <a href="${cpath}/PostDelete.do/${vo.post_id}"><strong>삭제 /</strong></a>
+					        </c:if>
+					        <a href="javascript:void(0)"><strong>신고</strong></a>
+					    </c:otherwise>
 					</c:choose>
 					<div class="contents-cardlist contents-cardlist-active">
 						<a href="javascript:void(0)" class="cardset">
@@ -202,63 +205,25 @@
 					<!-- 댓글창 -->
 					<div class="comment" id="comments-container">
 						<h2 class="h2">댓글 창</h2>
-						<!-- <div class="comment-section">
-							<div class="comment-display">
-								<div class="comment-user">
-									<strong>오승지</strong>
+						<c:forEach items="${Cvo}" var="Cvo">
+							<div class="comment-section">
+								<div class="comment-display">
+									<div class="comment-user">
+										<strong>${Cvo.nick}</strong>
+									</div>
+									<div class="comment-date">${Cvo.create_date}</div>
+									&nbsp&nbsp&nbsp&nbsp
+									<div class="comment-actions">
+										<c:if test="${loginMember.user_id eq Cvo.user_id}">
+					            			<!-- user_id가 post_id와 일치하는 경우에만 수정 및 삭제 링크를 표시 -->
+					            			<a href="${cpath}/CommentDelete.do/${Cvo.comment_id}/${vo.post_id}">삭제 /</a>
+					        			</c:if>
+										<a> 신고</a>
+									</div>
+									<div class="comment-content">${Cvo.content}</div>
 								</div>
-								<div class="comment-date">2023-02-19 14:19</div>
-								&nbsp&nbsp&nbsp&nbsp
-								<div class="comment-actions">
-									<a>수정</a> &nbsp/&nbsp <a>삭제</a> &nbsp/&nbsp <a>신고</a>
-								</div>
-								<div class="comment-content">웹사이트 리뉴얼이 정말 멋지게 되었네요! 새로운
-									디자인이 마음에 듭니다.</div>
 							</div>
-						</div>
-						<div class="comment-section">
-							<div class="comment-display">
-								<div class="comment-user">
-									<strong>오승지</strong>
-								</div>
-								<div class="comment-date">2023-02-19 14:19</div>
-								&nbsp&nbsp&nbsp&nbsp
-								<div class="comment-actions">
-									<a>수정</a> &nbsp/&nbsp <a>삭제</a> &nbsp/&nbsp <a>신고</a>
-								</div>
-								<div class="comment-content">웹사이트 리뉴얼이 정말 멋지게 되었네요! 새로운
-									디자인이 마음에 듭니다.</div>
-							</div>
-						</div>
-						<div class="comment-section">
-							<div class="comment-display">
-								<div class="comment-user">
-									<strong>오승지</strong>
-								</div>
-								<div class="comment-date">2023-02-19 14:19</div>
-								&nbsp&nbsp&nbsp&nbsp
-								<div class="comment-actions">
-									<a>수정</a> &nbsp/&nbsp <a>삭제</a> &nbsp/&nbsp <a>신고</a>
-								</div>
-								<div class="comment-content">웹사이트 리뉴얼이 정말 멋지게 되었네요! 새로운
-									디자인이 마음에 듭니다.</div>
-							</div>
-						</div> -->
-					<c:forEach items="${Cvo}" var="Cvo">
-						<div class="comment-section">
-							<div class="comment-display">
-								<div class="comment-user">
-									<strong>${Cvo.nick}</strong>
-								</div>
-								<div class="comment-date">${Cvo.create_date}</div>
-								&nbsp&nbsp&nbsp&nbsp
-								<div class="comment-actions">
-									<a>삭제</a> &nbsp/&nbsp <a>신고</a>
-								</div>
-								<div class="comment-content">${Cvo.content}</div>
-							</div>
-						</div>
-					</c:forEach>
+						</c:forEach>
 					</div>
 
 					<!-- 댓글 입력창 -->
@@ -292,6 +257,9 @@
 			</div>
 		</div>
 		<script>
+		function DeleteComment(comment_id){
+			console.log(comment_id);
+		}
 		function addComment(nick) {
 		    // 댓글 입력값 가져오기
 		    var commentInput = document.getElementById('comment-input');
@@ -326,12 +294,12 @@
 
 		        newCommentDisplay.innerHTML =
 		            '<div class="comment-user"><strong>' + nick + '</strong></div>' +
-		            '<div class="comment-date">' + formattedTime + '</div>' +
+		            '<div class="comment-date">' + formattedTime + '</div>&nbsp&nbsp&nbsp&nbsp' +
 		            '<div class="comment-actions">' +
-		            	'<a>수정</a> &nbsp;/&nbsp; <a>삭제</a> &nbsp;/&nbsp; <a>신고</a>' +
-		            '</div>' +
+						'<a href="javascript:void(0)">삭제 /</a>'+
+    					'<a>  신고</a></div>'+
 		            '<div class="comment-content">' + commentText + '</div>';
-
+		            
 		        // 새로운 댓글 요소를 기존 댓글 컨테이너에 추가
 		        var commentsContainer = document.getElementById('comments-container');
 		        commentsContainer.appendChild(newCommentSection);

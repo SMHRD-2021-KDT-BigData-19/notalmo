@@ -31,7 +31,7 @@ public class CommunityController {
 
 	// 게시물 업로드 요청
 	@PostMapping("/PostUpload.do")
-	public void PostUpload(PostContentDTO vo, MultipartHttpServletRequest postImg) {
+	public String PostUpload(PostContentDTO vo, MultipartHttpServletRequest postImg) {
 		
 		// user_id, category, title, content DB에 업로드
 		cmapper.PostUploadmapper(vo);
@@ -79,8 +79,10 @@ public class CommunityController {
 			cmapper.PostImgUploadmapper(Ivo);
 			
 		}
+		return "redirect:/CommunityPage.do";
 	}
 	
+	// 커뮤니티 상세보기 요청
 	@RequestMapping("/CommunityView.do/{post_id}")
 	public String boardContent(@PathVariable("post_id") int post_id, Model model) {
 		CTextGetDTO vo = cmapper.CTextGet(post_id);
@@ -94,8 +96,26 @@ public class CommunityController {
 		return "CommunityView";
 	}
 	
+	// 댓글 DB 저장
 	@PostMapping("/Comment.do")
 	public @ResponseBody void Comment(CommentDTO Cvo) {
 		cmapper.Comment(Cvo);
 	}
+	
+	// 게시물 지우기
+	@RequestMapping("/PostDelete.do/{post_id}")
+	public String PostDelete(@PathVariable("post_id") int post_id) {
+		cmapper.PostDelete(post_id);
+		System.out.println("게시물 삭제 완료	");
+		return "redirect:/CommunityPage.do";
+	}
+	
+	// 댓글 지우기
+	@RequestMapping("/CommentDelete.do/{comment_id}/{post_id}")
+	public String CommentDelete(@PathVariable("comment_id") int comment_id, @PathVariable("post_id") int post_id) {
+		cmapper.CommentDelete(comment_id);
+		System.out.println("댓글 삭제 완료");
+		return "redirect:/CommunityView.do/"+post_id;
+	}
+	
 }
