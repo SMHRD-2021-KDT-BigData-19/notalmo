@@ -117,5 +117,10 @@ public class PageController {
 	public String PostUploadPage() {
 		return "PostUpload";
 	}
+	
+	@GetMapping("xxxx.do")
+	public String xxxx() {
+		return "xxxx";
+	}
 
 }

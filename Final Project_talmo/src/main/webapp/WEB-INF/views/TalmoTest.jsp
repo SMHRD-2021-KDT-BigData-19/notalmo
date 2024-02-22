@@ -30,13 +30,13 @@
 </head>
 
 <body>
-<%-- <%
-  // 세션 확인
-  HttpSession session = request.getSession(false);
-  if (session == null || session.getAttribute("user_id") == null) {
-    response.sendRedirect("Talmo"); // 로그인 페이지 주소로 이동
-  }
-%> --%>
+
+<c:if test="${empty sessionScope['loginMember']}">
+    <!-- 로그인이 되어 있지 않은 경우 로그인 페이지로 이동 -->
+    <script>
+        window.location.href = "${cpath}/LoginPage.do";
+    </script>
+</c:if>
   <div class="hooms-N25" data-bid="kqlSPsJe0f" id="">
     <div class="contents-container">
       <img class="contents-backimg" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="배너 이미지">
@@ -51,7 +51,7 @@
     <div class="contents-inner">
       <div class="contents-container container-md">
         <div class="textset textset-h2">
-          <h2 class="textset-tit">Self Test</h2>
+          <h2 class="textset-tit">Self Test "${loginMember.nick}"</h2>
         </div>
         <div class="textset">
           <p class="textset-desc"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">탈모는 조기 진단과 조기 치료가 치료 효과가 높고 치료비도 절감할 수 있습니다. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​진단과 치료가 늦어질수록 치료 효과도 감소하고 치료비용도 증가하기 때문에 자가 진단법으로 모발 상태를 꼼꼼히 확인해보세요. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">이 중 5개 이상이 해당되면 탈모를 의심해볼 수 있으니 병원을 찾아 정확한 진단을 받아보는 것이 좋습니다.</span></p>
@@ -67,6 +67,9 @@
   </div>
   <!-- [E]hooms-N17 -->
   <!-- [S]hooms-N45 -->
+ <form id="uploadForm" action="${cpath}/TalmoTestResultPage.do" method="post" enctype="multipart/form-data">
+ <input type="hidden" name="selfcheck" v-model="selfcheck">
+ <input type="hidden" name="user_id" value="${loginMember.user_id}">
   <div class="hooms-N45" data-bid="erLSpsQm8g" id="">
     <div class="contents-inner">
       <div class="contents-container container-md">
@@ -79,6 +82,7 @@
 		            <tr v-for="(item, index) in checkpoint" :key="index">
 		                <td>
 		                    <div class="checkset">
+		                    
 		                        <input :id="'checkset-a-1-' + (index + 1)" class="checkset-input input-fill" 
 		                        type="checkbox" v-model="checks[index]" :disabled="!isEditable">
 		                        <label class="checkset-label" :for="'checkset-a-1-' + (index + 1)"></label>
@@ -181,7 +185,7 @@
 			<div class="contents-container container-md">
 				<div class="textset textset-h2"></div>
 				<div class="tabset tabset-brick"></div>
-				<form action="/upload" method="post" enctype="multipart/form-data">
+				
 					<div class="contents-form">
 						<div class="contents-form-middle">
 							<div class="fileset fileset-lg fileset-label">
@@ -194,6 +198,8 @@
 										</div>
 										<span class="btnset btnset-line btnset-lg fileset-upload">파일
 											첨부하기</span>
+											<br>
+											<ul class="image-preview2"></ul>
 									</div>
 								</label>
 							</div>
@@ -208,12 +214,14 @@
 										</div>
 										<span class="btnset btnset-line btnset-lg fileset-upload">파일
 											첨부하기</span>
+											<br>
+											<ul class="image-preview2"></ul>
 									</div>
 								</label>
 							</div>
 						</div>
 					</div>
-				</form>
+					
 				<div class="contents-form-bottom">
 					<div class="inputset inputset-lg inputset-label">
 						<label>
@@ -233,8 +241,9 @@
 					</div>
 				</div>
 				<div class="contents-sign">
-					<button class="btnset modalset-btn" onclick="agreecheck">등록하기</button>
+					<button type="button" class="btnset modalset-btn">등록하기</button>
 				</div>
+			</form>
 				<div id="modalSet1" class="modalset">
 					<div class="modal-header">
 						<h6 class="modal-title">진단 시작 안내</h6>
@@ -260,7 +269,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btnset btnset-confirm"
-							onclick="location.href='TalmoTestResultPage.do'">확인</button>
+							onclick="location.href='xxxx.do'">확인</button>
 					</div>
 				</div>
 				<div class="modalset-dim"></div>
@@ -324,6 +333,90 @@
 	});
   
   
+  
+  
+  
+	function getImageFiles(e) {
+        const uploadFiles = [];
+        const files = e.currentTarget.files;
+        const imagePreview = document.querySelector('.image-preview2'); // image-preview2 클래스를 사용하도록 변경
+        const docFrag = new DocumentFragment();
+
+        // 파일 타입 검사
+        [...files].forEach(file => {
+            if (!file.type.match("image/.*")) {
+                alert('이미지 파일만 업로드가 가능합니다.');
+                return;
+            }
+
+            uploadFiles.push(file);
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const preview = createElement(e, file);
+                imagePreview.appendChild(preview);
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // 이미지 선택 후 li 태그 추가 함수
+    function createElement(e, file) {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+
+        // 클래스 추가
+        li.classList.add('post_img_li');
+        img.classList.add('post_img_img');
+
+        img.setAttribute('src', e.target.result);
+        img.setAttribute('data-file', file.name);
+        li.appendChild(img);
+
+        return li;
+    }
+
+    const realUpload = document.querySelector('.fileset-input'); // .real-upload를 사용하지 않고 .fileset-input를 사용하도록 변경
+    const upload = document.querySelector('.fileset-upload'); // .upload를 사용하지 않고 .fileset-upload를 사용하도록 변경
+
+    upload.addEventListener('click', () => realUpload.click());
+
+    realUpload.addEventListener('change', getImageFiles);
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+	function validateForm() {
+	    // 개인정보 수집 및 이용 동의 체크박스의 상태 확인
+	    var isAgreed = document.querySelector('.contents-form-bottom .checkset-input').checked;
+
+	    // 두 개의 파일 입력 필드 확인
+	    var frontpath = document.querySelector('input[name="frontpath"]').value;
+	    var toppath = document.querySelector('input[name="toppath"]').value;
+
+	    // 체크된 항목의 개수를 계산
+	    var selfcheck = document.querySelectorAll('.contents-price .checkset-input:checked').length;
+
+	    if (!isAgreed || !frontpath || !toppath || selfcheck === 0) {
+	        // 개인정보 수집 및 이용 동의 체크박스가 체크되지 않았거나,
+	        // 두 개의 파일 입력 필드 중 하나라도 비어있는 경우,
+	        // 또는 체크된 항목이 없는 경우
+	        alert('모든 필드를 채우고 개인정보 수집 및 이용에 동의해주세요.');  // 사용자에게 메시지 표시
+	        return false;  // 폼 제출을 취소
+	    }
+
+	    // 모든 조건이 충족된 경우에만 폼 제출을 계속
+	    return true;
+	}
+
+	document.querySelector('.modalset2 .btnset-confirm').addEventListener('click', function() {
+	    if (validateForm()) {
+	        document.getElementById('uploadForm').submit();
+	    }
+	});
+	</script>
   
   </script>
   <!-- [E]hooms-N39 -->
