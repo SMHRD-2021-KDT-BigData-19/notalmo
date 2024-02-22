@@ -67,8 +67,5 @@ public class TalmoTestDTO {
 	    this.result = result;
 	    this.create_date = createDate;
 	}
-
-	
-	
 	
 }
