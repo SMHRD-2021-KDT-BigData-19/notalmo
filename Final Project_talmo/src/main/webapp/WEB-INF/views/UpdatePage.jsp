@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-
+<%@ include file="Header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +58,7 @@
         }
 
         button {
-            background-color: #4caf50;
+            background-color: #000000;
             color: #fff;
             padding: 12px;
             border: none;
@@ -69,7 +69,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #D59B45;
         }
     </style>
 </head>
@@ -98,3 +98,4 @@
 </body>
 
 </html>
+<%@ include file="Footer.jsp" %>

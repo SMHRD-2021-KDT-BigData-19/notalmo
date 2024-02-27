@@ -315,7 +315,7 @@
 	</main>
 	<!-----------------------------하단 푸터----------------------------->
 	<!-- [S]hooms-N57 -->
-	<footer class="hooms-N57" data-bid="mDLs88964B">
+<%-- 	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">
 			<div class="footer-top">
 				<h1 class="footer-logo">
@@ -368,7 +368,7 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+	</footer> --%>
 	<!-- [E]hooms-N57 -->
 
 
@@ -378,3 +378,5 @@
 	<script src="${cpath}/resources/communityViewResources/js/common.js"></script>
 	<script src="${cpath}/resources/communityViewResources/js/script.js"></script>
 </body>
+</html>
+<%@ include file="Footer.jsp"%>

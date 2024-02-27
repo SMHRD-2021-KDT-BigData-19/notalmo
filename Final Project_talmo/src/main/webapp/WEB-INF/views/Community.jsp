@@ -6,7 +6,7 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
+<!--   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="imagetoolbar" content="no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +17,8 @@
   <meta property="og:title" content="웹사이트">
   <meta property="og:description" content="웹사이트입니다">
   <meta property="og:image" content="https://웹사이트/images/opengraph.png">
-  <meta property="og:url" content="https://웹사이트">
-  <title>커뮤니티 | 실전프로젝트</title>
+  <meta property="og:url" content="https://웹사이트"> -->
+  <title>커뮤니티</title>
   
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/style.css">

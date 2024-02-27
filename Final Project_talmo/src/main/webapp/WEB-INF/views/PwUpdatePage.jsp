@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-
+<%@ include file="Header.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,9 +75,12 @@
 </head>
 
 	<body>
+	<br><br>
 	    <div class="container">
 	        <h2>비밀번호 수정</h2>
 	        <form id="updateForm" onsubmit="return validateForm()" action="${cpath}/PwUpdate.do" method="post">
+	        	
+	        	
 	        	<input type="hidden" name="user_id" value="${loginMember.user_id}">	
 	            <label for="password">새 비밀번호:</label>
 	            <input type="password" id="password">
@@ -89,6 +92,7 @@
 	            <button type="submit">수정하기</button>
 	        </form>
 	    </div>
+	    <br><br>
 	
 	    <script>
 	        function validateForm(event) {
@@ -108,3 +112,4 @@
 	</body>
 
 </html>
+<%@ include file="Footer.jsp" %>
