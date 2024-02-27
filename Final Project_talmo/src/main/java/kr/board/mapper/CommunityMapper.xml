@@ -39,7 +39,7 @@
     
 	<!-- 댓글 가져오기 -->
 	<select id="CommentGet" parameterType="int" resultType="kr.board.entity.CommentDTO">
-	    SELECT comments.content, comments.create_date, users.nick
+	    SELECT comments.comment_id, comments.user_id, comments.content, comments.create_date, users.nick
 	    FROM comments	
 	    JOIN users ON comments.user_id = users.user_id
 	    WHERE comments.post_id=#{post_id}
@@ -49,5 +49,15 @@
 	<insert id="Comment" parameterType="kr.board.entity.CommentDTO">
 	    insert into comments (post_id, user_id, content) values(#{post_id}, #{user_id}, #{content})
 	</insert>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="PostDelete" parameterType="int">
+		delete from posts where post_id=#{post_id}
+	</delete>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="CommentDelete" parameterType="int">
+		delete from comments where comment_id=#{comment_id}
+	</delete>
 
 </mapper>

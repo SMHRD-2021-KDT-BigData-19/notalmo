@@ -22,4 +22,6 @@ public interface CommunityMapper {
 	public List<CImgGetDTO> CImgGet(int post_id);
 	public List<CommentDTO> CommentGet(int post_id);
 	public void Comment(CommentDTO Cvo);
+	public void PostDelete(int post_id);
+	public void CommentDelete(int comment_id);
 }

@@ -8,6 +8,7 @@ public class CTextGetDTO {
 	private String category;
 	private String create_date;
 	private String nick;
+	
 	public int getPost_id() {
 		return post_id;
 	}
