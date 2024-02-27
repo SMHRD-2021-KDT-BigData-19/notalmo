@@ -9,26 +9,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import kr.board.entity.HospitalDTO;
+
 @Controller
 public class HospitalController {
+	
+	String clientId = "4LIWA1dsAzfd5RCedIPF"; //애플리케이션 클라이언트 아이디
+    String clientSecret = "u4T0rSV564"; //애플리케이션 클라이언트 시크릿
 
 	// 병원 검색 요청
 	@PostMapping("/HospitalSearch.do")
-	public @ResponseBody void PostUpload(String query) {
+	public @ResponseBody void PostUpload(String query, Model model) {
 		
 		System.out.println("HospitalSearch.do에 들어왔습니다.");
 		System.out.println("검색어: " + query);
 		
-		
-		
-		
-		
-		String clientId = "4LIWA1dsAzfd5RCedIPF"; //애플리케이션 클라이언트 아이디
-        String clientSecret = "u4T0rSV564"; //애플리케이션 클라이언트 시크릿
-        
         String text = null;
         try {
             text = URLEncoder.encode(query, "UTF-8");
@@ -45,6 +47,37 @@ public class HospitalController {
         String responseBody = get(apiURL,requestHeaders);
         
         System.out.println(responseBody);
+        
+        ObjectMapper objectMapper = new ObjectMapper();
+        
+        
+        try {
+            // JSON 문자열을 JsonNode로 파싱
+            JsonNode jsonNode = objectMapper.readTree(responseBody);
+
+            // "items" 배열에서 각 항목에 접근
+            JsonNode items = jsonNode.get("items");
+            for (JsonNode item : items) {
+                String title = item.get("title").asText();
+                String link = item.get("link").asText();
+                String category = item.get("category").asText();
+                String address = item.get("address").asText();
+                String roadAddress = item.get("roadAddress").asText();
+                
+                HospitalDTO Hvo = new HospitalDTO(title,link,category,address,roadAddress);
+                model.addAttribute("Hvo", Hvo);
+
+                // 필요한 데이터를 여기에서 처리하거나 출력
+                System.out.println("Title: " + title);
+                System.out.println("Link: " + link);
+                System.out.println("Category: " + category);
+                System.out.println("Address: " + address);
+                System.out.println("Road Address: " + roadAddress);
+                System.out.println("------------------------");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 		
 	}
 	

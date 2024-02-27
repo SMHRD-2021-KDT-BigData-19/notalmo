@@ -31,8 +31,8 @@
 
  	<h1>Welcome, ${loginMember.nick}!</h1>
     <h1>진단 결과</h1>
-    <p>체크된 항목 수: ${checkedCount}</p>
-    <p>사진 파일 1: ${photo1FileName}</p>
-    <p>사진 파일 2: ${photo2FileName}</p>
+    <p>체크된 항목 수: ${talmoTestDTO.selfcheck}</p>
+    <p>사진 파일 1: ${talmoTestDTO.frontpath}</p>
+    <p>사진 파일 2: ${talmoTestDTO.toppath}</p>
 </body>
 </html>
