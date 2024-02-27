@@ -299,7 +299,7 @@
 													<label>
 														<div class="fileset-body">
 															<div class="fileset-group">
-																<input type="file" class="real-upload" accept="image/*" id="postImg" name="postImg" required multiple>
+																<input type="file" class="real-upload" accept="image/*" id="postImg" name="postImg" multiple>
 																<div class="upload"></div>
 															</div>
 															<span class="btnset btnset-line btnset-mono btnset-lg btnset-rect fileset-upload">파일첨부</span>
