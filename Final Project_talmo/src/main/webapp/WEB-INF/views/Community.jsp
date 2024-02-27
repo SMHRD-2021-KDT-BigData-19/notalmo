@@ -18,7 +18,7 @@
   <meta property="og:description" content="웹사이트입니다">
   <meta property="og:image" content="https://웹사이트/images/opengraph.png">
   <meta property="og:url" content="https://웹사이트">
-  <title>커뮤니티 | 실전프로젝트</title>
+  <title>커뮤니티</title>
   
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/style.css">
