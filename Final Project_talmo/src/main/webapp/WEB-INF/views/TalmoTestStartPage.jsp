@@ -45,6 +45,63 @@
       </div>
     </div>
   </div>
+  	<footer class="hooms-N57" data-bid="mDLs88964B">
+		<div class="footer-container container-lg">
+			<div class="footer-top">
+				<h1 class="footer-logo">
+					<a href="javascript:void(0)"> <img
+						src="${cpath}/resources/images/img_logo_gray.png" alt="로고">
+					</a>
+				</h1>
+				<ul class="footer-menulist">
+					<li class="footer-menuitem"><a href="javascript:void(0)">
+							<span>이용약관</span>
+					</a></li>
+					<li class="footer-menuitem"><a href="javascript:void(0)">
+							<span>개인정보처리방침</span>
+					</a></li>
+					<li class="footer-menuitem"><a href="javascript:void(0)">
+							<span>푸터메뉴1</span>
+					</a></li>
+					<li class="footer-menuitem"><a href="javascript:void(0)">
+							<span>푸터메뉴2</span>
+					</a></li>
+				</ul>
+				<ul class="footer-snslist">
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="javascript:void(0)"> <img
+							src="${cpath}/resources/icons/ico_instagram_lightgrey.svg"
+							alt="인스타그램">
+					</a></li>
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="javascript:void(0)"> <img
+							src="${cpath}/resources/icons/ico_youtube_lightgrey.svg"
+							alt="유튜브">
+					</a></li>
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="javascript:void(0)"> <img
+							src="${cpath}/resources/icons/ico_facebook_lightgrey.svg"
+							alt="페이스북">
+					</a></li>
+					<li class="footer-snsitem"><a class="footer-snslink"
+						href="javascript:void(0)"> <img
+							src="${cpath}/resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
+					</a></li>
+				</ul>
+			</div>
+			<div class="footer-bottom">
+				<div class="footer-txt">
+					<p>전라남도 순천시 중앙로 260</p>
+					<p>
+						<span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span>
+					</p>
+				</div>
+				<!-- <div class="footer-txt">
+          <p>2022 BY TEMPLATEHOUSE. ALL RIGHTS RESEVED</p>
+        </div> -->
+			</div>
+		</div>
+	</footer>
   <!-- [E]hooms-N5 -->
   <script src="${cpath}/resources/talmotest/js/setting.js"></script>
   <script src="${cpath}/resources/talmotest/js/plugin.js"></script>
@@ -53,4 +110,3 @@
   <script src="${cpath}/resources/talmotest/js/script.js"></script>
 </body>
 </html>
-<%@ include file="Footer.jsp"%>
