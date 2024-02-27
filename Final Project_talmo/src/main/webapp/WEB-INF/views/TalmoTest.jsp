@@ -67,7 +67,7 @@
   </div>
   <!-- [E]hooms-N17 -->
   <!-- [S]hooms-N45 -->
- <form id="uploadForm" action="${cpath}/xxxx.do" method="post" enctype="multipart/form-data">
+ <form id="uploadForm" action="${cpath}/TalmoTestResultPage.do" method="post" enctype="multipart/form-data">
     <input type="hidden" name="selfcheck" v-model="selfcheck">
     <input type="hidden" name="user_id" value="${loginMember.user_id}">
     <div class="hooms-N45" data-bid="erLSpsQm8g" id="">
@@ -96,7 +96,7 @@
             </div>
        </div>
      </div>
-  <!-- [E]hooms-N45 -->
+<%--   <!-- [E]hooms-N45 -->
   <!-- [S]hooms-N8 -->
    <div class="hooms-N8" data-bid="BqLSPSVqk7" id="">
       <div class="contents-inner">
@@ -177,7 +177,7 @@
             </div>
          </div>
       </div>
-   </div>
+   </div> --%>
    <!-- [E]hooms-N15 -->
    <!-- [S]hooms-N39 -->
    <div class="hooms-N39" data-bid="hkLSPT0B60" id="">
@@ -193,7 +193,7 @@
                         <h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
                         <div class="fileset-body">
                            <div class="fileset-group">
-                              <input type="file" class="fileset-input" id="frontpath">
+                              <input type="file" class="fileset-input" id="frontpath" name="frontpath">
                               <button class="fileset-cancel"></button>
                            </div>
                            <span class="btnset btnset-line btnset-lg fileset-upload">파일 첨부하기</span>
@@ -208,7 +208,7 @@
                         <h6 class="fileset-tit">정면 사진을 올려주세요.</h6>
                         <div class="fileset-body">
                            <div class="fileset-group">
-                              <input type="file" class="fileset-input" id="toppath">
+                              <input type="file" class="fileset-input" id="toppath" name="toppath">
                               <button class="fileset-cancel"></button>
                            </div>
                            <span class="btnset btnset-line btnset-lg fileset-upload">파일 첨부하기</span>
@@ -239,7 +239,7 @@
                </div>
             </div>
             <div class="contents-sign">
-               <button type="submit" class="btnset modalset-btn">등록하기</button>
+               <button type="button" class="btnset modalset-btn">등록하기</button>
             </div>
             <div id="modalSet1" class="modalset">
                <div class="modal-header">
@@ -265,7 +265,7 @@
                   </p>
                </div>
                <div class="modal-footer">
-                  <button  class="btnset btnset-confirm">확인</button>
+                  <button type="submit" class="btnset btnset-confirm" >확인</button>
                </div>
             </div>
             <div class="modalset-dim"></div>
@@ -336,7 +336,7 @@
 /*    function getImageFiles(e) {
         const uploadFiles = [];
         const files = e.currentTarget.files;
-        const imagePreview = document.querySelector('.image-preview2'); // image-preview2 클래스를 사용하도록 변경
+        const imagePreview = document.querySelector('.image-preview2'); 
         const docFrag = new DocumentFragment();
 
         // 파일 타입 검사
@@ -386,21 +386,18 @@
        
        
    function validateForm() {
-       // 개인정보 수집 및 이용 동의 체크박스의 상태 확인
+       // 개인정보 수집 및 이용 동의 체크박스 확인
        var isAgreed = document.querySelector('.contents-form-bottom .checkset-input').checked;
 
-       // 두 개의 파일 입력 필드 확인
+       // 사진파일 두개 확인
        var frontpath = document.querySelector('input[name="frontpath"]').value;
        var toppath = document.querySelector('input[name="toppath"]').value;
 
-       // 체크된 항목의 개수를 계산
+       // 체크된 항목의 개수 계산
        var selfcheck = document.querySelectorAll('.contents-price .checkset-input:checked').length;
 
        if (!isAgreed || !frontpath || !toppath || selfcheck === 0) {
-           // 개인정보 수집 및 이용 동의 체크박스가 체크되지 않았거나,
-           // 두 개의 파일 입력 필드 중 하나라도 비어있는 경우,
-           // 또는 체크된 항목이 없는 경우
-           alert('모든 필드를 채우고 개인정보 수집 및 이용에 동의해주세요.');  // 사용자에게 메시지 표시
+           alert('모든 필드를 채우고 개인정보 수집 및 이용에 동의해주세요.');
            return false;  // 폼 제출을 취소
        }
 

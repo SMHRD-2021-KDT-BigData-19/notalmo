@@ -18,8 +18,11 @@ public class TalmoTestController {
     @Autowired
     private TalmoTestMapper talmoTestMapper;
 
-    @PostMapping("/xxxx.do")
-    public void xxxx(TalmoTestDTO talmoTestDTO, MultipartHttpServletRequest frontpath2) {
+
+    
+    
+    @PostMapping("/TalmoTestResultPage.do")
+    public void TalmoTestResultPage(TalmoTestDTO talmoTestDTO, MultipartHttpServletRequest frontpath2) {
     	System.out.println("SSSS");
         // user_id, frontpath, toppath, selfcheck DB에 업로드
         talmoTestMapper.insert(talmoTestDTO);

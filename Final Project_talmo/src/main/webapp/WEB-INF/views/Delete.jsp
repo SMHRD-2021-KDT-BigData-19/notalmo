@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-
+<%@ include file="Header.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>회원 탈퇴</title>
-    <style>
+<style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -51,8 +51,8 @@
         }
 
         button {
-            background-color: #e74c3c;
-            color: #fff;
+            background-color: #000; /* 버튼 배경색을 검정(#000)으로 변경 */
+            color: #fff; /* 버튼 글씨색을 하얀색(#fff)으로 변경 */
             padding: 12px;
             border: none;
             border-radius: 4px;
@@ -62,12 +62,13 @@
         }
 
         button:hover {
-            background-color: #c0392b;
+            background-color: #333; /* 버튼에 호버 시 배경색을 조금 더 어둡게 변경 */
         }
     </style>
 </head>
 
 <body>
+	<br><br><br><br>
     <div class="container">
         <h2>회원 탈퇴</h2>
         <form id="withdrawForm" onsubmit="return confirmWithdraw()" action="${cpath}/Delete.do" method="post">
@@ -79,6 +80,7 @@
             <button type="submit">탈퇴하기</button>
         </form>
     </div>
+    <br><br><br><br>
 
     <script>
     function confirmWithdraw() {
@@ -97,3 +99,4 @@
 </body>
 
 </html>
+<%@ include file="Footer.jsp"%>

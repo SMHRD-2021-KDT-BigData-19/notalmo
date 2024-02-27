@@ -2,12 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-
+<%@ include file="Header.jsp"%>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
-<meta charset="UTF-8">
+<!-- <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="imagetoolbar" content="no">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,17 +18,17 @@
 <meta property="og:title" content="웹사이트">
 <meta property="og:description" content="웹사이트입니다">
 <meta property="og:image" content="https://웹사이트/images/opengraph.png">
-<meta property="og:url" content="https://웹사이트">
+<meta property="og:url" content="https://웹사이트"> -->
 <title>회원가입 | 실전프로젝트</title>
-<link rel="stylesheet" href="${cpath}/resources/css/setting.css">
+<%-- <link rel="stylesheet" href="${cpath}/resources/css/setting.css">
 <link rel="stylesheet" href="${cpath}/resources/css/plugin.css">
 <link rel="stylesheet" href="${cpath}/resources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/css/common.css">
 <link rel="stylesheet" href="${cpath}/resources/css/style.css">
-</head>
+</head> --%>
 
 <body>
-	<!--------------------------------------------상단 메뉴2------------------------------------------->
+<%-- 	<!--------------------------------------------상단 메뉴2------------------------------------------->
 	<!-- [S]hooms-N55 -->
 	<header class="hooms-N55" data-bid="bFLS88Lpv5" id="">
 		<div class="header-container container-lg">
@@ -125,7 +125,7 @@
 			</div>
 		</div>
 		<div class="header-dim"></div>
-	</header>
+	</header> --%>
 	<!-- [E]hooms-N55 -->
 	<!-------------------------------------------------------------------------------------------->
 
@@ -271,10 +271,10 @@
 												</li>
 											</ul>
 										</div> -->
-										<button class="btnset btnset-line btnset-lg">인증번호 발송</button>
+										<!-- <button class="btnset btnset-line btnset-lg">인증번호 발송</button> -->
 									</div>
 
-									<div class="inputset inputset-lg inputset-label">
+									<!-- <div class="inputset inputset-lg inputset-label">
 										<label>
 											<input type="tel"
 												class="inputset-input form-control"
@@ -282,7 +282,7 @@
 												required="발송된 인증번호를 입력해주세요.">
 										</label>
 										<button class="btnset btnset-line btnset-lg">확인</button>
-									</div>
+									</div> -->
 
 									<div class="inputset inputset-lg inputset-label">
 										<label>
@@ -329,7 +329,7 @@
 		<!-------------------------------------------------------------->
 	</main>
 
-	<!-----------------------------하단 푸터----------------------------->
+<%-- 	<!-----------------------------하단 푸터----------------------------->
 	<!-- [S]hooms-N57 -->
 	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">
@@ -389,11 +389,13 @@
 		</div>
 	</footer>
 	<!-- [E]hooms-N57 -->
-	<!-------------------------------------------------------------->
-
+	<!--------------------------------------------------------------> --%>
+<%-- 
 	<script src="${cpath}/resources/js/setting.js"></script>
 	<script src="${cpath}/resources/js/plugin.js"></script>
 	<script src="${cpath}/resources/js/template.js"></script>
 	<script src="${cpath}/resources/js/common.js"></script>
-	<script src="${cpath}/resources/js/script.js"></script>
+	<script src="${cpath}/resources/js/script.js"></script> --%>
 </body>
+</html>
+<%@ include file="Footer.jsp"%>

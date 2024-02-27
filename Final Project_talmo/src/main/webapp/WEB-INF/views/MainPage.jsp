@@ -274,8 +274,22 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="textset textset-span">
+			<span class="textset-tit" style="font-weight: bold; margin-left:120px;">최신글</span>
+		</div>
+		
+		<br>
+		<br>
+		
+		<div class="full-width-image-container" style="margin-left: 120px; margin-right: 50px;">
+    		<img src="${cpath}/resources/images/MainPage_img.png" alt="전체 너비 이미지" style="width: 95%; height: auto;">
+		</div>
 
 </main>
+
+<br>
+<br>
 <br>
 	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">

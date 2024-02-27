@@ -24,9 +24,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	
+	<style>
+	.pagination-group ul {
+	    display: flex;
+	    flex-direction: row;
+	    list-style-type: none;
+	    justify-content: center; /* 페이지네이션을 가운데에 배치 */
+	}
 
+	.pagination-group ul li {
+	    margin: 0 28px; /* 숫자들의 간격을 넓힘 */
+	}
+	
+	.product-item {
+	    margin: 0;
+	    font-family: var(--ff);
+	    font-weight: 400;
+	    font-size: var(--fs-p1);
+	    line-height: var(--lh-p1);
+	    letter-spacing: var(--letter-spacing);
+	    color: var(--body-color);
+	    background-color: var(--body-bg);
+	    -webkit-text-size-adjust: 100%;
+	    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+		
+	</style>
   </head>
-  <body>
+<body>
     <section class="py-5">
       <div class="container-fluid">
         
@@ -55,211 +81,96 @@
         </div>
       </div>
     </section>
-    
-    
-	<div class="mg-b-10u">
-		<p class="h8 mg-b-2u">Default</p>
-		<div class="pagination-wrapper">
-			<div class="pagination">
-				<div class="pagination-group direction">
-					<ul>
-						<li class="disabled"><a href="#" class="pagination-item prev"><i class="Licon ico-prev"></i></a></li>
-						<li class="disabled"><a href="#" class="pagination-item left"><i class="Licon ico-left"></i></a></li>
-					</ul>
-				</div>
-				<div class="pagination-group">
-					<ul>
-						<li class="on"><a href="#" class="pagination-item"><i>1</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>2</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>3</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>4</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>5</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>6</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>7</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>8</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>9</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>10</i></a></li>
-						<li>
-							<div class="dp-inblock select">
-								<a href="#" class="pagination-item"><i class="Licon ico-elipsis"></i></a>
-								<div class="select-menu">
-									<ul>
-										<li class="on"><a href="#" class="select-menu-item" data-select-value="20"><p class="label">20</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="30"><p class="label">30</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="40"><p class="label">40</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="50"><p class="label">50</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="60"><p class="label">60</p></a></li>
-									</ul>
-								</div>
-								<div class="select-dim"></div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="pagination-group direction">
-					<ul>
-						<li class=""><a href="#" class="pagination-item right"><i class="Licon ico-right"></i></a></li>
-						<li class=""><a href="#" class="pagination-item next"><i class="Licon ico-next"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="mg-b-10u">
-		<p class="h8 mg-b-2u">Default - Disabled</p>
-		<div class="pagination-wrapper">
-			<div class="pagination disabled">
-				<div class="pagination-group direction">
-					<ul>
-						<li><a href="#" class="pagination-item prev"><i class="Licon ico-prev"></i></a></li>
-						<li><a href="#" class="pagination-item left"><i class="Licon ico-left"></i></a></li>
-					</ul>
-				</div>
-				<div class="pagination-group">
-					<ul>
-						<li><a href="#" class="pagination-item"><i>1</i></a></li>
-						<li><a href="#" class="pagination-item"><i>2</i></a></li>
-						<li><a href="#" class="pagination-item"><i>3</i></a></li>
-						<li><a href="#" class="pagination-item"><i>4</i></a></li>
-						<li class="on"><a href="#" class="pagination-item"><i>5</i></a></li>
-						<li><a href="#" class="pagination-item"><i>6</i></a></li>
-						<li><a href="#" class="pagination-item"><i>7</i></a></li>
-						<li><a href="#" class="pagination-item"><i>8</i></a></li>
-						<li><a href="#" class="pagination-item"><i>9</i></a></li>
-						<li><a href="#" class="pagination-item"><i>10</i></a></li>
-						<li>
-							<div class="dp-inblock select">
-								<a href="#" class="pagination-item"><i class="Licon ico-elipsis"></i></a>
-								<div class="select-menu">
-									<ul>
-										<li class="on"><a href="#" class="select-menu-item" data-select-value="20"><p class="label">20</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="30"><p class="label">30</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="40"><p class="label">40</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="50"><p class="label">50</p></a></li>
-										<li><a href="#" class="select-menu-item" data-select-value="60"><p class="label">60</p></a></li>
-									</ul>
-								</div>
-								<div class="select-dim"></div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="pagination-group direction">
-					<ul>
-						<li><a href="#" class="pagination-item right"><i class="Licon ico-right"></i></a></li>
-						<li><a href="#" class="pagination-item next"><i class="Licon ico-next"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="mg-b-10u">
-		<p class="h8 mg-b-2u">Small</p>
-		<div class="pagination-wrapper">
-			<div class="pagination">
-				<div class="pagination-group direction">
-					<ul>
-						<li class="disabled"><a href="#" class="pagination-item prev"><i class="Licon ico-prev"></i></a></li>
-						<li class="disabled"><a href="#" class="pagination-item left"><i class="Licon ico-left"></i></a></li>
-					</ul>
-				</div>
-				<div class="pagination-group">
-					<ul>
-						<li class="on"><a href="#" class="pagination-item"><i>1</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>2</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>3</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>4</i></a></li>
-						<li class=""><a href="#" class="pagination-item"><i>5</i></a></li>
-					</ul>
-				</div>
-				<div class="pagination-group direction">
-					<ul>
-						<li class=""><a href="#" class="pagination-item right"><i class="Licon ico-right"></i></a></li>
-						<li class=""><a href="#" class="pagination-item next"><i class="Licon ico-next"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="mg-b-10u">
-		<p class="h8 mg-b-2u">Small- Disabled</p>
-		<div class="pagination-wrapper">
-			<div class="pagination disabled">
-				<div class="pagination-group direction">
-					<ul>
-						<li><a href="#" class="pagination-item prev"><i class="Licon ico-prev"></i></a></li>
-						<li><a href="#" class="pagination-item left"><i class="Licon ico-left"></i></a></li>
-					</ul>
-				</div>
-				<div class="pagination-group">
-					<ul>
-						<li><a href="#" class="pagination-item"><i>1</i></a></li>
-						<li><a href="#" class="pagination-item"><i>2</i></a></li>
-						<li class="on"><a href="#" class="pagination-item"><i>3</i></a></li>
-						<li><a href="#" class="pagination-item"><i>4</i></a></li>
-						<li><a href="#" class="pagination-item"><i>5</i></a></li>
-					</ul>
-				</div>
-				<div class="pagination-group direction">
-					<ul>
-						<li><a href="#" class="pagination-item right"><i class="Licon ico-right"></i></a></li>
-						<li><a href="#" class="pagination-item next"><i class="Licon ico-next"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
 
     <script>
-	    let currentPage = 1;
-	    const itemsPerPage = 20;
-	
-	    async function getSampu() {
-	        let url = 'http://127.0.0.1:5000/sampu';
-	        try {
-	            let res = await fetch(url);
-	            if (!res.ok) {
-	                throw new Error(`HTTP error! status: ${res.status}`);
-	            }
-	            let data = await res.json();
-	            return data.value;
-	        } catch (error) {
-	            console.log(error);
-	        }
-	    }
-	
-	    async function renderSampu() {
-	        let sampuArr = await getSampu();
-	        let html = '';
-	        let start = (currentPage - 1) * itemsPerPage;
-	        let end = start + itemsPerPage;
-	        let paginatedItems = sampuArr.slice(start, end);
-	
-	        paginatedItems.forEach(sampu => {
-	            let htmlSegment = '<div class="col">' +
-	                                '<div class="product-item">' +
-	                                    '<figure>' +
-	                                        '<a href="' + sampu.link + '" title="' + sampu.name + '">' +
-	                                            '<img src="' + sampu.src + '" class="tab-image">' +
-	                                        '</a>' +
-	                                    '</figure>' +
-	                                    '<h3>' + sampu.name + '</h3>' +
-	                                    '<span class="qty">1 Unit</span>' +
-	                                    '<span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> ' + sampu.rating + '</span>' +
-	                                    '<span class="price">' + sampu.sale + '</span>' +
-	                                '</div>' +
-	                            '</div>';
-	            html += htmlSegment;
-	        });
-	
-	        let container = document.querySelector('.product-grid');
-	        container.innerHTML = html;
-	    }
-	
-	    renderSampu();
-    </script>
+        let currentPage = 1;
+        const itemsPerPage = 10;
 
-  
+        async function getSampu() {
+            let url = 'http://127.0.0.1:5000/sampu';
+            try {
+                let res = await fetch(url);
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+                let data = await res.json();
+                return data.value;
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        async function renderSampu() {
+            let sampuArr = await getSampu();
+            let html = '';
+            let start = (currentPage - 1) * itemsPerPage;
+            let end = start + itemsPerPage;
+            let paginatedItems = sampuArr.slice(start, end);
+
+            paginatedItems.forEach(sampu => {
+                let htmlSegment = '<div class="col">' +
+                                    '<div class="product-item">' +
+                                        '<figure>' +
+                                            '<a href="' + sampu.link + '" title="' + sampu.name + '">' +
+                                                '<img src="' + sampu.src + '" class="tab-image">' +
+                                            '</a>' +
+                                        '</figure>' +
+                                        '<h3>' + sampu.name + '</h3>' +
+                                        '<span class="qty">1 Unit</span>' +
+                                        '<span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> ' + sampu.rating + '</span>' +
+                                        '<span class="price">' + sampu.sale + '</span>' +
+                                    '</div>' +
+                                '</div>';
+                html += htmlSegment;
+            });
+
+            let container = document.querySelector('.product-grid');
+            container.innerHTML = html;
+
+            // 페이지네이션 업데이트
+            let paginationList = document.querySelector('.pagiset-list');
+            let totalPages = Math.ceil(sampuArr.length / itemsPerPage);
+            let paginationHtml = '';
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHtml += '<a class="pagiset-link' + (i === currentPage ? ' active-fill' : '') + '" href="javascript:void(0)" onclick="goToPage(' + i + ')">' + i + '</a>';
+            }
+            paginationList.innerHTML = paginationHtml;
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            renderSampu();
+        }
+
+        renderSampu();
+    </script>
+	<br><br>
+    <nav class="pagiset pagiset-line">
+        <div class="pagiset-ctrl">
+          <a class="pagiset-link pagiset-first" href="javascript:void(0)" onclick="goToPage(1)">
+            <span class="visually-hidden">처음</span>
+          </a>
+        </div>
+        <div class="pagiset-ctrl">
+          <a class="pagiset-link pagiset-prev" href="javascript:void(0)" onclick="goToPage(currentPage > 1 ? currentPage - 1 : 1)">
+            <span class="visually-hidden">이전</span>
+          </a>
+        </div>
+        <div class="pagiset-list">
+          <!-- 페이지 번호가 여기에 동적으로 생성됩니다 -->
+        </div>
+        <div class="pagiset-ctrl">
+          <a class="pagiset-link pagiset-next" href="javascript:void(0)" onclick="goToPage(currentPage < Math.ceil(sampuArr.length / itemsPerPage) ? currentPage + 1 : currentPage)">
+            <span class="visually-hidden">다음</span>
+          </a>
+        </div>
+        <div class="pagiset-ctrl">
+          <a class="pagiset-link pagiset-last" href="javascript:void(0)" onclick="goToPage(Math.ceil(sampuArr.length / itemsPerPage))">
+            <span class="visually-hidden">마지막</span>
+          </a>
+        </div>
+    </nav>
+  	<br><br>
     <script src="${cpath}/resources/product/js/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

@@ -91,7 +91,6 @@
                 </div>
             </div>
         </div>
-        </div>
 
         <div class="header-fullmenu fullmenu-top">
             <div class="fullmenu-head container-lg">

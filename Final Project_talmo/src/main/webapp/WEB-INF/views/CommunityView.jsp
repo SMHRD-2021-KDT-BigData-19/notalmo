@@ -27,18 +27,6 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <style>
-	
-	.h7{
-		text-align:center;
-		font-size: 36px;
-		font-weight: bold;
-	}
-	
-	.p1{
-		text-align:right;
-		font-size: 18px;
-	}
-	
 	.comment {
 		padding-top: 5rem;
 	}
@@ -179,31 +167,27 @@
 		<div class="hooms-N32" data-bid="kylsTY0GhF" id="">
 			<div class="contents-inner">
 				<div class="contents-container container-md">
-					<h1 class="h7">${vo.title}</h1>
-					<p style="font-size: 20px; font-weight: bold;">${vo.category}</p>
-
-					<p class="p1">${vo.create_date}</p>
+					<h2 class="h2">${vo.title}</h2>
+					<p>${vo.category}</p>
+					<p>${vo.nick}</p>
+					<p>${vo.create_date}</p>
+					<c:choose>
+    					<c:when test="${empty loginMember}">
+        					<!-- 로그인 멤버가 비어있는 경우 처리 -->
+    					</c:when>
+					    <c:otherwise>
+					        <c:if test="${loginMember.user_id eq vo.user_id}">
+					            <!-- user_id가 post_id와 일치하는 경우에만 수정 및 삭제 링크를 표시 -->
+					            <a href="javascript:void(0)"><strong>수정 /</strong></a>
+					            <a href="${cpath}/PostDelete.do/${vo.post_id}"><strong>삭제 /</strong></a>
+					        </c:if>
+					        <a href="javascript:void(0)"><strong>신고</strong></a>
+					    </c:otherwise>
+					</c:choose>
 					<div class="contents-cardlist contents-cardlist-active">
-					
-	    					<p style="margin-top: 10px; font-weight: bold;">닉네임 : ${vo.nick}</p>
-						<c:choose>
-	    					<c:when test="${empty loginMember}">
-	        					<!-- 로그인 멤버가 비어있는 경우 처리 -->
-	    					</c:when>
-						    <c:otherwise>
-						    	<div style="text-align: right;">
-							        <c:if test="${loginMember.user_id eq vo.user_id}">
-							            <!-- user_id가 post_id와 일치하는 경우에만 수정 및 삭제 링크를 표시 -->
-							            <a href="javascript:void(0)"><strong>수정 /</strong></a>
-							            <a href="${cpath}/PostDelete.do/${vo.post_id}"><strong>삭제 /</strong></a>
-							            <a href="javascript:void(0)"><strong>신고</strong></a>
-							        </c:if>
-						        </div>
-						    </c:otherwise>
-						</c:choose>
 						<a href="javascript:void(0)" class="cardset">
 							<div class="cardset-body">
-								<p class="cardset-descView" style="font-size: 20px;">${vo.content}</p>
+								<p class="cardset-descView">${vo.content}</p>
 							</div>
 							<figure>
 								<c:forEach items="${Ivo}" var="ivo">
@@ -220,7 +204,7 @@
 
 					<!-- 댓글창 -->
 					<div class="comment" id="comments-container">
-						<h2 class="h2">댓글</h2>
+						<h2 class="h2">댓글 창</h2>
 						<c:forEach items="${Cvo}" var="Cvo">
 							<div class="comment-section">
 								<div class="comment-display">
@@ -331,7 +315,7 @@
 	</main>
 	<!-----------------------------하단 푸터----------------------------->
 	<!-- [S]hooms-N57 -->
-	<footer class="hooms-N57" data-bid="mDLs88964B">
+<%-- 	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">
 			<div class="footer-top">
 				<h1 class="footer-logo">
@@ -384,7 +368,7 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+	</footer> --%>
 	<!-- [E]hooms-N57 -->
 
 
@@ -394,3 +378,5 @@
 	<script src="${cpath}/resources/communityViewResources/js/common.js"></script>
 	<script src="${cpath}/resources/communityViewResources/js/script.js"></script>
 </body>
+</html>
+<%@ include file="Footer.jsp"%>

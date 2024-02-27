@@ -6,7 +6,7 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8">
+<!--   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="imagetoolbar" content="no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
   <meta property="og:title" content="웹사이트">
   <meta property="og:description" content="웹사이트입니다">
   <meta property="og:image" content="https://웹사이트/images/opengraph.png">
-  <meta property="og:url" content="https://웹사이트">
+  <meta property="og:url" content="https://웹사이트"> -->
   <title>커뮤니티</title>
   
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/template.css">
@@ -239,17 +239,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="tableset-mobile">24</td>
-                  <td class="tableset-tit tableset-order02">
-                    <a class="tableset-ico" href="javascript:void(0)">
-                      <span>안녕하세요. 문의드립니다.</span>
-                    </a>
-                  </td>
-                  <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td>
-                  <td class="tableset-mobile">166</td>
-                </tr>
                 
                 
               	<c:forEach items="${PostList}" var="b">
