@@ -291,60 +291,7 @@
 <br>
 <br>
 <br>
-	<footer class="hooms-N57" data-bid="mDLs88964B">
-		<div class="footer-container container-lg">
-			<div class="footer-top">
-				<h1 class="footer-logo">
-					<a href="javascript:void(0)"> <img
-						src="${cpath}/resources/images/img_logo_white.png" alt="로고">
-					</a>
-				</h1>
-				<ul class="footer-menulist">
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>정동현</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>곽수진</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>오승지</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>유성민</span>
-					</a></li>
-				</ul>
-				<ul class="footer-snslist">
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_instagram_lightgrey.svg"
-							alt="인스타그램">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_youtube_lightgrey.svg"
-							alt="유튜브">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_facebook_lightgrey.svg"
-							alt="페이스북">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
-					</a></li>
-				</ul>
-			</div>
-			<div class="footer-bottom">
-				<div class="footer-txt">
-					<p>스마트 인재 개발원</p>
-					<p>
-						<span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<%@ include file="Footer.jsp" %>
 
 	<script src="${cpath}/resources/js/setting.js"></script>
 	<script src="${cpath}/resources/js/plugin.js"></script>

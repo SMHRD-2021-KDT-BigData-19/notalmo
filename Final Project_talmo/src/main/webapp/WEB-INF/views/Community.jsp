@@ -38,7 +38,7 @@
       <div class="contents-inner">
         <div class="contents-container container-md">
           <div class="textset textset-h2">
-            <h2 class="textset-tit" style="text-align: center; margin-bottom:35px;">
+            <h2 class="textset-tit" style="text-align: center; margin-bottom:35px; font-size:56px;">
 			<span>자유게시판</span></h2>
           </div>
           
