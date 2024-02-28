@@ -256,8 +256,8 @@
 								</table>
 								<br>
 									<div class="btn-container" style="text-align: center">
-								    <a href="${cpath}/CommunityPage.do" class="btn btn-secondary btn-lg">취소</a>
-								    <button type="submit" class="btn btn-primary btn-lg">등록</button>
+								    <a class="btnset" href="${cpath}/CommunityPage.do" class="btn btn-secondary btn-lg">취소</a>
+								    <button type="submit" class="btnset">등록</button>
 									</div>
 							</div>
 

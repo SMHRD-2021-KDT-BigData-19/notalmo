@@ -6,70 +6,46 @@
 <html lang="ko">
 
 <head>
-<!--   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="imagetoolbar" content="no">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="title" content="웹사이트">
-  <meta name="description" content="웹사이트입니다.">
-  <meta name="keywords" content="키워드,키워드,키워드">
-  <meta property="og:title" content="웹사이트">
-  <meta property="og:description" content="웹사이트입니다">
-  <meta property="og:image" content="https://웹사이트/images/opengraph.png">
-  <meta property="og:url" content="https://웹사이트"> -->
   <title>커뮤니티</title>
   
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/style.css">
 
-<%-- <link rel="stylesheet" href="${cpath}/resources/css/template.css">
-<link rel="stylesheet" href="${cpath}/resources/css/common.css">
-<link rel="stylesheet" href="${cpath}/resources/css/style.css"> --%>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-	/* $(document).ready(function(){
-		// alert("제이쿼리 시작!!");
-		// 게시글 목록을 가져오는 ajax통신이
-		// 문서가 시작되면 바로 요청을 보냈다가 응답 받아오는 함수를 호출
-		boardList()
-	});
-	
-	
-	function boardList(){
-		// ajax가 통신하는 서버는 REST SERVER
-		// ajax는 보통 응답할 떄 json 형식으로 주고받음 
-		$.ajax({
-			url: "${cpath}/boardAjaxList.do",
-			type: "get",
-			// data 보내줄 데이터 없음
-			dataType: "json",
-			// 응답해왔을 때 처리할 수 았는 콜백 함수 사용
-			// ajax에서 함수를 부를 떄 ()를 붙이지 않음
-			success: callBack,
-			error: function(){
-				alert("게시글 목록 가져오기 실패ㅜㅜ");
-			}
-		}) // END ajax
-	} // END boardList() */
-</script>
 
 </head>
+
+<style>
+    .placeholder-text {
+        color: #666;
+        font-style: italic;
+        font-size: 18px;
+        text-align: right;
+    }
+</style>
 
 <body>
 	
 	<%@ include file="Header.jsp" %>
 	
   <main class="th-layout-main ">
-    <!-- [S]hooms-N36 -->
     <div class="hooms-N36" data-bid="LklssKG92p" id="">
       <div class="contents-inner">
         <div class="contents-container container-md">
           <div class="textset textset-h2">
-            <h2 class="textset-tit" style="text-align: center;">
+            <h2 class="textset-tit" style="text-align: center; margin-bottom:35px;">
 			<span>자유게시판</span></h2>
           </div>
-
+          
+		<br>
+		
+		<div class="placeholder-text">
+			<a class="jaju" href="${cpath}/Jaju.do">자주 묻는 질문</a>
+		</div>
+		
+		
+		<br>
+		
           <div class="contents-search">
             <p class="contents-result"> 전체<span> 24</span>개 </p>
             <div class="contents-form">
@@ -105,16 +81,17 @@
 					</li>
 					<li class="selectset-item">
 						<button class="selectset-link btn" type="button">
-							<span>병원</span>
+							<span>병원질문</span>
 						</button>
 					</li>
 					<li class="selectset-item">
 						<button class="selectset-link btn" type="button">
-							<span>제품</span>
+							<span>제품질문</span>
 						</button>
 					</li>
 				</ul>
               </div>
+              
               <div class="inputset inputset-lg">
                 <button class="inputset-icon icon-right icon-search btn" type="button" aria-label="아이콘"></button>
                 <input type="text" class="inputset-input form-control" placeholder="검색어를 입력해주세요." aria-label="내용">
@@ -217,13 +194,44 @@
         });
       });
     });
-  </script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggleButton = document.querySelector('.selectset-toggle');
+        var selectList = document.querySelector('.selectset-list');
 
-<%-- 	<script src="${cpath}/resources/js/plugin.js"></script>
-	<script src="${cpath}/resources/js/template.js"></script>
-	<script src="${cpath}/resources/js/common.js"></script>
-	<script src="${cpath}/resources/js/script.js"></script> --%>
-	
+        toggleButton.addEventListener('click', function () {
+            selectList.style.display = (selectList.style.display === 'none' || selectList.style.display === '') ? 'block' : 'none';
+        });
+
+        // 다른 부분을 클릭하면 선택 목록이 사라지도록 설정
+        document.addEventListener('click', function (event) {
+            if (!toggleButton.contains(event.target)) {
+                selectList.style.display = 'none';
+            }
+        });
+    });
+    
+ // JavaScript를 사용하여 플레이스홀더 텍스트를 숨기거나 표시
+    document.addEventListener('DOMContentLoaded', function () {
+        var inputElement = document.querySelector('.inputset-input');
+        var placeholderText = document.querySelector('.placeholder-text');
+
+        inputElement.addEventListener('focus', function () {
+            placeholderText.style.display = 'none';
+        });
+
+        inputElement.addEventListener('blur', function () {
+            if (inputElement.value === '') {
+                placeholderText.style.display = 'block';
+            }
+        });
+    });
+ 
+    function redirectToJaju() {
+        window.location.href = 'Jaju.jsp';
+    }
+    
+  </script>
 
 	<script src="${cpath}/resources/communityListResources/js/setting.js"></script>
 	<script src="${cpath}/resources/communityListResources/js/template.js"></script>

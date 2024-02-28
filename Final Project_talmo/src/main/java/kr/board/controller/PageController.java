@@ -122,5 +122,10 @@ public class PageController {
 	public String xxxx() {
 		return "xxxx";
 	}
+	
+	@GetMapping("/Jaju.do")
+	public String Jaju() {
+		return "Jaju";
+	}
 
 }
