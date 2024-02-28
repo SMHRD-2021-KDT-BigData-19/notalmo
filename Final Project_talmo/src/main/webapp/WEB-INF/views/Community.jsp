@@ -22,6 +22,11 @@
         font-size: 18px;
         text-align: right;
     }
+    
+    .placeholder-text a.jaju {
+        text-decoration: underline;
+    }
+    
 </style>
 
 <body>
