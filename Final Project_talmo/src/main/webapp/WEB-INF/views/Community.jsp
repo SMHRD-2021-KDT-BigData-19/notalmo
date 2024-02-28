@@ -57,106 +57,7 @@
 </head>
 
 <body>
-	<%-- <!--------------------------------------------상단 메뉴2------------------------------------------->
-	<!-- [S]hooms-N55 -->
-	<header class="hooms-N55" data-bid="bFLS88Lpv5" id="">
-		<div class="header-container container-lg">
-			<div class="header-left">
-				<h1 class="header-title">
-					<a class="header-logo" href="${cpath}/MainPage.do" title="hooms"></a>
-				</h1>
-			</div>
-			<div class="header-center">
-				<ul class="header-gnblist">
-					<li class="header-gnbitem"><c:choose>
-							<c:when test="${empty loginMember}">
-								<a class="header-gnblink" href="${cpath}/LoginPage.do"> <span>탈모진단</span>
-								</a>
-							</c:when>
-							<c:otherwise>
-								<a class="header-gnblink" href="${cpath}/TalmoTestPage.do">
-									<span>탈모진단</span>
-								</a>
-							</c:otherwise>
-						</c:choose></li>
-					<li class="header-gnbitem"><a class="header-gnblink"
-						href="${cpath}/ProductPage.do"> <span>제품찾기</span>
-					</a></li>
-					<li class="header-gnbitem"><a class="header-gnblink"
-						href="${cpath}/HospitalPage.do"> <span>병원찾기</span>
-					</a></li>
-					<li class="header-gnbitem"><a class="header-gnblink"
-						href="${cpath}/CommunityPage.do"> <span>커뮤니티</span>
-					</a></li>
-				</ul>
-			</div>
-			<div class="header-right">
-				<div class="header-utils">
-					<c:choose>
-						<c:when test="${empty loginMember}">
-							<a href="${cpath}/LoginPage.do" class="header-gnblink">로그인</a>
-							<a href="${cpath}/LoginPage.do"
-								class="btn-profile header-utils-btn" title="profile"></a>
-						</c:when>
-						<c:otherwise>
-							<a href="${cpath}/Logout.do" class="header-gnblink">로그아웃</a>
-							<a href="${cpath}/MyPage.do" class="btn-profile header-utils-btn"
-								title="profile"></a>
-						</c:otherwise>
-					</c:choose>
-					<!-- <a href="javascript:void(0);" class="btn-profile header-utils-btn" title="profile"></a> -->
-					<button class="btn-search header-utils-btn" title="search"></button>
-					<button class="btn-menu header-utils-btn" title="menu"></button>
-					<button class="btn-close header-utils-btn" title="close"></button>
-				</div>
-			</div>
-			<div class="header-search-form">
-				<div class="inputset inputset-line">
-					<button class="icon-right icon-search btn" type="button"
-						aria-label="아이콘"></button>
-					<input type="text" class="inputset-input form-control"
-						placeholder="검색어를 입력해주세요." aria-label="내용">
-				</div>
-			</div>
-		</div>
-
-
-		<div class="header-fullmenu fullmenu-top">
-			<div class="fullmenu-head container-lg">
-				<h4 class="fullmenu-title">
-					<a class="fullmenu-logo" href="javascript:void(0)" title="hooms"></a>
-				</h4>
-				<button class="fullmenu-close"></button>
-			</div>
-			<div class="fullmenu-wrapper container-lg">
-				<ul class="fullmenu-gnblist">
-					<li class="fullmenu-gnbitem"><c:choose>
-							<c:when test="${empty loginMember}">
-								<a class="fullmenu-gnblink" href="${cpath}/LoginPage.do"> <span>탈모진단</span>
-								</a>
-							</c:when>
-							<c:otherwise>
-								<a class="fullmenu-gnblink" href="${cpath}/TalmoTestPage.do">
-									<span>탈모진단</span>
-								</a>
-							</c:otherwise>
-						</c:choose></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/ProductPage.do"> <span>제품찾기</span>
-					</a></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/HospitalPage.do"> <span>병원찾기</span>
-					</a></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/CommunityPage.do"> <span>커뮤니티</span>
-					</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="header-dim"></div>
-	</header>
-	<!-- [E]hooms-N55 -->
-	<!--------------------------------------------------------------------------------------------> --%>
+	
 	<%@ include file="Header.jsp" %>
 	
   <main class="th-layout-main ">
@@ -244,8 +145,6 @@
               	<c:forEach items="${PostList}" var="b">
 					<tr>
 						<td class="tableset-mobile">${b.category}</td>
-						<!-- cpath/boardContent.do/idx c:url에 정리할 때는 jstl은 무조건 프로젝트 내에서 이동
-							cpath를 입력하지 않아도 됨 -->
 						<c:url var="contectLink" value="CommunityView.do/${b.post_id}" />
 						<td class="tableset-tit tableset-order02">
 							<a class="tableset-ico" href="${contectLink}">
@@ -299,74 +198,10 @@
           </nav>
         </div>
       </div>
-<!--       <div id="modalSet1" class="modalset">
-        <div class="modal-header">
-          <h6 class="modal-title">1:1 문의</h6>
-        </div>
-        <div class="modal-body">
-          <p> 로그인이 필요한 서비스입니다. <br> 로그인하시겠습니까? </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btnset btnset-ghost modal-close">취소</button>
-          <a href="javascript:void(0)" class="btnset btnset-confirm">확인</a>
-        </div>
-      </div>
-      <div class="modalset-dim"></div> -->
+
     </div>
-    <!-- [E]hooms-N36 -->
   </main>
   
-  
-<%--   <!-----------------------------하단 푸터----------------------------->
-	<!-- [S]hooms-N57 -->
-	<footer class="hooms-N57" data-bid="mDLs88964B">
-		<div class="footer-container container-lg">
-			<div class="footer-top">
-				<h1 class="footer-logo">
-					<a href="javascript:void(0)"> <img
-						src="${cpath}/resources/images/img_logo_gray.png" alt="로고">
-					</a>
-				</h1>
-				<ul class="footer-menulist">
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>이용약관</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>개인정보처리방침</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴1</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴2</span>
-					</a></li>
-				</ul>
-				<ul class="footer-snslist">
-					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
-						<img src="${cpath}/resources/icons/ico_instagram_lightgrey.svg" alt="인스타그램">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
-						<img src="${cpath}/resources/icons/ico_youtube_lightgrey.svg" alt="유튜브">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
-						<img src="${cpath}/resources/icons/ico_facebook_lightgrey.svg" alt="페이스북">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)">
-						<img src="${cpath}/resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
-					</a></li>
-				</ul>
-			</div>
-			<div class="footer-bottom">
-				<div class="footer-txt">
-					<p>전라남도 순천시 중앙로 260</p>
-					<p>
-						<span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- [E]hooms-N57 --> --%>
 	<%@ include file="Footer.jsp" %>
 	
   <script>
