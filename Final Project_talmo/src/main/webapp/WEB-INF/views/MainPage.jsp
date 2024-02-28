@@ -33,14 +33,53 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
+<style>
+
+
+  .cardset-item {
+    width: 33.33%;
+    box-sizing: border-box;
+    float: left;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .cardset-container {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .cardset-figure {
+    margin: 0;
+  }
+
+  .cardset-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cardset-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+</style>
+
+
 <body>
 
-<%-- 	<h1>mainPage</h1>
-	<a href="${cpath}/LoginPage.do">로그인</a>
-	<a href="${cpath}/SignupPage.do">회원가입</a>
-	<a href="${cpath}/Logout.do">로그아웃</a> --%>
-	<!--------------------------------------------상단 메뉴1------------------------------------------->
-	<!-- [S]hooms-N54 -->
 	<header class="hooms-N54" data-bid="sELS8895JS">
 		<div class="header-inner">
 			<div class="header-container container-lg">
@@ -135,23 +174,19 @@
 		</div>
 		<div class="header-dim"></div>
 	</header>
-	<!-- [E]hooms-N54 -->
-	<!------------------------------------------------------------------------------------>
 
 	<main class="th-layout-main ">
-		<!-- [S]hooms-N1 -->
 		<div class="hooms-N1" data-bid="uRLS880PXf">
 			<div class="contents-container">
 				<div class="contents-swiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="contents-backimg img-pc" alt="배너 PC 이미지"
-								style="background-color: orange;"></div>
+								style="background-image: url('${cpath}/resources/images/MainPageBanner1.jpg');"></div>
 							<div class="contents-slide-group">
 								<h2 class="contents-title">Full Fill</h2>
 								<p class="contents-text">
 									Full Fill만의 독자적인 기능 <br> AI가 진단해주는 나의 탈모 진행율은?
-									Test
 								</p>
 								<a class="contents-link" href="${cpath}/TalmoTestStartPage.do">AI 탈모 진단 받기</a>
 							</div>
@@ -162,26 +197,13 @@
 							<div class="contents-slide-group">
 								<h2 class="contents-title">Full Fill</h2>
 								<p class="contents-text">
-									Full Fill만의 독자적인 기능 <br> 추천 두피 샴푸
-									product
+									Full Fill의 추천 두피 샴푸
 								</p>
 								<a class="contents-link" href="javascript:void(0)">제품 보러가기</a>
 							</div>
 						</div>
-						<div class="swiper-slide">
-							<div class="contents-backimg img-pc" alt="배너 PC 이미지"
-								style="background-color: yellowgreen;"></div>
-							<div class="contents-slide-group">
-								<h2 class="contents-title">HOOMS</h2>
-								<p class="contents-text">
-									훔스만의 독자적인 기술로 완성된 포켓스프링 <br> 흔들리지 않는 편안함, 그 아름다운 휴식
-									Beautyrest
-								</p>
-								<a class="contents-link" href="javascript:void(0)">Learn
-									more</a>
-							</div>
-						</div>
 					</div>
+					
 					<div class="swiper-button-next"></div>
 					<div class="swiper-button-prev"></div>
 					<div class="contents-control">
@@ -196,309 +218,99 @@
 				</div>
 			</div>
 		</div>
-		<!-- [E]hooms-N1 -->
 
-		<!-- [S]hooms-N2 -->
-		<!-- <div class="hooms-N2" data-bid="yklS8895Mj">
-      <div class="contents-container">
-        <div class="contents-visual img-pc" alt="비주얼 PC 이미지"></div>
-        <div class="contents-body container-md">
-          <h2 class="contents-title">INTRO</h2>
-          <p class="contents-text"> 편안하고 기품있는 침실문화의 시작 <br> 실용성을 넘어선 공간의 새로운 가치를 만들어갑니다 </p>
-        </div>
-      </div>
-    </div> -->
-		<!-- [E]hooms-N2 -->
-
-		<!-- [S]hooms-N58 -->
-		<!-- <div class="hooms-N58" data-bid="SNlS8895S3">
-      <div class="contents-container container-md">
-        <div class="tabset tabset-solid">
-          <ul class="tabset-list tabset-sm">
-            <li class="tabset-item">
-              <a class="tabset-link active" href="javascript:void(0)">
-                <span>INTRO</span>
-              </a>
-            </li>
-            <li class="tabset-item">
-              <a class="tabset-link" href="javascript:void(0)">
-                <span>BRAND STORY</span>
-              </a>
-            </li>
-            <li class="tabset-item">
-              <a class="tabset-link" href="javascript:void(0)">
-                <span>OUR PHILOSOPHY</span>
-              </a>
-            </li>
-            <li class="tabset-item">
-              <a class="tabset-link" href="javascript:void(0)">
-                <span>HERITAGE</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
-		<!-- [E]hooms-N58 -->
-
-		<!-- [S]hooms-N36 -->
 		<div class="hooms-N36" data-bid="dvlS8895wE">
 			<div class="contents-inner">
 				<div class="contents-container container-md">
 					<div class="textset textset-span">
-						<span class="textset-tit">풀필 최신글</span>
+						<span class="textset-tit" style="font-weight: bold;">관련 기사</span>
 					</div>
 					<div class="tabset tabset-brick">
 						<ul class="tabset-list tabset-sm tabset-fill">
-							<li class="tabset-item"><a href="javascript:void(0);"
-								class="cardset">
-									<figure class="cardset-figure">
-										<img class="cardset-img"
-											src="${cpath}/resources/images/MainPage_community_talmo_img1.png"
-											alt="카드 이미지">
-									</figure> <span>탈모 일지2</span>
-							</a> <!-- <img src="../resources/images/img_subvisual_mobile_01.png" alt="비주얼 모바일 이미지">
-                <a class="tabset-link" href="javascript:void(0)">
-                  <span>Q&amp;A</span>
-                </a> --></li>
+						
 							<li class="tabset-item">
-								<!-- <a class="tabset-link" href="javascript:void(0)">
-                  <span>자주 묻는 질문</span>
-                </a> --> <a href="javascript:void(0);" class="cardset">
-									<figure class="cardset-figure">
-										<img class="cardset-img"
-											src="${cpath}/resources/images/MainPage_community_talmo_img2.png"
-											alt="카드 이미지">
-									</figure> <span>탈모 일지2</span>
-							</a>
+							    <a href="https://topclass.chosun.com/news/articleView.html?idxno=31628" class="cardset" target="_blank">
+							        <div class="cardset-container">
+							            <figure class="cardset-figure">
+							                <img class="cardset-img"
+							                    src="${cpath}/resources/images/MainPage_talmo_img1.jpg"
+							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+							            </figure>
+							            <div class="cardset-title">탈모 예방하는 습관 5가지</div>
+							        </div>
+							    </a>
 							</li>
+
+
 							<li class="tabset-item">
-								<!-- <a class="tabset-link" href="javascript:void(0)">
-                  <span>1:1 문의</span>
-                </a> --> <a href="javascript:void(0);" class="cardset">
-									<figure class="cardset-figure">
-										<img class="cardset-img"
-											src="${cpath}/resources/images/MainPage_community_talmo_img3.png"
-											alt="카드 이미지">
-									</figure> <span>탈모 일지2</span>
-							</a>
+							    <a href="https://www.healthinnews.co.kr/news/articleView.html?idxno=22486" class="cardset" target="_blank">
+							        <div class="cardset-container">
+							            <figure class="cardset-figure">
+							                <img class="cardset-img"
+							                    src="${cpath}/resources/images/MainPage_talmo_img2.jpg"
+							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+							            </figure>
+							            <div class="cardset-title">청소년 탈모의 원인과 치료법</div>
+							        </div>
+							    </a>
 							</li>
+
+							
+							<li class="tabset-item">
+							    <a href="https://www.pinpointnews.co.kr/news/articleView.html?idxno=188566" class="cardset" target="_blank">
+							        <div class="cardset-container">
+							            <figure class="cardset-figure">
+							                <img class="cardset-img"
+							                    src="${cpath}/resources/images/MainPage_talmo_img3.jpg"
+							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+							            </figure>
+							            <div class="cardset-title">탈모 관련 화장품 긍정적 평가 나와…주가 17% 이상 올라</div>
+							        </div>
+							    </a>
+							</li>
+							
 						</ul>
 					</div>
-					<!-- <div class="contents-search">
-            <p class="contents-result"> 전체<span> 24</span>개 </p>
-            <div class="contents-form">
-              <div class="selectset selectset-lg">
-                <button class="selectset-toggle btn" type="button">
-                  <span>전체</span>
-                </button>
-                <ul class="selectset-list">
-                  <li class="selectset-item">
-                    <button class="selectset-link btn" type="button" data-value="전체">
-                      <span>전체</span>
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div class="inputset inputset-lg">
-                <button class="inputset-icon icon-right icon-search btn" type="button" aria-label="아이콘"></button>
-                <input type="text" class="inputset-input form-control" placeholder="검색어를 입력해주세요." aria-label="내용">
-              </div>
-            </div>
-          </div> -->
-					<div class="tableset">
-						<table class="tableset-table table">
-							<colgroup>
-								<col>
-								<col>
-								<col>
-								<col>
-								<col>
-								<col>
-								<col>
-							</colgroup>
-							<!-- <thead class="thead-light thead-border-top">
-                <tr>
-                  <th scope="col">No.</th>
-                  <th scope="col">구분</th>
-                  <th scope="col">제목</th>
-                  <th scope="col">등록일</th>
-                  <th scope="col">등록자</th>
-                  <th scope="col">답변</th>
-                  <th scope="col">조회수</th>
-                </tr>
-              </thead> -->
-							<tbody>
-								<tr>
-									<!-- <td class="tableset-mobile">24</td>
-                  <td class="tableset-category tableset-order03">가구 상담</td> -->
-									<td class="tableset-tit tableset-order02"><a
-										class="tableset-ico" href="javascript:void(0)">안녕하세요.
-											문의드립니다.</a></td>
-									<!-- <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td> -->
-									<!-- <td class="tableset-order01">
-                    <div class="badgeset">대기</div>
-                  </td> -->
-									<td class="tableset-mobile">166</td>
-								</tr>
-								<tr>
-									<!-- <td class="tableset-mobile">23</td>
-                  <td class="tableset-category tableset-order03">인테리어 상담</td> -->
-									<td class="tableset-tit tableset-order02"><a
-										class="tableset-ico" href="javascript:void(0)">안녕하세요.
-											문의드립니다.</a></td>
-									<!-- <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td> -->
-									<!-- <td class="tableset-order01">
-                    <div class="badgeset badgeset-active">답변완료</div>
-                  </td> -->
-									<td class="tableset-mobile">166</td>
-								</tr>
-								<tr>
-									<!-- <td class="tableset-mobile">22</td>
-                  <td class="tableset-category tableset-order03">A/S 신청</td> -->
-									<td class="tableset-tit tableset-order02"><a
-										class="tableset-ico" href="javascript:void(0)">안녕하세요.
-											문의드립니다.</a></td>
-									<!-- <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td> -->
-									<!-- <td class="tableset-order01">
-                    <div class="badgeset">대기</div>
-                  </td> -->
-									<td class="tableset-mobile">166</td>
-								</tr>
-								<tr>
-									<!-- <td class="tableset-mobile">21</td>
-                  <td class="tableset-category tableset-order03">기타</td> -->
-									<td class="tableset-tit tableset-order02"><a
-										class="tableset-ico" href="javascript:void(0)">안녕하세요.
-											문의드립니다.</a></td>
-									<!-- <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td> -->
-									<!-- <td class="tableset-order01">
-                    <div class="badgeset badgeset-active">답변완료</div>
-                  </td> -->
-									<td class="tableset-mobile">166</td>
-								</tr>
-								<tr>
-									<!-- <td class="tableset-mobile">20</td>
-                  <td class="tableset-category tableset-order03">가구 상담</td> -->
-									<td class="tableset-tit tableset-order02"><a
-										class="tableset-ico" href="javascript:void(0)">안녕하세요.
-											문의드립니다.</a></td>
-									<!-- <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td> -->
-									<!-- <td class="tableset-order01">
-                    <div class="badgeset badgeset-active">답변완료</div>
-                  </td> -->
-									<td class="tableset-mobile">166</td>
-								</tr>
-								<!-- <tr>
-                  <td class="tableset-mobile">19</td>
-                  <td class="tableset-category tableset-order03">기타</td>
-                  <td class="tableset-tit tableset-order02">
-                    <a class="tableset-ico" href="javascript:void(0)">
-                      <span>안녕하세요. 문의드립니다.</span>
-                    </a>
-                  </td>
-                  <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td>
-                  <td class="tableset-order01">
-                    <div class="badgeset badgeset-active">답변완료</div>
-                  </td>
-                  <td class="tableset-mobile">166</td>
-                </tr>
-                <tr>
-                  <td class="tableset-mobile">18</td>
-                  <td class="tableset-category tableset-order03">기타</td>
-                  <td class="tableset-tit tableset-order02">
-                    <a class="tableset-ico" href="javascript:void(0)">
-                      <span>안녕하세요. 문의드립니다.</span>
-                    </a>
-                  </td>
-                  <td class="tableset-order05">2023.01.01</td>
-                  <td class="tableset-order04">홍**</td>
-                  <td class="tableset-order01">
-                    <div class="badgeset badgeset-active">답변완료</div>
-                  </td>
-                  <td class="tableset-mobile">166</td>
-                </tr> -->
-							</tbody>
-						</table>
-					</div>
-					<!-- <div class="contents-btn">
-            <a class="btnset modalset-btn" href="javascript:void(0)">상담 문의</a>
-          </div> -->
-					<!-- <nav class="pagiset pagiset-line">
-            <div class="pagiset-ctrl">
-              <a class="pagiset-link pagiset-first" href="javascript:void(0)">
-                <span class="visually-hidden">처음</span>
-              </a>
-            </div>
-            <div class="pagiset-ctrl">
-              <a class="pagiset-link pagiset-prev" href="javascript:void(0)">
-                <span class="visually-hidden">이전</span>
-              </a>
-            </div>
-            <div class="pagiset-list">
-              <a class="pagiset-link active-fill" href="javascript:void(0)">1</a>
-              <a class="pagiset-link" href="javascript:void(0)">2</a>
-              <a class="pagiset-link" href="javascript:void(0)">3</a>
-            </div>
-            <div class="pagiset-ctrl">
-              <a class="pagiset-link pagiset-next" href="javascript:void(0)">
-                <span class="visually-hidden">다음</span>
-              </a>
-            </div>
-            <div class="pagiset-ctrl">
-              <a class="pagiset-link pagiset-last" href="javascript:void(0)">
-                <span class="visually-hidden">마지막</span>
-              </a>
-            </div>
-          </nav> -->
 				</div>
 			</div>
-			<!-- <div id="modalSet1" class="modalset">
-        <div class="modal-header">
-          <h6 class="modal-title">1:1 문의</h6>
-        </div>
-        <div class="modal-body">
-          <p> 로그인이 필요한 서비스입니다. <br> 로그인하시겠습니까? </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btnset btnset-ghost modal-close">취소</button>
-          <a href="javascript:void(0)" class="btnset btnset-confirm">확인</a>
-        </div>
-      </div>
-      <div class="modalset-dim"></div> -->
 		</div>
-		<!-- [E]hooms-N36 -->
+		
+		<div class="textset textset-span">
+			<span class="textset-tit" style="font-weight: bold; margin-left:120px;">최신글</span>
+		</div>
+		
+		<br>
+		<br>
+		
+		<div class="full-width-image-container" style="margin-left: 120px; margin-right: 50px;">
+    		<img src="${cpath}/resources/images/MainPage_img.png" alt="전체 너비 이미지" style="width: 95%; height: auto;">
+		</div>
 
+</main>
 
-	</main>
-	<!-----------------------------하단 푸터----------------------------->
-	<!-- [S]hooms-N57 -->
+<br>
+<br>
+<br>
 	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">
 			<div class="footer-top">
 				<h1 class="footer-logo">
 					<a href="javascript:void(0)"> <img
-						src="${cpath}/resources/images/img_logo_gray.png" alt="로고">
+						src="${cpath}/resources/images/img_logo_white.png" alt="로고">
 					</a>
 				</h1>
 				<ul class="footer-menulist">
 					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>이용약관</span>
+							<span>정동현</span>
 					</a></li>
 					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>개인정보처리방침</span>
+							<span>곽수진</span>
 					</a></li>
 					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴1</span>
+							<span>오승지</span>
 					</a></li>
 					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴2</span>
+							<span>유성민</span>
 					</a></li>
 				</ul>
 				<ul class="footer-snslist">
@@ -525,18 +337,14 @@
 			</div>
 			<div class="footer-bottom">
 				<div class="footer-txt">
-					<p>전라남도 순천시 중앙로 260</p>
+					<p>스마트 인재 개발원</p>
 					<p>
 						<span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span>
 					</p>
 				</div>
-				<!-- <div class="footer-txt">
-          <p>2022 BY TEMPLATEHOUSE. ALL RIGHTS RESEVED</p>
-        </div> -->
 			</div>
 		</div>
 	</footer>
-	<!-- [E]hooms-N57 -->
 
 	<script src="${cpath}/resources/js/setting.js"></script>
 	<script src="${cpath}/resources/js/plugin.js"></script>

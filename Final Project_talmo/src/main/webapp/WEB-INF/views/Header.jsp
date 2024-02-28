@@ -31,7 +31,7 @@
         <div class="header-container container-lg">
             <div class="header-left">
                 <h1 class="header-title">
-                    <a class="header-logo" href="${cpath}/MainPage.do" title="hooms"></a>
+                    <a href="${cpath}/MainPage.do"><img src="${cpath}/resources/images/img_logo_white.png" alt="로고"></a>
                 </h1>
             </div>
             <div class="header-center">

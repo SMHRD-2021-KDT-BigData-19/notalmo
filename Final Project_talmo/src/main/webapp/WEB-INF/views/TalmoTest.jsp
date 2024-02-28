@@ -51,7 +51,7 @@
     <div class="contents-inner">
       <div class="contents-container container-md">
         <div class="textset textset-h2">
-          <h2 class="textset-tit">Self Test "${loginMember.nick}"</h2>
+          <h2 class="textset-tit">Self Test</h2>
         </div>
         <div class="textset">
           <p class="textset-desc"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">탈모는 조기 진단과 조기 치료가 치료 효과가 높고 치료비도 절감할 수 있습니다. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​진단과 치료가 늦어질수록 치료 효과도 감소하고 치료비용도 증가하기 때문에 자가 진단법으로 모발 상태를 꼼꼼히 확인해보세요. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">이 중 5개 이상이 해당되면 탈모를 의심해볼 수 있으니 병원을 찾아 정확한 진단을 받아보는 것이 좋습니다.</span></p>
@@ -96,7 +96,7 @@
             </div>
        </div>
      </div>
-<%--   <!-- [E]hooms-N45 -->
+ <!-- [E]hooms-N45 -->
   <!-- [S]hooms-N8 -->
    <div class="hooms-N8" data-bid="BqLSPSVqk7" id="">
       <div class="contents-inner">
