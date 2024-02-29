@@ -3,14 +3,14 @@
 /* hooms-N54 [OelS87k00v] */
 .hooms-N54 { position: absolute; width: 100%; }
 .hooms-N54.header-top-active { position: fixed; top: 0; left: 0; transition: 0.3s; background-color: var(--white); z-index: 200; }
-.hooms-N54.header-top-active .header-logo { background-image: url("../../resources/images/img_logo_black.png"); }
+.hooms-N54.header-top-active .header-logo { background-image: url("../../resources/images/3333.png"); }
 .hooms-N54.header-top-active .header-gnblink { color: var(--text-color1); }
 .hooms-N54.header-top-active .header-gnblink.on::after { background-color: var(--black); }
 .hooms-N54.header-top-active .btn-profile { background-image: url("../../resources/icons/ico_profile_black.svg"); }
 .hooms-N54.header-top-active .btn-search { background-image: url("../../resources/icons/ico_search_black.svg"); }
 .hooms-N54.header-top-active .btn-menu { background-image: url("../../resources/icons/ico_menu_black.svg"); }
 .hooms-N54.header-search-active .header-inner { background-color: var(--white); }
-.hooms-N54.header-search-active .header-logo { background-image: url("../../resources/images/img_logo_black.png"); }
+.hooms-N54.header-search-active .header-logo { background-image: url("../../resources/images/3333.png"); }
 .hooms-N54.header-search-active .header-center { display: none; }
 .hooms-N54.header-search-active .btn-profile { display: none; }
 .hooms-N54.header-search-active .btn-search { display: none; }
@@ -111,11 +111,11 @@
 }
 
 /* hooms-N54 [wGLs891TTV] : 편집됨 */
-.hooms-N54[data-bid=wGLs891TTV].header-top-active .header-logo { background-image: url("../../resources/images/img_logo_black.png"); }
+.hooms-N54[data-bid=wGLs891TTV].header-top-active .header-logo { background-image: url("../../resources/images/3333.png"); }
 .hooms-N54[data-bid=wGLs891TTV].header-top-active .btn-profile { background-image: url("../../resources/icons/ico_profile_black.svg"); }
 .hooms-N54[data-bid=wGLs891TTV].header-top-active .btn-search { background-image: url("../../resources/icons/ico_search_black.svg"); }
 .hooms-N54[data-bid=wGLs891TTV].header-top-active .btn-menu { background-image: url("../../resources/icons/ico_menu_black.svg"); }
-.hooms-N54[data-bid=wGLs891TTV].header-search-active .header-logo { background-image: url("../../resources/images/img_logo_black.png"); }
+.hooms-N54[data-bid=wGLs891TTV].header-search-active .header-logo { background-image: url("../../resources/images/3333.png"); }
 .hooms-N54[data-bid=wGLs891TTV].header-search-active .btn-close { background-image: url("../../resources/icons/ico_close_black.svg"); }
 .hooms-N54[data-bid=wGLs891TTV] .header-logo { background-image: url("../../resources/images/img_logo_white.png"); }
 .hooms-N54[data-bid=wGLs891TTV] .header-gnblink { padding: 0 3rem; font-size: var(--fs-p1); font-weight: 500; text-align: center; color: var(--text-color5); white-space: nowrap; }
@@ -144,11 +144,11 @@
 }
 
 /* hooms-N54 [PRlS892392] : 편집됨 */
-.hooms-N54[data-bid=PRlS892392].header-top-active .header-logo { background-image: url("../../resources/images/img_logo_black.png"); }
+.hooms-N54[data-bid=PRlS892392].header-top-active .header-logo { background-image: url("../../resources/images/3333.png"); }
 .hooms-N54[data-bid=PRlS892392].header-top-active .btn-profile { background-image: url("../../resources/icons/ico_profile_black.svg"); }
 .hooms-N54[data-bid=PRlS892392].header-top-active .btn-search { background-image: url("../../resources/icons/ico_search_black.svg"); }
 .hooms-N54[data-bid=PRlS892392].header-top-active .btn-menu { background-image: url("../../resources/icons/ico_menu_black.svg"); }
-.hooms-N54[data-bid=PRlS892392].header-search-active .header-logo { background-image: url("../../resources/images/img_logo_black.png"); }
+.hooms-N54[data-bid=PRlS892392].header-search-active .header-logo { background-image: url("../../resources/images/3333.png"); }
 .hooms-N54[data-bid=PRlS892392].header-search-active .btn-close { background-image: url("../../resources/icons/ico_close_black.svg"); }
 .hooms-N54[data-bid=PRlS892392] .header-logo { background-image: url("../../resources/images/img_logo_white.png"); }
 .hooms-N54[data-bid=PRlS892392] .header-gnblink { padding: 0 3rem; font-size: var(--fs-p1); font-weight: 500; text-align: center; color: var(--text-color5); white-space: nowrap; }
@@ -222,7 +222,7 @@
 .hooms-N55.header-search-active .header-search-form { display: flex; padding: 0 2.4rem; }
 .hooms-N55 .header-container { position: relative; display: flex; align-items: center; justify-content: space-between; width: 100%; height: 10rem; padding: 0 14.2rem; transition: 0.3s; z-index: 200; }
 .hooms-N55 .header-title { margin-bottom: 0; }
-.hooms-N55 .header-logo { width: 11rem; height: 4rem; background-image: url("../../resources/images/img_logo_black.png"); background-repeat: no-repeat; background-size: contain; background-position: center; }
+.hooms-N55 .header-logo { width: 11rem; height: 4rem; background-image: url("../../resources/images/3333.png"); background-repeat: no-repeat; background-size: contain; background-position: center; }
 .hooms-N55 .header-gnblist { display: flex; justify-content: center; align-items: center; }
 .hooms-N55 .header-gnbitem { position: relative; display: flex; align-items: center; height: 10rem; }
 .hooms-N55 .header-gnblink { position: relative; margin: 0 3rem; padding: 0 1rem; font-size: var(--fs-p1); font-weight: 500; text-align: center; white-space: nowrap; }
@@ -261,7 +261,7 @@
 .hooms-N55 .header-fullmenu .fullmenu-wrapper { display: flex; position: relative; left: 32rem; padding-top: 13.7rem; width: 100%; }
 .hooms-N55 .header-fullmenu .fullmenu-head { display: flex; justify-content: space-between; align-items: center; height: 10rem; padding: 0 10rem; }
 .hooms-N55 .header-fullmenu .fullmenu-title { margin-bottom: 0; }
-.hooms-N55 .header-fullmenu .fullmenu-logo { width: 11rem; height: 4rem; background-image: url("../../resources/images/img_logo_black.png"); background-size: cover; background-position: center; }
+.hooms-N55 .header-fullmenu .fullmenu-logo { width: 11rem; height: 4rem; background-image: url("../../resources/images/3333.png"); background-size: cover; background-position: center; }
 .hooms-N55 .header-fullmenu .fullmenu-close { width: 3.2rem; height: 3.2rem; border: transparent; background-color: transparent; background-position: center; background-size: cover; background-image: url("../../resources/icons/ico_close_black.svg"); }
 .hooms-N55 .header-fullmenu .fullmenu-gnbitem { position: relative; display: flex; width: 100%; width: 21rem; }
 .hooms-N55 .header-fullmenu .fullmenu-gnbitem+.fullmenu-gnbitem { padding-top: 4rem; }

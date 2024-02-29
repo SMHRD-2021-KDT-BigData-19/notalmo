@@ -29,12 +29,10 @@
 <body>
   <div class="hooms-N13" data-bid="txlSpTE580" id="">
     <div class="contents-container">
-      <img class="contents-backimg" src="${cpath}/resources/talmotest/images/img_banner_bg.png" alt="배너 이미지">
+      <img class="contents-backimg" src="${cpath}/resources/talmotest/images/result_banner.png" alt="배너 이미지">
       <div class="contents-body">
         <h2 class="contents-tit">진단 결과</h2>
-        <p class="contents-desc">
-          어쩌구저쩌구?.
-        </p>
+        <p class="contents-desc">탈모 유무의 결과가 나왔습니다</p>
       </div>
     </div>
   </div>
@@ -44,8 +42,7 @@
     <div class="contents-container container-lg">
       <div class="textset textset-h2 container-md">
         <span class="textset-name">Test Result</span>
-        <h2 class="textset-tit">
-          당신은 탈모 #단계 입니다.</h2>
+        <h2 class="textset-tit">당신은 탈모 2단계 입니다.</h2>
       </div>
       <div class="contents-swiper-container container-md">
         <div class="contents-swiper">
@@ -53,7 +50,7 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result1.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   1단계
@@ -66,12 +63,12 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/img_frame_02.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result2.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   2단계
                   <span>
-                    개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
+                    Full Fill만의 Ai검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>
@@ -79,7 +76,7 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/img_frame_03.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result3.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   3단계
@@ -92,7 +89,7 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result4.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   4단계
@@ -105,7 +102,7 @@
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result5.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   5단계
@@ -118,7 +115,7 @@
             <div class="swiper-slide contents-slide">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result6.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   6단계
@@ -131,7 +128,7 @@
             <div class="swiper-slide contents-slide">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/img_frame_01.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result7.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   7단계
@@ -157,82 +154,34 @@
   </div>
   <!-- [E]blank-DrLspTfgJC -->
   <!-- [S]hooms-N11 -->
-  <div class="hooms-N11" data-bid="OclSpu3SRf" id="">
-    <div class="contents-container">
-      <div class="contents-top">
-        <img class="contents-backimg" src="${cpath}/resources/talmotest/images/testproduct.jpg" alt="배경 이미지">
-        <div class="contents-topinner container-md">
-          <div class="textset textset-h2">
-            <h2 class="textset-tit">제품을​​<br>추천해 드릴게요.</h2>
-          </div>
-          <div class="textset">
-            <h5 class="textset-tit">좋은 침대에는 역사와 원칙이 있습니다.</h5>
-            <p class="textset-desc">
-              열정과 노력이 깃든 시간은 브랜드의 역사와 유산을 만들어내는 자산입니다.
-              <br>
-              HOOMS는 그 자산을 통해 배우고 또 새롭게 성장해 나갈 것입니다.
-            </p>
-          </div>
+<div class="hooms-N11" data-bid="OclSpu3SRf" id="">
+  <div class="contents-container">
+    <div class="contents-top">
+      <img class="contents-backimg" src="${cpath}/resources/talmotest/images/testproduct.jpg" alt="배경 이미지">
+      <div class="contents-topinner container-md">
+        <div class="textset textset-h2">
+          <h2 class="textset-tit">제품을​​<br>추천해 드릴게요.</h2>
         </div>
-      </div>
-      <div class="contents-bottom container-md">
-        <div class="contents-cardgroup">
-          <div class="cardset">
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_philosophy2_01.png" alt="이미지">
-            </figure>
-            <div class="cardset-body">
-              <h5 class="cardset-tit">VISIT US</h5>
-              <p class="cardset-desc">
-                HOOMS 매장을 방문하셔서 재료를 시험해보세요.
-                당신은 친절한 오프라인 직원에게 맞는 가구를
-                찾을 수 있도록 상담받을 수 있습니다.
-              </p>
-            </div>
-          </div>
-          <div class="cardset">
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_philosophy2_02.png" alt="이미지">
-            </figure>
-            <div class="cardset-body">
-              <h5 class="cardset-tit">Eco-friendly</h5>
-              <p class="cardset-desc">
-                사람과 자연을 생각합니다. 자연을 통해
-                공간을 창조하고 다시 자연으로 되돌립니다.
-              </p>
-            </div>
-          </div>
-          <div class="cardset">
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_philosophy2_03.png" alt="이미지">
-            </figure>
-            <div class="cardset-body">
-              <h5 class="cardset-tit">Handmade</h5>
-              <p class="cardset-desc">
-                품질의 기본 원칙을 지킵니다. 원칙을 지켜온
-                정신과 기술력으로 품질력을 자랑합니다.
-              </p>
-            </div>
-          </div>
-          <div class="cardset">
-            <figure class="cardset-figure">
-              <img class="cardset-img" src="/api/t-a/56/1708156800/resources/images/img_philosophy2_04.png" alt="이미지">
-            </figure>
-            <div class="cardset-body">
-              <h5 class="cardset-tit">Life</h5>
-              <p class="cardset-desc">
-                침대를 넘어 인생을 만듭니다. 편안하게 쉴 수
-                있는 공간으로, 당신의 일상이 달라집니다.
-              </p>
-            </div>
-          </div>
+        <div class="textset">
+          <h5 class="textset-tit">인기 제품 Top4</h5>
+          <p class="textset-desc">
+            현재 쿠팡에서 가장 인기있는 제품 top4를 가져왔어요.
+            <br>
+            정보가 더 필요하시면 하단의 'view more'을 클릭하세요.
+          </p>
         </div>
-      </div>
-      <div class="textset contents-link container-md">
-        <a class="textset-link btnset btnset-mono" href="ProductPage.do">View more</a>
       </div>
     </div>
+    <div class="contents-bottom container-md">
+      <div class="contents-cardgroup">
+        <!-- 카드들이 여기에 삽입됩니다 -->
+      </div>
+    </div>
+    <div class="textset contents-link container-md">
+      <a class="textset-link btnset btnset-mono" href="ProductPage.do">View more</a>
+    </div>
   </div>
+</div>
   <!-- [E]hooms-N11 -->
   <!-- [S]hooms-N41 -->
   <div class="hooms-N41" data-bid="HELspU66Ix">
@@ -423,6 +372,50 @@
   <div class="blank-zmlSptfKvp" data-bid="zmlSptfKvp">
     <div class="container"></div>
   </div>
+  <script>
+	  let currentPage = 1;
+	  const itemsPerPage = 4;
+	
+	  async function getSampu() {
+	      let url = 'http://127.0.0.1:5000/sampu';
+	      try {
+	          let res = await fetch(url);
+	          if (!res.ok) {
+	              throw new Error(`HTTP error! status: ${res.status}`);
+	          }
+	          let data = await res.json();
+	          return data.value;
+	      } catch (error) {
+	          console.log(error);
+	      }
+	  }
+	
+	  async function renderSampu() {
+	      let sampuArr = await getSampu();
+	      let html = '';
+	      let start = (currentPage - 1) * itemsPerPage;
+	      let end = start + itemsPerPage;
+	      let paginatedItems = sampuArr.slice(start, end);
+	
+	      paginatedItems.forEach(sampu => {
+	          let htmlSegment = '<div class="cardset">' +
+	                              '<figure class="cardset-figure">' +
+	                                  '<img class="cardset-img" src="' + sampu.src + '" alt="이미지">' +
+	                              '</figure>' +
+	                              '<div class="cardset-body">' +
+	                                  '<h5 class="cardset-tit">' + sampu.name + '</h5>' +
+	                                  '<p class="cardset-desc">' + sampu.desc + '</p>' +
+	                              '</div>' +
+	                            '</div>';
+	          html += htmlSegment;
+	      });
+	
+	      let container = document.querySelector('.contents-cardgroup');
+	      container.innerHTML = html;
+	  }
+	
+	  renderSampu();
+  </script>
   <!-- [E]blank-zmlSptfKvp -->
   <script src="${cpath}/resources/talmotest/js/setting.js"></script>
   <script src="${cpath}/resources/talmotest/js/plugin.js"></script>

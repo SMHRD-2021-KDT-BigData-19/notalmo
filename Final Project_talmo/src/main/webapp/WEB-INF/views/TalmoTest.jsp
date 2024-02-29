@@ -39,9 +39,9 @@
 </c:if>
   <div class="hooms-N25" data-bid="kqlSPsJe0f" id="">
     <div class="contents-container">
-      <img class="contents-backimg" src="${cpath}/resources/talmotest/images/testBanner.jpg" alt="배너 이미지">
+      <img class="contents-backimg" src="${cpath}/resources/talmotest/images/testBanner.png" alt="배너 이미지">
       <div class="contents-body container-md">
-        <h2 class="contents-title">AI 탈모 진단</h2>
+        <h2 class="contents-title" style="color: white;" ><strong>AI 탈모 진단</strong></h2>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@
           <h2 class="textset-tit">Self Test</h2>
         </div>
         <div class="textset">
-          <p class="textset-desc"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">탈모는 조기 진단과 조기 치료가 치료 효과가 높고 치료비도 절감할 수 있습니다. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​진단과 치료가 늦어질수록 치료 효과도 감소하고 치료비용도 증가하기 때문에 자가 진단법으로 모발 상태를 꼼꼼히 확인해보세요. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">이 중 5개 이상이 해당되면 탈모를 의심해볼 수 있으니 병원을 찾아 정확한 진단을 받아보는 것이 좋습니다.</span></p>
+          <p class="textset-desc"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">탈모는 조기 진단과 조기 치료가 치료 효과가 높고 치료비도 절감할 수 있습니다. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​진단과 치료가 늦어질수록 치료 효과도 감소하고 치료비용도 증가하기 때문에 자가 진단법으로 모발 상태를 꼼꼼히 확인해보세요. ​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">​</span><br style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;"><span style="color: rgb(0, 0, 0); font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 18px; letter-spacing: -0.75px; text-align: justify;">다음 중 5개 이상이 해당되면 탈모를 의심해볼 수 있으니 병원을 찾아 정확한 진단을 받아보는 것이 좋습니다.</span></p>
         </div>
         <ul class="contents-textlist">
           <li class="contents-textitem subtitle">
@@ -108,35 +108,35 @@
                <div class="cardset">
                   <figure class="cardset-figure">
                      <img class="cardset-img"
-                        src="${cpath}/resources/talmotest/images/testBanner.jpg"
+                        src="${cpath}/resources/talmotest/images/warning1.png"
                         alt="이미지">
                   </figure>
                   <div class="cardset-body">
                      <h5 class="cardset-tit">사진을 레이어에 맞춰주세요.</h5>
-                     <p class="cardset-desc">정수리가 카메라 정면에 보이게 위치하도록 찍어주세요.</p>
+                     <p class="cardset-desc">너무 가까이서 촬영하거나 대각선 구도에서 촬영한 사진은 AI의 인식이 어렵습니다.</p>
                   </div>
                </div>
                <div class="cardset">
                   <figure class="cardset-figure">
                      <img class="cardset-img"
-                        src="${cpath}/resources/talmotest/images/testBanner.jpg"
+                        src="${cpath}/resources/talmotest/images/warning2.png"
                         alt="이미지">
                   </figure>
                   <div class="cardset-body">
                      <h5 class="cardset-tit">머리에 손, 사물 등은 올리지 마세요.</h5>
-                     <p class="cardset-desc">머리가 아닌 다른 부분은 AI가 인식을 못 할 수도 있습니다.</p>
+                     <p class="cardset-desc">머리에 손이나 밝은 핀, 집게 등은 AI의 인식이 어렵습니다.</p>
                   </div>
                </div>
                <div class="cardset">
                   <figure class="cardset-figure">
                      <img class="cardset-img"
-                        src="${cpath}/resources/talmotest/images/testBanner.jpg"
+                        src="${cpath}/resources/talmotest/images/warning3.png"
                         alt="이미지">
                   </figure>
                   <div class="cardset-body">
-                     <h5 class="cardset-tit">주의점</h5>
-                     <p class="cardset-desc">주의점주의점입니다. 주의점주의점입니다. 주의점주의점입니다.
-                        주의점주의점입니다.&nbsp;</p>
+                     <h5 class="cardset-tit">너무 밝거나 어두운 사진은 피해주세요.</h5>
+                     <p class="cardset-desc">머리카락이 빛에 반사되어 너무 밝거나, 젖은머리, 어두운 환경에서 찍어 너무 어두운 사진은 AI의 인식이 어렵습니다.
+                        &nbsp;</p>
                   </div>
                </div>
             </div>
@@ -153,42 +153,42 @@
             </div>
             <div class="contents-group">
                <div class="cardset">
-                  <div class="cardset-body">
-                     <p class="cardset-desc">HOOMS 매장을 방문하셔서 재료를 시험해보세요. 당신은 친절한
-                        오프라인 직원에게 맞는 가구를 찾을 수 있도록 상담받을 수 있습니다.</p>
-                  </div>
+                  
                   <figure class="cardset-figure">
                      <img class="cardset-img"
-                        src="${cpath}/resources/talmotest/images/testBanner.jpg"
+                        src="${cpath}/resources/talmotest/images/proper_img.png"
                         alt="이미지">
                   </figure>
+                  <div class="cardset-body">
+                     <p class="cardset-desc">정수리가 카메라 정면에 보이게 위치하도록 바로 위에서 찍어주세요.</p>
+                  </div>
                </div>
                <div class="cardset">
-                  <div class="cardset-body">
-                     <p class="cardset-desc">HOOMS 매장을 방문하셔서 재료를 시험해보세요. 당신은 친절한
-                        오프라인 직원에게 맞는 가구를 찾을 수 있도록 상담받을 수 있습니다.</p>
-                  </div>
+                  
                   <figure class="cardset-figure">
                      <img class="cardset-img"
-                        src="${cpath}/resources/talmotest/images/testBanner.jpg"
+                        src="${cpath}/resources/talmotest/images/proper_img2.png"
                         alt="이미지">
                   </figure>
+                  <div class="cardset-body">
+                     <p class="cardset-desc">머리가 긴 경우 묶지 말고 푼 상태로 정수리를 카메라 정면에 보이게 위치하도록 바로 위에서 찍어주세요.</p>
+                  </div>
                </div>
             </div>
          </div>
       </div>
-   </div> --%>
+   </div>
    <!-- [E]hooms-N15 -->
    <!-- [S]hooms-N39 -->
    <div class="hooms-N39" data-bid="hkLSPT0B60" id="">
       <div class="contents-inner">
          <div class="contents-container container-md">
-            <div class="textset textset-h2"></div>
-            <div class="tabset tabset-brick"></div>
+            <!-- <div class="textset textset-h2"></div>
+            <div class="tabset tabset-brick"></div> -->
             
             <div class="contents-form">
                <div class="contents-form-middle">
-                  <div class="fileset fileset-lg fileset-label">
+                  <!-- <div class="fileset fileset-lg fileset-label">
                      <label>
                         <h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
                         <div class="fileset-body">
@@ -201,11 +201,10 @@
                            <ul class="image-preview2"></ul>
                         </div>
                      </label>
-                  </div>
-                  <br><br>
+                  </div> -->
                   <div class="fileset fileset-lg fileset-label">
                      <label>
-                        <h6 class="fileset-tit">정면 사진을 올려주세요.</h6>
+                        <h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
                         <div class="fileset-body">
                            <div class="fileset-group">
                               <input type="file" class="fileset-input" id="toppath" name="toppath">

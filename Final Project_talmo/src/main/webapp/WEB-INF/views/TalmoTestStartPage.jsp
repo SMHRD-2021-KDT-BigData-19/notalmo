@@ -39,7 +39,7 @@
           <h2 class="textset-tit">AI 탈모 진단​<br>​서비스<br></h2>
         </div>
         <div class="textset">
-          <p class="textset-desc">탈모 진단 서비스 주의 사항 작성, 여기엔 탈모 진단 서비스​<br>광고적기<br>어쩌구저쩌구&nbsp;</p>
+          <p class="textset-desc">탈모 진단 서비스 주의 사항<br>학습된 AI가 진단하오니 안내사항을 잘 지켜주세요.<br>자세한 결과는 병원에서 진단해주세요.&nbsp;</p>
           <a class="textset-link aboutus-imgitem btnset btnset-mono" href="${cpath}/TalmoTest.do">검사하기</a>
         </div>
       </div>
