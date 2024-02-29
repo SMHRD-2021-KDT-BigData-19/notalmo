@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="${cpath}/resources/communityViewResources/css/style.css">
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
+
 <style>
 	.comment {
 		padding-top: 5rem;
@@ -47,12 +48,10 @@
 	.comment-user, .comment-date, .comment-actions {
 		display: inline-block;
 		margin-right: 10px;
-		/* 간격 조절, 필요에 따라 조절 가능 */
 	}
 	
 	.comment-section {
 		background-color: #f0f0f0;
-		/* 댓글창 배경색 */
 		padding: 10px;
 		border-radius: 5px;
 		margin: 0px 0 20px 0;
@@ -68,17 +67,15 @@
 		<div class="hooms-N32" data-bid="kylsTY0GhF" id="">
 			<div class="contents-inner">
 				<div class="contents-container container-md">
-					<h2 class="h2">${vo.title}</h2>
+					<h2 class="h2" style="text-align:center;">${vo.title}</h2>
 					<p>${vo.category}</p>
 					<p>${vo.nick}</p>
-					<p>${vo.create_date}</p>
+					<p style="text-align: right;">${vo.create_date}</p>
 					<c:choose>
     					<c:when test="${empty loginMember}">
-        					<!-- 로그인 멤버가 비어있는 경우 처리 -->
     					</c:when>
 					    <c:otherwise>
 					        <c:if test="${loginMember.user_id eq vo.user_id}">
-					            <!-- user_id가 post_id와 일치하는 경우에만 수정 및 삭제 링크를 표시 -->
 					            <a href="javascript:void(0)"><strong>수정 /</strong></a>
 					            <a href="${cpath}/PostDelete.do/${vo.post_id}"><strong>삭제 /</strong></a>
 					        </c:if>
@@ -92,9 +89,6 @@
 							</div>
 							<figure>
 								<c:forEach items="${Ivo}" var="ivo">
-									<%-- <h4>${ivo.picture_id}</h4>
-									<h4>${ivo.folder}\'${ivo.file_name}'</h4> --%>
-									<%-- <img class="cardset-img" src="${ivo.folder}\${ivo.file_name}" alt="이미지"> --%>
 									<img class="cardset-imgT" src="http://172.30.1.59:8080/imgT/post/${vo.post_id}/${ivo.file_name}" alt="이미지">
 								</c:forEach>
 							</figure>
@@ -103,7 +97,6 @@
 
 
 
-					<!-- 댓글창 -->
 					<div class="comment" id="comments-container">
 						<h2 class="h2">댓글 창</h2>
 						<c:forEach items="${Cvo}" var="Cvo">
@@ -116,7 +109,6 @@
 									&nbsp&nbsp&nbsp&nbsp
 									<div class="comment-actions">
 										<c:if test="${loginMember.user_id eq Cvo.user_id}">
-					            			<!-- user_id가 post_id와 일치하는 경우에만 수정 및 삭제 링크를 표시 -->
 					            			<a href="${cpath}/CommentDelete.do/${Cvo.comment_id}/${vo.post_id}">삭제 /</a>
 					        			</c:if>
 										<a> 신고</a>
@@ -127,7 +119,8 @@
 						</c:forEach>
 					</div>
 
-					<!-- 댓글 입력창 -->
+
+
 					<c:choose>
 						<c:when test="${empty loginMember}">
 							
@@ -162,7 +155,6 @@
 			console.log(comment_id);
 		}
 		function addComment(nick) {
-		    // 댓글 입력값 가져오기
 		    var commentInput = document.getElementById('comment-input');
 		    var commentText = commentInput.value;
 		    var fData = $("#frm").serialize();
@@ -172,24 +164,15 @@
 		    	// To DB
 		    	$.ajax({
 	  				url: "${cpath}/Comment.do",
-	  				type: "post", // 내용이 길 떄, 생성시킬 때 사용
+	  				type: "post",
 	  				data: fData,
-	  				/* success: function () {
-	  		            alert("성공~~");
-	  		        },
-	  				error: function(e){
-	  					console.log(e);
-	  					alert("댓글 저장 실패ㅜ");
-	  				} */
-  				}); // END ajax
+  				});
   			
-		        // 새로운 댓글 요소 생성
 		        var newCommentSection = document.createElement('div');
 		        newCommentSection.className = 'comment-section';
 		        var newCommentDisplay = document.createElement('div');
 		        newCommentDisplay.className = 'comment-display';
 				
-		        // 현재 시간 가져오기
 		        var currentTime = new Date();
 		        var formattedTime = currentTime.toISOString().slice(0, 19).replace('T', ' ');
 
@@ -201,77 +184,18 @@
     					'<a>  신고</a></div>'+
 		            '<div class="comment-content">' + commentText + '</div>';
 		            
-		        // 새로운 댓글 요소를 기존 댓글 컨테이너에 추가
 		        var commentsContainer = document.getElementById('comments-container');
 		        commentsContainer.appendChild(newCommentSection);
 		        newCommentSection.appendChild(newCommentDisplay);
 
-		        // 댓글 입력창 초기화
 		        commentInput.value = '';
 		    }
 		}
     </script>
-	<!-- [E]hooms-N32 -->
 
 	</main>
-	<!-----------------------------하단 푸터----------------------------->
-	<!-- [S]hooms-N57 -->
-<%-- 	<footer class="hooms-N57" data-bid="mDLs88964B">
-		<div class="footer-container container-lg">
-			<div class="footer-top">
-				<h1 class="footer-logo">
-					<a href="javascript:void(0)"> <img
-						src="${cpath}/resources/images/img_logo_gray.png" alt="로고">
-					</a>
-				</h1>
-				<ul class="footer-menulist">
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>이용약관</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>개인정보처리방침</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴1</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴2</span>
-					</a></li>
-				</ul>
-				<ul class="footer-snslist">
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_instagram_lightgrey.svg"
-							alt="인스타그램">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_youtube_lightgrey.svg"
-							alt="유튜브">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_facebook_lightgrey.svg"
-							alt="페이스북">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
-					</a></li>
-				</ul>
-			</div>
-			<div class="footer-bottom">
-				<div class="footer-txt">
-					<p>전라남도 순천시 중앙로 260</p>
-					<p>
-						<span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer> --%>
-	<!-- [E]hooms-N57 -->
 
+<%@ include file="Footer.jsp"%>
 
 	<script src="${cpath}/resources/communityViewResources/js/setting.js"></script>
 	<script src="${cpath}/resources/communityViewResources/js/plugin.js"></script>
@@ -280,4 +204,3 @@
 	<script src="${cpath}/resources/communityViewResources/js/script.js"></script>
 </body>
 </html>
-<%@ include file="Footer.jsp"%>
