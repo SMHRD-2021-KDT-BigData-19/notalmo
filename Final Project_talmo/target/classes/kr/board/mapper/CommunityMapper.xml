@@ -18,7 +18,7 @@
 	
 	<!-- 게시물 리스트 모두 가져오기 -->
 	<select id="PostGetList" resultType="kr.board.entity.PostListGetDTO">
-        SELECT posts.post_id, posts.user_id, posts.title, posts.category, posts.create_date, users.nick
+        SELECT posts.post_id, posts.user_id, posts.title, posts.category, posts.create_date, users.nick, posts.view_cnt
 		FROM posts
 		JOIN users ON posts.user_id = users.user_id
 		ORDER BY posts.post_id DESC
@@ -40,7 +40,7 @@
 	<!-- 댓글 가져오기 -->
 	<select id="CommentGet" parameterType="int" resultType="kr.board.entity.CommentDTO">
 	    SELECT comments.comment_id, comments.user_id, comments.content, comments.create_date, users.nick
-	    FROM comments	
+	    FROM comments
 	    JOIN users ON comments.user_id = users.user_id
 	    WHERE comments.post_id=#{post_id}
 	</select>

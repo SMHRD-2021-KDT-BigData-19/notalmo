@@ -152,7 +152,7 @@
 						    </script>
 						</td>
 						<td class="tableset-order04">${b.nick}</td>
-						<td class="tableset-mobile">1234</td>
+						<td class="tableset-mobile">${b.view_cnt}</td>
 					</tr>
 				</c:forEach>
 

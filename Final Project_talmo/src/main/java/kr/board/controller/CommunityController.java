@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -88,6 +89,7 @@ public class CommunityController {
 		CTextGetDTO vo = cmapper.CTextGet(post_id);
 		List<CImgGetDTO> Ivo = cmapper.CImgGet(post_id);
 		List<CommentDTO> Cvo = cmapper.CommentGet(post_id);
+		cmapper.ViewCnt(post_id);
 		
 		model.addAttribute("vo", vo);
 		model.addAttribute("Ivo", Ivo);
@@ -106,7 +108,7 @@ public class CommunityController {
 	@RequestMapping("/PostDelete.do/{post_id}")
 	public String PostDelete(@PathVariable("post_id") int post_id) {
 		cmapper.PostDelete(post_id);
-		System.out.println("게시물 삭제 완료	");
+		System.out.println("게시물 삭제 완료");
 		return "redirect:/CommunityPage.do";
 	}
 	
@@ -116,6 +118,14 @@ public class CommunityController {
 		cmapper.CommentDelete(comment_id);
 		System.out.println("댓글 삭제 완료");
 		return "redirect:/CommunityView.do/"+post_id;
+	}
+	
+	// 게시글 신고
+	@PostMapping("/PostReport.do")
+	public @ResponseBody void PostReport(@RequestParam int post_id) {
+		System.out.println(post_id);
+		cmapper.PostReport(post_id);
+		System.out.println("게시글 신고 완료");
 	}
 	
 }

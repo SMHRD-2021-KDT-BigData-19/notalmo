@@ -7,6 +7,7 @@ public class PostListGetDTO {
 	private String category;
 	private String create_date;
 	private String nick;
+	private int view_cnt;
 	
 	public int getPost_id() {
 		return post_id;
@@ -44,11 +45,17 @@ public class PostListGetDTO {
 	public void setNick(String nick) {
 		this.nick = nick;
 	}
+	
+	public int getView_cnt() {
+		return view_cnt;
+	}
+	public void setView_cnt(int view_cnt) {
+		this.view_cnt = view_cnt;
+	}
 	@Override
 	public String toString() {
 		return "PostListGetDTO [post_id=" + post_id + ", user_id=" + user_id + ", title=" + title + ", category="
-				+ category + ", create_date=" + create_date + ", nick=" + nick + "]";
+				+ category + ", create_date=" + create_date + ", nick=" + nick + ", view_cnt=" + view_cnt + "]";
 	}
-	
 	
 }

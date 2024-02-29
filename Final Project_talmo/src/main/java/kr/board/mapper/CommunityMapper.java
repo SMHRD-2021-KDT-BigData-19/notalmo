@@ -3,6 +3,7 @@ package kr.board.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Update;
 
 import kr.board.entity.CImgGetDTO;
 import kr.board.entity.CTextGetDTO;
@@ -24,4 +25,12 @@ public interface CommunityMapper {
 	public void Comment(CommentDTO Cvo);
 	public void PostDelete(int post_id);
 	public void CommentDelete(int comment_id);
+
+	// 게시글 조회수 카운트
+	@Update("UPDATE posts SET view_cnt=view_cnt+1 WHERE post_id=#{post_id}")
+	public void ViewCnt(int post_id);
+	
+	// 게시물 신고 카운트
+	@Update("UPDATE posts SET report_cnt=report_cnt+1 WHERE post_id=#{post_id}")
+	public void PostReport(int post_id);
 }
