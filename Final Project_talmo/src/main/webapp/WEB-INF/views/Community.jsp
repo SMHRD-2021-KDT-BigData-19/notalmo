@@ -134,7 +134,19 @@
 							<a class="tableset-ico" href="${contectLink}">
                       			<span>${b.title}</span>
                    			</a>
-                 		<td class="tableset-order05">${b.create_date}</td>
+                 		<td class="tableset-order05">
+						    <script>
+						        var createDate = new Date('${b.create_date}');
+						        var formattedDate = createDate.toLocaleString('ko-KR', {
+						            year: 'numeric',
+						            month: 'numeric',
+						            day: 'numeric',
+						            hour: 'numeric',
+						            minute: 'numeric'
+						        });
+						        document.write(formattedDate);
+						    </script>
+						</td>
 						<td class="tableset-order04">${b.nick}</td>
 						<td class="tableset-mobile">1234</td>
 					</tr>
@@ -146,10 +158,10 @@
           <div class="contents-btn">
 			<c:choose>
 			    <c:when test="${empty loginMember}">
-			      <a class="btnset" href="${cpath}/LoginPage.do">게시물 등록</a>
+			      <a class="btnset" href="${cpath}/LoginPage.do">글쓰기</a>
 			    </c:when>
 			    <c:otherwise>
-			      <a class="btnset" href="${cpath}/PostUploadPage.do">게시물 등록</a>
+			      <a class="btnset" href="${cpath}/PostUploadPage.do">글쓰기</a>
 			    </c:otherwise>
 		  	</c:choose>
           </div>

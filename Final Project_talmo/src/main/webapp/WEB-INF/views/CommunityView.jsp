@@ -18,7 +18,7 @@
 <meta property="og:description" content="웹사이트입니다">
 <meta property="og:image" content="https://웹사이트/images/opengraph.png">
 <meta property="og:url" content="https://웹사이트">
-<title>News_Article_상세 | 13245689</title>
+<title>글보기</title>
 <link rel="stylesheet" href="${cpath}/resources/communityViewResources/css/setting.css">
 <link rel="stylesheet" href="${cpath}/resources/communityViewResources/css/plugin.css">
 <link rel="stylesheet" href="${cpath}/resources/communityViewResources/css/template.css">
@@ -63,25 +63,51 @@
 	<%@ include file="Header.jsp" %>
 
 	
-	<main class="th-layout-main ">
-		<div class="hooms-N32" data-bid="kylsTY0GhF" id="">
-			<div class="contents-inner">
-				<div class="contents-container container-md">
-					<h2 class="h2" style="text-align:center;">${vo.title}</h2>
-					<p>${vo.category}</p>
-					<p>${vo.nick}</p>
-					<p style="text-align: right;">${vo.create_date}</p>
-					<c:choose>
-    					<c:when test="${empty loginMember}">
-    					</c:when>
-					    <c:otherwise>
-					        <c:if test="${loginMember.user_id eq vo.user_id}">
-					            <a href="javascript:void(0)"><strong>수정 /</strong></a>
-					            <a href="${cpath}/PostDelete.do/${vo.post_id}"><strong>삭제 /</strong></a>
-					        </c:if>
-					        <a href="javascript:void(0)"><strong>신고</strong></a>
-					    </c:otherwise>
-					</c:choose>
+	<main class="th-layout-main">
+    <div class="hooms-N32" data-bid="kylsTY0GhF" id="">
+        <div class="contents-inner">
+            <div class="contents-container container-md">
+                <h3 class="h8" style="text-align:center; font-size: 34px;">${vo.title}</h3>
+                <br>
+                <br>
+                <p style="display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-weight: bold; font-size: 20px;">${vo.category}</span>
+                	
+                    <span style="text-align: right;">
+                        <script>
+                            var createDate = new Date('${vo.create_date}');
+                            var formattedDate = createDate.toLocaleString('ko-KR', {
+                                year: 'numeric',
+                                month: 'numeric',
+                                day: 'numeric',
+                                hour: 'numeric',
+                                minute: 'numeric'
+                            });
+                            document.write(formattedDate);
+                        </script>
+                    </span>
+                </p>
+                
+                
+	              
+	                <div >
+	                <span style="text-align: left;">닉네임: ${vo.nick}</span>
+	                <div style="display: inline-block; float: right;">
+	                    <c:choose>
+	                        <c:when test="${empty loginMember}">
+	                        </c:when>
+	                        <c:otherwise>
+	                            <c:if test="${loginMember.user_id eq vo.user_id}">
+	                                <a href="javascript:void(0)"><strong>수정 /</strong></a>
+	                                <a href="${cpath}/PostDelete.do/${vo.post_id}"><strong>삭제 /</strong></a>
+	                            </c:if>
+	                            <a href="javascript:void(0)"><strong>신고</strong></a>
+	                        </c:otherwise>
+	                    </c:choose>
+	                    </div>
+	                </div>
+					
+					
 					<div class="contents-cardlist contents-cardlist-active">
 						<a href="javascript:void(0)" class="cardset">
 							<div class="cardset-body">
@@ -106,7 +132,7 @@
 										<strong>${Cvo.nick}</strong>
 									</div>
 									<div class="comment-date">${Cvo.create_date}</div>
-									&nbsp&nbsp&nbsp&nbsp
+									
 									<div class="comment-actions">
 										<c:if test="${loginMember.user_id eq Cvo.user_id}">
 					            			<a href="${cpath}/CommentDelete.do/${Cvo.comment_id}/${vo.post_id}">삭제 /</a>
