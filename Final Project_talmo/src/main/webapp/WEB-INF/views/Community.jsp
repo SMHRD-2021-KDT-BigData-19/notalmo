@@ -10,7 +10,9 @@
   
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/template.css">
 <link rel="stylesheet" href="${cpath}/resources/communityListResources/css/style.css">
-
+<script src="${cpath}/resources/communityListResources/js/setting.js"></script>
+<script src="${cpath}/resources/communityListResources/js/template.js"></script>
+<script src="${cpath}/resources/communityListResources/js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 </head>
@@ -208,7 +210,7 @@
             selectList.style.display = (selectList.style.display === 'none' || selectList.style.display === '') ? 'block' : 'none';
         });
 
-        // 다른 부분을 클릭하면 선택 목록이 사라지도록 설정
+        
         document.addEventListener('click', function (event) {
             if (!toggleButton.contains(event.target)) {
                 selectList.style.display = 'none';
@@ -216,7 +218,6 @@
         });
     });
     
- // JavaScript를 사용하여 플레이스홀더 텍스트를 숨기거나 표시
     document.addEventListener('DOMContentLoaded', function () {
         var inputElement = document.querySelector('.inputset-input');
         var placeholderText = document.querySelector('.placeholder-text');
@@ -238,7 +239,4 @@
     
   </script>
 
-	<script src="${cpath}/resources/communityListResources/js/setting.js"></script>
-	<script src="${cpath}/resources/communityListResources/js/template.js"></script>
-	<script src="${cpath}/resources/communityListResources/js/script.js"></script>
 </body>
