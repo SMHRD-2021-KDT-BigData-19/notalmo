@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="${cpath}/resources/css/style.css">
 </head>
 <body>
-<!-----------------------------하단 푸터----------------------------->
+
 <footer class="hooms-N57" data-bid="mDLs88964B">
     <div class="footer-container container-lg">
         <div class="footer-top">
@@ -34,10 +34,11 @@
                 <a href="javascript:void(0)"> <img src="${cpath}/resources/images/img_logo_white.png" alt="로고"></a>
             </h1>
             <ul class="footer-menulist">
-                <li class="footer-menuitem"><a href="javascript:void(0)"><span>정동현</span></a></li>
-                <li class="footer-menuitem"><a href="javascript:void(0)"><span>곽수진</span></a></li>
-                <li class="footer-menuitem"><a href="javascript:void(0)"><span>오승지</span></a></li>
-                <li class="footer-menuitem"><a href="javascript:void(0)"><span>유성민</span></a></li>
+            	<li class="footer-menuitem"><a href="javascript:void(0)"><span>회사소개</span></a></li>
+                <li class="footer-menuitem"><a href="javascript:void(0)"><span>제휴제안</span></a></li>
+                <li class="footer-menuitem"><a href="javascript:void(0)"><span>이용약관</span></a></li>
+                <li class="footer-menuitem"><a href="javascript:void(0)" style="font-weight: bold;"><span>개인정보처리방침</span></a></li>
+                <li class="footer-menuitem"><a href="javascript:void(0)"><span>고객센터</span></a></li>
             </ul>
             <ul class="footer-snslist">
                 <li class="footer-snsitem"><a class="footer-snslink" href="javascript:void(0)"> <img src="${cpath}/resources/icons/ico_instagram_lightgrey.svg" alt="인스타그램"></a></li>
@@ -47,14 +48,22 @@
             </ul>
         </div>
         <div class="footer-bottom">
-            <div class="footer-txt">
-                <p>스마트 인재 개발원</p>
-                <p> <span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span></p>
-            </div>
+        <div class="footer-txt">
+          <p> 전라남도 순천시 중앙로 260 </p>
+          <p>
+            <span>T. 061-754-3501</span>
+            <span>E. test.smhrd.or.kr</span>
+          </p>
         </div>
+        <div class="footer-txt">
+          <p>㈔스마트인재개발원</p>
+        </div>
+      </div>
     </div>
-</footer>
-<!-- [E]hooms-N57 -->
+  </footer>
+
+
+
 
 <script src="${cpath}/resources/js/setting.js"></script>
 <script src="${cpath}/resources/js/plugin.js"></script>
