@@ -85,100 +85,7 @@
 
 <body>
 
-	<header class="hooms-N54" data-bid="sELS8895JS">
-		<div class="header-inner">
-			<div class="header-container container-lg">
-				<div class="header-left">
-					<h1 class="header-title">
-						<a class="header-logo" href="${cpath}/MainPage.do" title="full fill"></a>
-					</h1>
-				</div>
-				<div class="header-center">
-					<ul class="header-gnblist">
-						<li class="header-gnbitem"><c:choose>
-								<c:when test="${empty loginMember}">
-									<a class="header-gnblink" href="${cpath}/LoginPage.do"> <span>탈모진단</span>
-									</a>
-								</c:when>
-								<c:otherwise>
-									<a class="header-gnblink" href="${cpath}/TalmoTestStartPage.do">
-										<span>탈모진단</span>
-									</a>
-								</c:otherwise>
-							</c:choose></li>
-						<li class="header-gnbitem"><a class="header-gnblink"
-							href="${cpath}/ProductPage.do"> <span>제품찾기</span>
-						</a></li>
-						<li class="header-gnbitem"><a class="header-gnblink"
-							href="${cpath}/HospitalPage.do"> <span>병원찾기</span>
-						</a></li>
-						<li class="header-gnbitem"><a class="header-gnblink"
-							href="${cpath}/CommunityPage.do"> <span>커뮤니티</span>
-						</a></li>
-					</ul>
-				</div>
-				<div class="header-right">
-					<div class="header-utils">
-						<c:choose>
-							<c:when test="${empty loginMember}">
-								<a href="${cpath}/LoginPage.do" class="header-gnblink">로그인</a>
-								<a href="${cpath}/LoginPage.do"
-									class="btn-profile header-utils-btn" title="profile"></a>
-							</c:when>
-							<c:otherwise>
-								<a href="${cpath}/Logout.do" class="header-gnblink">로그아웃</a>
-								<a href="${cpath}/MyPage.do"
-									class="btn-profile header-utils-btn" title="profile"></a>
-							</c:otherwise>
-						</c:choose>
-
-						<button class="btn-search header-utils-btn" title="search"></button>
-						<button class="btn-menu header-utils-btn" title="menu"></button>
-						<button class="btn-close header-utils-btn" title="close"></button>
-					</div>
-				</div>
-				<div class="header-search-form">
-					<div class="inputset inputset-line">
-						<button class="icon-right icon-search btn" type="button"
-							aria-label="아이콘"></button>
-						<input type="text" class="inputset-input form-control"
-							placeholder="검색어를 입력해주세요." aria-label="내용">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="header-fullmenu-dark fullmenu-top">
-			<div class="fullmenu-head container-lg">
-				<h4 class="fullmenu-title">
-					<a class="fullmenu-logo" href="javascript:void(0)" title="hooms"></a>
-				</h4>
-				<button class="fullmenu-close"></button>
-			</div>
-			<div class="fullmenu-wrapper container-lg">
-				<ul class="fullmenu-gnblist">
-					<li class="fullmenu-gnbitem">
-						<c:choose>
-							<c:when test="${empty loginMember}">
-								<a class="fullmenu-gnblink" href="${cpath}/LoginPage.do"> <span>탈모진단</span> </a> </c:when>
-							<c:otherwise>
-								<a class="fullmenu-gnblink" href="${cpath}/TalmoTestStartPage.do">
-									<span>탈모진단</span> </a> </c:otherwise>
-						</c:choose>
-					</li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/ProductPage.do"> <span>제품찾기</span>
-					</a></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/HospitalPage.do"> <span>병원찾기</span>
-					</a></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/CommunityPage.do"> <span>커뮤니티</span>
-					</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="header-dim"></div>
-	</header>
+	<%@ include file="Header.jsp" %>
 
 	<main class="th-layout-main ">
 		<div class="hooms-N1" data-bid="uRLS880PXf">
@@ -214,97 +121,86 @@
 						
 						
 							<li class="tabset-item">
-							    <a href="https://topclass.chosun.com/news/articleView.html?idxno=31628" class="cardset" target="_blank">
-							        <div class="cardset-container">
-							            <figure class="cardset-figure">
-							                <img class="cardset-img"
-							                    src="${cpath}/resources/images/MainPage_talmo_img1.jpg"
-							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-							            </figure>
-							            <div class="cardset-title">탈모 예방하는 습관 5가지</div>
-							        </div>
-							    </a>
-							</li>
+                         <a href="https://topclass.chosun.com/news/articleView.html?idxno=31628" class="cardset" target="_blank">
+                             <div class="cardset-container">
+                                 <figure class="cardset-figure">
+                                     <img class="cardset-img"
+                                         src="${cpath}/resources/images/MainPage_talmo_img1.jpg"
+                                         alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                 </figure>
+                                 <div class="cardset-title">탈모 예방하는<br>습관 5가지</div>
+                             </div>
+                         </a>
+                     </li>
 
 
-							<li class="tabset-item">
-							    <a href="https://www.healthinnews.co.kr/news/articleView.html?idxno=22486" class="cardset" target="_blank">
-							        <div class="cardset-container">
-							            <figure class="cardset-figure">
-							                <img class="cardset-img"
-							                    src="${cpath}/resources/images/MainPage_talmo_img2.jpg"
-							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-							            </figure>
-							            <div class="cardset-title">청소년 탈모의 원인과 치료법</div>
-							        </div>
-							    </a>
-							</li>
+                     <li class="tabset-item">
+                         <a href="https://www.healthinnews.co.kr/news/articleView.html?idxno=22486" class="cardset" target="_blank">
+                             <div class="cardset-container">
+                                 <figure class="cardset-figure">
+                                     <img class="cardset-img"
+                                         src="${cpath}/resources/images/MainPage_talmo_img2.jpg"
+                                         alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                 </figure>
+                                 <div class="cardset-title">청소년 탈모의 원인과 치료법</div>
+                             </div>
+                         </a>
+                     </li>
 
+                     
+                     <li class="tabset-item">
+                         <a href="https://www.pinpointnews.co.kr/news/articleView.html?idxno=188566" class="cardset" target="_blank">
+                             <div class="cardset-container">
+                                 <figure class="cardset-figure">
+                                     <img class="cardset-img"
+                                         src="${cpath}/resources/images/MainPage_talmo_img3.jpg"
+                                         alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                 </figure>
+                                 <div class="cardset-title">탈모 관련 화장품 주가 17% 상승</div>
+                             </div>
+                         </a>
+                     </li>
+                     
+                     <li class="tabset-item">
+                         <a href="https://weekly.chosun.com/news/articleView.html?idxno=17300" class="cardset" target="_blank">
+                             <div class="cardset-container">
+                                 <figure class="cardset-figure">
+                                     <img class="cardset-img"
+                                         src="${cpath}/resources/images/MainPage_talmo_img4.jpg"
+                                         alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                 </figure>
+                                 <div class="cardset-title">탈모 방지에 좋은<br>채소5 &nbsp과일5</div>
+                             </div>
+                         </a>
+                     </li>
+                     
+                     <li class="tabset-item">
+                         <a href="https://www.enewstoday.co.kr/news/articleView.html?idxno=1651118" class="cardset" target="_blank">
+                             <div class="cardset-container">
+                                 <figure class="cardset-figure">
+                                     <img class="cardset-img"
+                                         src="${cpath}/resources/images/MainPage_talmo_img5.jpg"
+                                         alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                 </figure>
+                                 <div class="cardset-title">갈수록 치열해지는 탈모 샴푸 경쟁</div>
+                             </div>
+                         </a>
+                     </li>
+                     
+                     <li class="tabset-item">
+                         <a href="https://www.fsnews.co.kr/news/articleView.html?idxno=38883" class="cardset" target="_blank">
+                             <div class="cardset-container">
+                                 <figure class="cardset-figure">
+                                     <img class="cardset-img"
+                                         src="${cpath}/resources/images/MainPage_talmo_img6.png"
+                                         alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                 </figure>
+                                 <div class="cardset-title">탈모는 유전에<br>의해서만 생긴다?</div>
+                             </div>
+                         </a>
+                     </li>
 							
-							<li class="tabset-item">
-							    <a href="https://www.pinpointnews.co.kr/news/articleView.html?idxno=188566" class="cardset" target="_blank">
-							        <div class="cardset-container">
-							            <figure class="cardset-figure">
-							                <img class="cardset-img"
-							                    src="${cpath}/resources/images/MainPage_talmo_img3.jpg"
-							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-							            </figure>
-							            <div class="cardset-title">탈모 관련 화장품 주가 17% 상승</div>
-							        </div>
-							    </a>
-							</li>
-							
-							<li class="tabset-item">
-							    <a href="https://weekly.chosun.com/news/articleView.html?idxno=17300" class="cardset" target="_blank">
-							        <div class="cardset-container">
-							            <figure class="cardset-figure">
-							                <img class="cardset-img"
-							                    src="${cpath}/resources/images/MainPage_talmo_img4.jpg"
-							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-							            </figure>
-							            <div class="cardset-title">탈모 방지에 좋은 채소5 과일5</div>
-							        </div>
-							    </a>
-							</li>
-							
-							<li class="tabset-item">
-							    <a href="https://www.enewstoday.co.kr/news/articleView.html?idxno=1651118" class="cardset" target="_blank">
-							        <div class="cardset-container">
-							            <figure class="cardset-figure">
-							                <img class="cardset-img"
-							                    src="${cpath}/resources/images/MainPage_talmo_img5.jpg"
-							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-							            </figure>
-							            <div class="cardset-title">갈수록 치열해지는 탈모 샴푸 경쟁</div>
-							        </div>
-							    </a>
-							</li>
-							
-							<li class="tabset-item">
-							    <a href="https://www.fsnews.co.kr/news/articleView.html?idxno=38883" class="cardset" target="_blank">
-							        <div class="cardset-container">
-							            <figure class="cardset-figure">
-							                <img class="cardset-img"
-							                    src="${cpath}/resources/images/MainPage_talmo_img6.png"
-							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-							            </figure>
-							            <div class="cardset-title">탈모는 유전에 의해서만 생긴다?</div>
-							        </div>
-							    </a>
-							</li>
-							
-							<li class="tabset-item">
-							    <a href="https://weekly.cnbnews.com/news/article.html?no=135188" class="cardset" target="_blank">
-							        <div class="cardset-container">
-							            <figure class="cardset-figure">
-							                <img class="cardset-img"
-							                    src="${cpath}/resources/images/MainPage_talmo_img7.jpg"
-							                    alt="카드 이미지" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-							            </figure>
-							            <div class="cardset-title">성분별 탈모약 부작용과 대처법</div>
-							        </div>
-							    </a>
-							</li>
+
 							
 						</ul>
 					</div>
