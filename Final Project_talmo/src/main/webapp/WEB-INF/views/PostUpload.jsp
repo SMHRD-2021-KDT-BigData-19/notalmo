@@ -6,24 +6,8 @@
 <html lang="ko">
 
 <head>
-<!-- <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="imagetoolbar" content="no">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="format-detection" content="telephone=no">
-<meta name="title" content="웹사이트">
-<meta name="description" content="웹사이트입니다.">
-<meta name="keywords" content="키워드,키워드,키워드">
-<meta property="og:title" content="웹사이트">
-<meta property="og:description" content="웹사이트입니다">
-<meta property="og:image" content="https://웹사이트/images/opengraph.png">
-<meta property="og:url" content="https://웹사이트"> -->
+
 <title>게시글 등록 | post</title>
-<%-- <link rel="stylesheet" href="${cpath}/resources/css/setting.css">
-<link rel="stylesheet" href="${cpath}/resources/css/plugin.css">
-<link rel="stylesheet" href="${cpath}/resources/css/template.css">
-<link rel="stylesheet" href="${cpath}/resources/css/common.css">
-<link rel="stylesheet" href="${cpath}/resources/css/style.css"> --%>
 
 <link rel="stylesheet" href="${cpath}/resources/postupload/css/style.css">
 <link rel="stylesheet" href="${cpath}/resources/postupload/css/plugin.css">
@@ -42,160 +26,54 @@
         .upload { width: 200px; height: 200px; background-color: antiquewhite; }
 
         .image-preview {
-        	max-height: 300px; /* 원하는 높이로 조절 */
+        	max-height: 300px;
         	max-width: 950px;
     		height: auto;
     		display: flex;
     		gap: 10px;
-    		overflow-x: auto; /* 세로 스크롤이 필요한 경우 */
-    		
+    		overflow-x: auto;
 		}
+		
+    /* 취소 버튼 스타일 */
+    a.btn.btn-secondary.btn-lg {
+        display: inline-block;
+        width: 80px;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        border: 2px solid #000;
+        color: #000;
+        border-radius: 5px;
+    }
+
+    button.btn.btn-primary.btn-lg {
+        display: inline-block;
+        width: 80px;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        border: 2px solid #000;
+        color: #000;
+        border-radius: 5px;
+    }
+
+    .btn-container {
+        margin-top: 20px;
+    }
+    
+    a.btn.btn-secondary.btn-lg {
+        margin-right: 10px;
+    }
 </style>
 
 </head>
 
 <body>
-	<script>
-	/* function insertPost() {
-	    var titleValue = $("#Title").val().trim();
-	    var contentValue = $("#Inquiry").val().trim();
-	    //var imageFiles = document.getElementById('postImg').files;
-
-	    if (titleValue === "" || contentValue === "") {
-	        alert("제목과 내용을 모두 입력해주세요.");
-	        return false;
-	    }
-	    
-	    var formData = new FormData($('#frm')[0]);
-	 	// 여러 이미지 파일을 FormData에 추가
-        var imageFiles = $('#postImg')[0].files;
-        for (var i = 0; i < imageFiles.length; i++) {
-            formData.append('images', imageFiles[i]);
-        }
-        let test = $('#frm').serialize();
-	    console.log(formData);
-	    console.log(imageFiles);
-	    console.log(test);
-
-	    $.ajax({
-	        url: "${cpath}/PostUpload.do",
-	        type: "post",
-	        data: formData,
-	        contentType: false,
-            processData: false,
-	        success: function () {
-	            alert("성공~~");
-	        },
-	        error: function () {
-	            alert("글쓰기 실패ㅜ");
-	        }
-	    });
-	} */
-	</script>
-
-	<!--------------------------------------------상단 메뉴2------------------------------------------->
-	<!-- [S]hooms-N55 -->
-<%-- 	<header class="hooms-N55" data-bid="bFLS88Lpv5" id="">
-		<div class="header-container container-lg">
-			<div class="header-left">
-				<h1 class="header-title">
-					<a class="header-logo" href="${cpath}/MainPage.do" title="hooms"></a>
-				</h1>
-			</div>
-			<div class="header-center">
-				<ul class="header-gnblist">
-					<li class="header-gnbitem"><c:choose>
-							<c:when test="${empty loginMember}">
-								<a class="header-gnblink" href="${cpath}/LoginPage.do"> <span>탈모진단</span>
-								</a>
-							</c:when>
-							<c:otherwise>
-								<a class="header-gnblink" href="${cpath}/TalmoTestPage.do">
-									<span>탈모진단</span>
-								</a>
-							</c:otherwise>
-						</c:choose></li>
-					<li class="header-gnbitem"><a class="header-gnblink"
-						href="${cpath}/ProductPage.do"> <span>제품찾기</span>
-					</a></li>
-					<li class="header-gnbitem"><a class="header-gnblink"
-						href="${cpath}/HospitalPage.do"> <span>병원찾기</span>
-					</a></li>
-					<li class="header-gnbitem"><a class="header-gnblink"
-						href="${cpath}/CommunityPage.do"> <span>커뮤니티</span>
-					</a></li>
-				</ul>
-			</div>
-			<div class="header-right">
-				<div class="header-utils">
-					<c:choose>
-						<c:when test="${empty loginMember}">
-							<a href="${cpath}/LoginPage.do" class="header-gnblink">로그인</a>
-							<a href="${cpath}/LoginPage.do"
-								class="btn-profile header-utils-btn" title="profile"></a>
-						</c:when>
-						<c:otherwise>
-							<a href="${cpath}/Logout.do" class="header-gnblink">로그아웃</a>
-							<a href="${cpath}/MyPage.do" class="btn-profile header-utils-btn"
-								title="profile"></a>
-						</c:otherwise>
-					</c:choose>
-					<!-- <a href="javascript:void(0);" class="btn-profile header-utils-btn" title="profile"></a> -->
-					<button class="btn-search header-utils-btn" title="search"></button>
-					<button class="btn-menu header-utils-btn" title="menu"></button>
-					<button class="btn-close header-utils-btn" title="close"></button>
-				</div>
-			</div>
-			<div class="header-search-form">
-				<div class="inputset inputset-line">
-					<button class="icon-right icon-search btn" type="button"
-						aria-label="아이콘"></button>
-					<input type="text" class="inputset-input form-control"
-						placeholder="검색어를 입력해주세요." aria-label="내용">
-				</div>
-			</div>
-		</div>
-
-
-		<div class="header-fullmenu fullmenu-top">
-			<div class="fullmenu-head container-lg">
-				<h4 class="fullmenu-title">
-					<a class="fullmenu-logo" href="javascript:void(0)" title="hooms"></a>
-				</h4>
-				<button class="fullmenu-close"></button>
-			</div>
-			<div class="fullmenu-wrapper container-lg">
-				<ul class="fullmenu-gnblist">
-					<li class="fullmenu-gnbitem"><c:choose>
-							<c:when test="${empty loginMember}">
-								<a class="fullmenu-gnblink" href="${cpath}/LoginPage.do"> <span>탈모진단</span>
-								</a>
-							</c:when>
-							<c:otherwise>
-								<a class="fullmenu-gnblink" href="${cpath}/TalmoTestPage.do">
-									<span>탈모진단</span>
-								</a>
-							</c:otherwise>
-						</c:choose></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/ProductPage.do"> <span>제품찾기</span>
-					</a></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/HospitalPage.do"> <span>병원찾기</span>
-					</a></li>
-					<li class="fullmenu-gnbitem"><a class="fullmenu-gnblink"
-						href="${cpath}/CommunityPage.do"> <span>커뮤니티</span>
-					</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="header-dim"></div>
-	</header> --%>
-	<!-- [E]hooms-N55 -->
-	<!-------------------------------------------------------------------------------------------->
-
+	
 	<main class="th-layout-main ">
-		<!-- [S]opilsol-N34 -->
+
 		<div class="opilsol-N34" data-bid="ZflSLHIxiE" id="">
 			<div class="content-container container-md">
 				<div class="textset content-tit">
@@ -376,8 +254,11 @@
 										</script>
 									</tbody>
 								</table>
-								<a href="${cpath}/CommunityPage.do">취소</a>
-								<button type="submit" class="btn btn-secondary btn-lg">등록</button>
+								<br>
+									<div class="btn-container" style="text-align: center">
+								    <button type="submit" class="btnset">등록</button>
+								    <a class="btnset" href="${cpath}/CommunityPage.do" class="btn btn-secondary btn-lg">취소</a>
+									</div>
 							</div>
 
 						</form>
@@ -385,74 +266,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- [E]opilsol-N27 -->
 
 	</main>
 
-	<!-----------------------------하단 푸터----------------------------->
-	<!-- [S]hooms-N57 -->
-<%-- 	<footer class="hooms-N57" data-bid="mDLs88964B">
-		<div class="footer-container container-lg">
-			<div class="footer-top">
-				<h1 class="footer-logo">
-					<a href="javascript:void(0)"> <img
-						src="${cpath}/resources/images/img_logo_gray.png" alt="로고">
-					</a>
-				</h1>
-				<ul class="footer-menulist">
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>이용약관</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>개인정보처리방침</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴1</span>
-					</a></li>
-					<li class="footer-menuitem"><a href="javascript:void(0)">
-							<span>푸터메뉴2</span>
-					</a></li>
-				</ul>
-				<ul class="footer-snslist">
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_instagram_lightgrey.svg"
-							alt="인스타그램">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_youtube_lightgrey.svg"
-							alt="유튜브">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_facebook_lightgrey.svg"
-							alt="페이스북">
-					</a></li>
-					<li class="footer-snsitem"><a class="footer-snslink"
-						href="javascript:void(0)"> <img
-							src="${cpath}/resources/icons/ico_kakao_lightgrey.svg" alt="카카오톡">
-					</a></li>
-				</ul>
-			</div>
-			<div class="footer-bottom">
-				<div class="footer-txt">
-					<p>전라남도 순천시 중앙로 260</p>
-					<p>
-						<span>T. 061-754-3501</span> <span>E. help@openfield.co.kr</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer> --%>
-	<!-- [E]hooms-N57 -->
-<%-- 
-	<script src="${cpath}/resources/js/setting.js"></script>
-	<script src="${cpath}/resources/js/plugin.js"></script>
-	<script src="${cpath}/resources/js/template.js"></script>
-	<script src="${cpath}/resources/js/common.js"></script>
-	<script src="${cpath}/resources/js/script.js"></script>
- --%>
 </body>
 </html>
 <%@ include file="Footer.jsp" %>
