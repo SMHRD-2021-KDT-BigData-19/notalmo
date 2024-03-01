@@ -28,11 +28,29 @@
   <link rel="stylesheet" href="${cpath}/resources/talmotest/css/common.css">
   <link rel="stylesheet" href="${cpath}/resources/talmotest/css/style.css">
 </head>
+<style>
+  .checkset-label {
+	    border: 2px solid black;
+	  }
+	  
+  .contents-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .checkset {
+    display: flex;
+    align-items: center;
+  }
+</style>
+
 
 <body>
 
 <c:if test="${empty sessionScope['loginMember']}">
-    <!-- 로그인이 되어 있지 않은 경우 로그인 페이지로 이동 -->
+
     <script>
         window.location.href = "${cpath}/LoginPage.do";
     </script>
@@ -45,8 +63,7 @@
       </div>
     </div>
   </div>
-  <!-- [E]hooms-N25 -->
-  <!-- [S]hooms-N17 -->
+
   <div class="hooms-N17" data-bid="mNlsPskigN" id="">
     <div class="contents-inner">
       <div class="contents-container container-md">
@@ -65,8 +82,7 @@
       </div>
     </div>
   </div>
-  <!-- [E]hooms-N17 -->
-  <!-- [S]hooms-N45 -->
+
  <form id="uploadForm" action="${cpath}/TalmoTestResultPage.do" method="post" enctype="multipart/form-data">
     <input type="hidden" name="selfcheck" v-model="selfcheck">
     <input type="hidden" name="user_id" value="${loginMember.user_id}">
@@ -82,10 +98,9 @@
                      <tr v-for="(item, index) in checkpoint" :key="index">
                          <td>
                              <div class="checkset">
-                          
                                  <input :id="'checkset-a-1-' + (index + 1)" class="checkset-input input-fill" 
                                  type="checkbox" v-model="checks[index]" :disabled="!isEditable">
-                                 <label class="checkset-label" :for="'checkset-a-1-' + (index + 1)"></label>
+                                 <label class="checkset-label" style="border: 2px solid black;" :for="'checkset-a-1-' + (index + 1)"></label>
                                  <span class="checkset-text" id="talmocheck">{{ item }}</span>
                              </div>
                          </td>
@@ -96,8 +111,7 @@
             </div>
        </div>
      </div>
- <!-- [E]hooms-N45 -->
-  <!-- [S]hooms-N8 -->
+
    <div class="hooms-N8" data-bid="BqLSPSVqk7" id="">
       <div class="contents-inner">
          <div class="contents-container container-md">
@@ -143,8 +157,7 @@
          </div>
       </div>
    </div>
-   <!-- [E]hooms-N8 -->
-   <!-- [S]hooms-N15 -->
+
    <div class="hooms-N15" data-bid="HQLSPSyJyF" id="">
       <div class="contents-inner">
          <div class="contents-container container-md">
@@ -178,30 +191,13 @@
          </div>
       </div>
    </div>
-   <!-- [E]hooms-N15 -->
-   <!-- [S]hooms-N39 -->
+
    <div class="hooms-N39" data-bid="hkLSPT0B60" id="">
       <div class="contents-inner">
          <div class="contents-container container-md">
-            <!-- <div class="textset textset-h2"></div>
-            <div class="tabset tabset-brick"></div> -->
             
             <div class="contents-form">
                <div class="contents-form-middle">
-                  <!-- <div class="fileset fileset-lg fileset-label">
-                     <label>
-                        <h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
-                        <div class="fileset-body">
-                           <div class="fileset-group">
-                              <input type="file" class="fileset-input" id="frontpath" name="frontpath">
-                              <button class="fileset-cancel"></button>
-                           </div>
-                           <span class="btnset btnset-line btnset-lg fileset-upload">파일 첨부하기</span>
-                           <br>
-                           <ul class="image-preview2"></ul>
-                        </div>
-                     </label>
-                  </div> -->
                   <div class="fileset fileset-lg fileset-label">
                      <label>
                         <h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
@@ -238,7 +234,7 @@
                </div>
             </div>
             <div class="contents-sign">
-               <button type="button" class="btnset modalset-btn">등록하기</button>
+               <button type="button" class="btnset modalset-btn">진단하기</button>
             </div>
             <div id="modalSet1" class="modalset">
                <div class="modal-header">
@@ -250,8 +246,8 @@
                   </p>
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btnset btnset-ghost modal-close">취소</button>
                   <button type="button" class="btnset btnset-confirm">확인</button>
+                  <button type="button" class="btnset btnset-ghost modal-close">취소</button>
                </div>
             </div>
             <div id="modalSet2" class="modalset modalset2">
@@ -294,8 +290,7 @@
      });
    });
    
-   
-  // 자가진단 항목의 체크된갯수 세기
+
    window.app = new Vue({
        el: '#app',
        data: function() {
@@ -312,95 +307,36 @@
                    '9. 이마와 정수리 부분이 유난히 번들거린다.',
                    '10. 두피에 피지량이 갑자기 늘어난 것 같다.'
                ],
-              checks: Array(10).fill(false), // 체크박스 상태를 추적하는 배열
-              isEditable: true // 체크박스의 수정 가능 여부를 나타내는 속성
+              checks: Array(10).fill(false),
+              isEditable: true
            }
        },
        computed: {
            selfcheck: function() {
-               return this.checks.filter(Boolean).length; // 체크된 항목의 개수를 계산
+               return this.checks.filter(Boolean).length;
            }
        },
        methods: {
            toggleEdit: function() {
-             this.isEditable = !this.isEditable; // 수정 가능 여부를 토글
+             this.isEditable = !this.isEditable;
            }
        }
    });
-  
-  
-  
-  
-  
-/*    function getImageFiles(e) {
-        const uploadFiles = [];
-        const files = e.currentTarget.files;
-        const imagePreview = document.querySelector('.image-preview2'); 
-        const docFrag = new DocumentFragment();
-
-        // 파일 타입 검사
-        [...files].forEach(file => {
-            if (!file.type.match("image/.*")) {
-                alert('이미지 파일만 업로드가 가능합니다.');
-                return;
-            }
-
-            uploadFiles.push(file);
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const preview = createElement(e, file);
-                imagePreview.appendChild(preview);
-            };
-            reader.readAsDataURL(file);
-        });
-    }
-
-    // 이미지 선택 후 li 태그 추가 함수
-    function createElement(e, file) {
-        const li = document.createElement('li');
-        const img = document.createElement('img');
-
-        // 클래스 추가
-        li.classList.add('post_img_li');
-        img.classList.add('post_img_img');
-
-        img.setAttribute('src', e.target.result);
-        img.setAttribute('data-file', file.name);
-        li.appendChild(img);
-
-        return li;
-    }
-
-    const realUpload = document.querySelector('.fileset-input'); // .real-upload를 사용하지 않고 .fileset-input를 사용하도록 변경
-    const upload = document.querySelector('.fileset-upload'); // .upload를 사용하지 않고 .fileset-upload를 사용하도록 변경
-
-    upload.addEventListener('click', () => realUpload.click());
-
-    realUpload.addEventListener('change', getImageFiles);
-       
-        */
-       
-       
-       
        
        
    function validateForm() {
-       // 개인정보 수집 및 이용 동의 체크박스 확인
        var isAgreed = document.querySelector('.contents-form-bottom .checkset-input').checked;
 
-       // 사진파일 두개 확인
        var frontpath = document.querySelector('input[name="frontpath"]').value;
        var toppath = document.querySelector('input[name="toppath"]').value;
 
-       // 체크된 항목의 개수 계산
        var selfcheck = document.querySelectorAll('.contents-price .checkset-input:checked').length;
 
        if (!isAgreed || !frontpath || !toppath || selfcheck === 0) {
            alert('모든 필드를 채우고 개인정보 수집 및 이용에 동의해주세요.');
-           return false;  // 폼 제출을 취소
+           return false;
        }
 
-       // 모든 조건이 충족된 경우에만 폼 제출을 계속
        return true;
    }
 
@@ -411,12 +347,13 @@
    });
    </script>
 
-  <!-- [E]hooms-N39 -->
   <script src="${cpath}/resources/talmotest/js/setting.js"></script>
   <script src="${cpath}/resources/talmotest/js/plugin.js"></script>
   <script src="${cpath}/resources/talmotest/js/template.js"></script>
   <script src="${cpath}/resources/talmotest/js/common.js"></script>
   <script src="${cpath}/resources/talmotest/js/script.js"></script>
+  
+  <%@ include file="Footer.jsp" %>
+  
 </body>
 </html>
-<%@ include file="Footer.jsp" %>

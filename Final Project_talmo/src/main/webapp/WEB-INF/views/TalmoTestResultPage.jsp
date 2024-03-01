@@ -422,6 +422,6 @@
   <script src="${cpath}/resources/talmotest/js/template.js"></script>
   <script src="${cpath}/resources/talmotest/js/common.js"></script>
   <script src="${cpath}/resources/talmotest/js/script.js"></script>
+  <%@ include file="Footer.jsp" %>
 </body>
 </html>
-<%@ include file="Footer.jsp" %>
