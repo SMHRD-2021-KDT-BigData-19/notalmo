@@ -345,7 +345,7 @@
 	    new Swiper('.awards-cardset .swiper-container', {
 	        direction: 'horizontal',
 	        autoplay: {
-	            delay: 4000,
+	            delay: 5000,
 	        },
 	        loop: true,
 	        spaceBetween: 30,
