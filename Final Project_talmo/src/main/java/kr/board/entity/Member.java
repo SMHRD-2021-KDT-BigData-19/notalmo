@@ -9,8 +9,6 @@ public class Member {
 	private String phone;
 	private String birthday;
 	
-	
-	
 	public int getUser_id() {
 		return user_id;
 	}

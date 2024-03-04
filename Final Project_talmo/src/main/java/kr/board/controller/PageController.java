@@ -1,13 +1,16 @@
 package kr.board.controller;
 
+
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import kr.board.entity.PostContentDTO;
+import kr.board.entity.Member;
 import kr.board.entity.PostListGetDTO;
 import kr.board.mapper.CommunityMapper;
 
@@ -22,10 +25,14 @@ public class PageController {
 
 	// 메인페이지 요청
 	@GetMapping("/MainPage.do")
-	public String MainPage() {
+	public String MainPage(Model model) {
 		// return의 용도
 		// 1) jsp이름 돌려주기
 		// 2) redirect:/ 다른요청으로 보내기
+		
+		List<PostListGetDTO> MainPagePostList = cmapper.MainPagePostList();
+		
+		model.addAttribute("MainPagePostList", MainPagePostList);
 		return "MainPage";
 	}
 
@@ -79,7 +86,13 @@ public class PageController {
 
 	// 마이페이지 요청
 	@GetMapping("/MyPage.do")
-	public String MyPage() {
+	public String MyPage(Model model, HttpSession session) {
+		Member loginMem = (Member) session.getAttribute("loginMember");
+		int user_id = loginMem.getUser_id();
+		List<PostListGetDTO> myPostList = cmapper.MyPostGetList(user_id);
+		
+		// request.setAttribute("이름", 데이터);
+		model.addAttribute("myPostList", myPostList);
 		return "MyPage";
 	}
 

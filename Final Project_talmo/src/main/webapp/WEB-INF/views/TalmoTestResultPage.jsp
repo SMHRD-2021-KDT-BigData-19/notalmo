@@ -42,11 +42,25 @@
     <div class="contents-container container-lg">
       <div class="textset textset-h2 container-md">
         <span class="textset-name">Test Result</span>
-        <h2 class="textset-tit">당신은 탈모 2단계 입니다.</h2>
+        <h2 class="textset-tit">당신은 탈모 <strong>${talmoResult}단계</strong> 입니다.</h2>
+        <input type="hidden" data-talmoResult="${String(talmoResult)}">
       </div>
       <div class="contents-swiper-container container-md">
         <div class="contents-swiper">
           <div class="swiper-wrapper contents-wrapper">
+          	<div class="swiper-slide contents-slide contents-price-active">
+              <a class="contents-link" href="javascript:void(0)">
+                <div class="contents-productimg">
+                  <img src="${cpath}/resources/talmotest/images/result1.png" alt="이미지">
+                </div>
+                <div class="contents-price">
+                  0단계
+                  <span>
+                    Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
+                  </span>
+                </div>
+              </a>
+            </div>
             <div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
@@ -55,7 +69,7 @@
                 <div class="contents-price">
                   1단계
                   <span>
-                    개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
+                    Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>
@@ -68,7 +82,7 @@
                 <div class="contents-price">
                   2단계
                   <span>
-                    Full Fill만의 Ai검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
+                    Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>
@@ -81,7 +95,7 @@
                 <div class="contents-price">
                   3단계
                   <span>
-                    개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
+                   	Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>
@@ -94,7 +108,7 @@
                 <div class="contents-price">
                   4단계
                   <span>
-                    개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
+					Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>
@@ -107,7 +121,7 @@
                 <div class="contents-price">
                   5단계
                   <span>
-                    개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
+					Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>
@@ -120,7 +134,7 @@
                 <div class="contents-price">
                   6단계
                   <span>
-                    개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
+                   Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>
@@ -133,7 +147,7 @@
                 <div class="contents-price">
                   7단계
                   <span>
-                    개성 있는 텍스처감의 패브릭과 헤드보드 양 사이드에 배치된 원목의 조화가 돋보이는 세트
+                   Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
                   </span>
                 </div>
               </a>

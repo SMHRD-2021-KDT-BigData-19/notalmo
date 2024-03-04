@@ -319,14 +319,40 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <!-- <tr>
                                     <td class="tableset-mobile">자유게시판</td>
                                     <td class="tableset-tit tableset-order02"><a href="javascript:void(0)"> <span>안녕하세요. 문의드립니다.</span>
                                     </a></td>
                                     <td class="tableset-order05">2023.01.01</td>
                                     <td class="tableset-order04">홍**</td>
                                     <td class="tableset-mobile">166</td>
-                                </tr>
+                                </tr> -->
+                                
+                                <c:forEach items="${MainPagePostList}" var="mainb">
+									<tr>
+										<td class="tableset-mobile">${mainb.category}</td>
+										<c:url var="contectLink" value="CommunityView.do/${mainb.post_id}" />
+										<td class="tableset-tit tableset-order02">
+											<a class="tableset-ico" href="${contectLink}">
+				                      			<span>${mainb.title}</span>
+				                   			</a>
+				                 		<td class="tableset-order05">
+										    <script>
+										        var createDate = new Date('${mainb.create_date}');
+										        var formattedDate = createDate.toLocaleString('ko-KR', {
+										            year: 'numeric',
+										            month: 'numeric',
+										            day: 'numeric',
+										            hour: 'numeric',
+										            minute: 'numeric'
+										        });
+										        document.write(formattedDate);
+										    </script>
+										</td>
+										<td class="tableset-order04">${mainb.nick}</td>
+										<td class="tableset-mobile">${mainb.view_cnt}</td>
+									</tr>
+								</c:forEach>
                             </tbody>
                         </table>
                     </div>

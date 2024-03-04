@@ -18,10 +18,29 @@
 	
 	<!-- 게시물 리스트 모두 가져오기 -->
 	<select id="PostGetList" resultType="kr.board.entity.PostListGetDTO">
+        <![CDATA[ SELECT posts.post_id, posts.user_id, posts.title, posts.category, posts.create_date, users.nick, posts.view_cnt
+		FROM posts
+		JOIN users ON posts.user_id = users.user_id
+		WHERE posts.report_cnt <= 10
+		ORDER BY posts.post_id DESC ]]>
+    </select>
+    
+	<!-- 내가 쓴 게시물 리스트 모두 가져오기 -->
+	<select id="MyPostGetList" parameterType="int" resultType="kr.board.entity.PostListGetDTO">
+        SELECT posts.post_id, posts.user_id, posts.title, posts.category, posts.create_date, users.nick, posts.view_cnt
+		FROM posts
+		JOIN users ON posts.user_id = users.user_id
+		WHERE posts.user_id = #{user_id}
+		ORDER BY posts.post_id DESC
+    </select>
+    
+	<!-- 메인페이지 게시물 리스트 5개 가져오기 -->
+	<select id="MainPagePostList" parameterType="int" resultType="kr.board.entity.PostListGetDTO">
         SELECT posts.post_id, posts.user_id, posts.title, posts.category, posts.create_date, users.nick, posts.view_cnt
 		FROM posts
 		JOIN users ON posts.user_id = users.user_id
 		ORDER BY posts.post_id DESC
+		LIMIT 5
     </select>
     
 	<!-- 게시물 내용 가져오기 -->
@@ -39,10 +58,10 @@
     
 	<!-- 댓글 가져오기 -->
 	<select id="CommentGet" parameterType="int" resultType="kr.board.entity.CommentDTO">
-	    SELECT comments.comment_id, comments.user_id, comments.content, comments.create_date, users.nick
+	    <![CDATA[ SELECT comments.comment_id, comments.user_id, comments.content, comments.create_date, users.nick
 	    FROM comments
 	    JOIN users ON comments.user_id = users.user_id
-	    WHERE comments.post_id=#{post_id}
+	    WHERE comments.post_id=#{post_id} AND comments.report_cnt <= 10 ]]>
 	</select>
     
 	<!-- 댓글 등록 -->

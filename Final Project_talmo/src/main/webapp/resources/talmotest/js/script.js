@@ -176,7 +176,13 @@
     $(".hooms-N27").each(function() {
       const $block = $(this);
       // 초기 슬라이드 인덱스 설정
-      const initialSlide = 4 - 1; // 탈모 단계 숫자 받아오기~~
+      const talmoResultElement = document.querySelector('[data-talmoResult]');
+      const talmoResultText = talmoResultElement.getAttribute('data-talmoResult').replace(/\D/g, ''); // 숫자 이외의 문자 제거
+      const talmoResult = parseInt(talmoResultText, 10);
+      
+      // 초기 슬라이드 인덱스 설정
+      const initialSlide = isNaN(talmoResult) ? 6 : talmoResult;
+
       // Swiper
       const swiper = new Swiper(".hooms-N27 .contents-swiper", {
         slidesPerView: 'auto',

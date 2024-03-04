@@ -99,9 +99,9 @@
 	                        <c:otherwise>
 	                            <c:if test="${loginMember.user_id eq vo.user_id}">
 	                                <a href="javascript:void(0)"><strong>수정 /</strong></a>
-                					<a href="javascript:void(0)" onclick="confirmDelete('${cpath}/PostDelete.do/${vo.post_id}')"><strong>삭제 /</strong></a>
+                					<a href="javascript:void(0)" onclick="PostDelete('${cpath}/PostDelete.do/${vo.post_id}')"><strong>삭제 /</strong></a>
             					</c:if>
-	                            <a href="javascript:void(0)" onclick="confirmReport('${vo.post_id}')"><strong>신고</strong></a>
+	                            <a href="javascript:void(0)" onclick="PostReport('${vo.post_id}')"><strong>신고</strong></a>
 	                        </c:otherwise>
 	                    </c:choose>
 	                    </div>
@@ -137,7 +137,7 @@
 										<c:if test="${loginMember.user_id eq Cvo.user_id}">
 					            			<a href="javascript:void(0)" onclick="CommentDelete('${cpath}/CommentDelete.do/${Cvo.comment_id}/${vo.post_id}')"><strong>삭제 /</strong></a>
 					        			</c:if>
-										<a> 신고</a>
+										<a href="javascript:void(0)" onclick="CommentReport('${Cvo.comment_id}')"> 신고</a>
 									</div>
 									<div class="comment-content">${Cvo.content}</div>
 								</div>
@@ -169,10 +169,8 @@
 							</div></div>
 							</form>
 						</c:otherwise>
-					</c:choose>
-					</form>
-					
-					
+					</c:choose>				
+						
 				</div>
 			</div>
 		</div>
@@ -182,6 +180,48 @@
 				window.location.href = url;
 	        }
 		}
+		function CommentReport(comment_id){
+			if (confirm("이 댓글을 신고하시겠습니까?")) {
+				$.ajax({
+	  				url: "${cpath}/CommentReport.do",
+	  				type: "post",
+	  				data: {
+	  					comment_id: comment_id
+	  			    },
+	  				success: function(){
+	  					alert("감사합니다. 신고가 접수되었습니다.");
+	  				},
+	  				error: function(){
+	  					alert("신고 실패하였습니다.");
+	  				}
+	  			}) // END ajax
+	        }
+		}
+
+	    function PostDelete(url) {
+	        if (confirm("이 게시글을 삭제하시겠습니까?")) {
+	            window.location.href = url;
+	        }
+	    }
+
+	    function PostReport(post_id) {
+	        if (confirm("이 게시물을 신고하시겠습니까?")) {
+	        	
+	        	$.ajax({
+	  				url: "${cpath}/PostReport.do",
+	  				type: "post",
+	  				data: {
+	  			        post_id: post_id
+	  			    },
+	  				success: function(){
+	  					alert("감사합니다. 신고가 접수되었습니다.");
+	  				},
+	  				error: function(){
+	  					alert("신고 실패하였습니다.");
+	  				}
+	  			}) // END ajax
+	        }
+	    }
 		function addComment(nick) {
 		    var commentInput = document.getElementById('comment-input');
 		    var commentText = commentInput.value;
@@ -209,7 +249,7 @@
 		            '<div class="comment-date">' + formattedTime + '</div>&nbsp&nbsp&nbsp&nbsp' +
 		            '<div class="comment-actions">' +
 						'<a href="javascript:void(0)">삭제 /</a>'+
-    					'<a>  신고</a></div>'+
+    					'<a href="javascript:void(0)">  신고</a></div>'+
 		            '<div class="comment-content">' + commentText + '</div>';
 		            
 		        var commentsContainer = document.getElementById('comments-container');
@@ -220,30 +260,6 @@
 		    }
 		}
 		
-	    function confirmDelete(url) {
-	        if (confirm("이 게시글을 삭제하시겠습니까?")) {
-	            window.location.href = url;
-	        }
-	    }
-
-	    function confirmReport(post_id) {
-	        if (confirm("이 게시물을 신고하시겠습니까?")) {
-	        	
-	        	$.ajax({
-	  				url: "${cpath}/PostReport.do",
-	  				type: "post",
-	  				data: {
-	  			        post_id: post_id
-	  			    },
-	  				success: function(){
-	  					alert("신고되었습니다.");
-	  				},
-	  				error: function(){
-	  					alert("신고 실패하였습니다.");
-	  				}
-	  			}) // END ajax
-	        }
-	    }
 	</script>
 
 	</main>

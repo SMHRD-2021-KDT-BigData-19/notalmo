@@ -25,6 +25,8 @@ public interface CommunityMapper {
 	public void Comment(CommentDTO Cvo);
 	public void PostDelete(int post_id);
 	public void CommentDelete(int comment_id);
+	public List<PostListGetDTO> MyPostGetList(int user_id);
+	public List<PostListGetDTO> MainPagePostList();
 
 	// 게시글 조회수 카운트
 	@Update("UPDATE posts SET view_cnt=view_cnt+1 WHERE post_id=#{post_id}")
@@ -33,4 +35,9 @@ public interface CommunityMapper {
 	// 게시물 신고 카운트
 	@Update("UPDATE posts SET report_cnt=report_cnt+1 WHERE post_id=#{post_id}")
 	public void PostReport(int post_id);
+	
+	// 댓글 신고 카운트
+	@Update("UPDATE comments SET report_cnt=report_cnt+1 WHERE comment_id=#{comment_id}")
+	public void CommentReport(int comment_id);
+	
 }

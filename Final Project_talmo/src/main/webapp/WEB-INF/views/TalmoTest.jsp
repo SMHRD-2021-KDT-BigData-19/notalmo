@@ -156,9 +156,9 @@
             </div>
          </div>
       </div>
-   </div>
-
-   <div class="hooms-N15" data-bid="HQLSPSyJyF" id="">
+    </div>
+    
+ 	<div class="hooms-N15" data-bid="HQLSPSyJyF" id="">
       <div class="contents-inner">
          <div class="contents-container container-md">
             <div class="textset textset-h2">
@@ -173,7 +173,7 @@
                         alt="이미지">
                   </figure>
                   <div class="cardset-body">
-                     <p class="cardset-desc">정수리가 카메라 정면에 보이게 위치하도록 바로 위에서 찍어주세요.</p>
+                     <p class="cardsfileesc">정수리file라 정면에 보이게 위치하도록 바로 위에서 찍어주세요.</p>
                   </div>
                </div>
                <div class="cardset">
@@ -194,7 +194,7 @@
 
    <div class="hooms-N39" data-bid="hkLSPT0B60" id="">
       <div class="contents-inner">
-         <div class="contents-container container-md">
+         <div class="contents-requiredr container-md">
             
             <div class="contents-form">
                <div class="contents-form-middle">

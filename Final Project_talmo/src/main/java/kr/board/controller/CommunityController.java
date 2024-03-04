@@ -104,20 +104,28 @@ public class CommunityController {
 		cmapper.Comment(Cvo);
 	}
 	
-	// 게시물 지우기
-	@RequestMapping("/PostDelete.do/{post_id}")
-	public String PostDelete(@PathVariable("post_id") int post_id) {
-		cmapper.PostDelete(post_id);
-		System.out.println("게시물 삭제 완료");
-		return "redirect:/CommunityPage.do";
-	}
-	
 	// 댓글 지우기
 	@RequestMapping("/CommentDelete.do/{comment_id}/{post_id}")
 	public String CommentDelete(@PathVariable("comment_id") int comment_id, @PathVariable("post_id") int post_id) {
 		cmapper.CommentDelete(comment_id);
 		System.out.println("댓글 삭제 완료");
 		return "redirect:/CommunityView.do/"+post_id;
+	}
+	
+	// 댓글 신고
+	@PostMapping("/CommentReport.do")
+	public @ResponseBody void CommentReport(@RequestParam int comment_id) {
+		System.out.println(comment_id);
+		cmapper.CommentReport(comment_id);
+		System.out.println("댓글 신고 완료");
+	}
+	
+	// 게시물 지우기
+	@RequestMapping("/PostDelete.do/{post_id}")
+	public String PostDelete(@PathVariable("post_id") int post_id) {
+		cmapper.PostDelete(post_id);
+		System.out.println("게시물 삭제 완료");
+		return "redirect:/CommunityPage.do";
 	}
 	
 	// 게시글 신고
