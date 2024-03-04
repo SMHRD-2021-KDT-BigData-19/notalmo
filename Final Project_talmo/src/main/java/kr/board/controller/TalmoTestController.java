@@ -12,6 +12,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +33,7 @@ public class TalmoTestController {
 
 
     @PostMapping("/TalmoTestResultPage.do/{user_id}")
-    public void TalmoTestResultPage(@PathVariable("user_id") int user_id, MultipartFile file) throws IOException {
+    public String TalmoTestResultPage(@PathVariable("user_id") int user_id, MultipartFile file, Model model) throws IOException {
         
         System.out.println(user_id);
 
@@ -104,6 +105,9 @@ public class TalmoTestController {
 		System.out.println(timgdto.toString());
 		
 		tmapper.TestImgUpload(timgdto);
+		
+		model.addAttribute("talmoResult", talmoResult);
+		return "TalmoTestResultPage";
         
 
 //        // 이미지 파일 서버에 저장
