@@ -12,12 +12,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import kr.board.entity.Member;
 import kr.board.entity.PostListGetDTO;
+import kr.board.entity.TestListGetDTO;
 import kr.board.mapper.CommunityMapper;
+import kr.board.mapper.TalmoTestMapper;
 
 @Controller
 public class PageController {
 	@Autowired
 	private CommunityMapper cmapper;
+	@Autowired
+	private TalmoTestMapper tmapper;
 	// 기존에 사용했던 생성자 주입보다 조금 더 유연성이 높은 의존성 주입(Dependency Injection)
 
 	// boardAjaxMain.do 요청을 받아서 basic.jsp를 실행시키는 메소드 작성
@@ -90,9 +94,11 @@ public class PageController {
 		Member loginMem = (Member) session.getAttribute("loginMember");
 		int user_id = loginMem.getUser_id();
 		List<PostListGetDTO> myPostList = cmapper.MyPostGetList(user_id);
+		List<TestListGetDTO> myTestList = tmapper.MyTestGetList(user_id);
 		
 		// request.setAttribute("이름", 데이터);
 		model.addAttribute("myPostList", myPostList);
+		model.addAttribute("myTestList", myTestList);
 		return "MyPage";
 	}
 

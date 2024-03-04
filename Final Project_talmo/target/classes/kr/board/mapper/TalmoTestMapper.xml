@@ -13,4 +13,13 @@
 	<insert id="TestImgUpload" parameterType="kr.board.entity.TestImageDTO">
 	    insert into pictures (result_id,folder,file_name) values(#{result_id}, #{folder}, #{file_name})
 	</insert>
+	
+	<!-- 탈모진단 리스트 모두 가져오기 -->
+	<select id="MyTestGetList" parameterType="int" resultType="kr.board.entity.TestListGetDTO">
+        SELECT result.result_id,result.user_id,result.result,result.create_date,pictures.picture_id,pictures.folder,pictures.file_name
+		FROM result
+		JOIN pictures ON result.result_id = pictures.result_id
+		WHERE result.user_id = #{user_id}
+		ORDER BY result.create_date DESC
+    </select>
 </mapper>

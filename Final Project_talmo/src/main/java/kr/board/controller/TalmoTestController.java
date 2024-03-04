@@ -1,7 +1,6 @@
 package kr.board.controller;
 
 
-import kr.board.entity.PostImageDTO;
 import kr.board.entity.TalmoResultDTO;
 import kr.board.entity.TestImageDTO;
 import kr.board.mapper.TalmoTestMapper;
@@ -22,7 +21,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 
 @Controller
