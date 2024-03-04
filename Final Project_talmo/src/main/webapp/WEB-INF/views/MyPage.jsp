@@ -91,7 +91,7 @@
 							</li>
 						</ul>
 						<div class="contents-btn">
-							<a class="btnset btnset-ghost" href="${cpath}/UpdatePage.do">회원수정</a>
+							<a class="btnset btnset-ghost" href="${cpath}/UpdatePage.do">회원 정보 수정</a>
 							<a class="btnset btnset-ghost" href="${cpath}/PwUpdatePage.do">비밀번호 수정</a>
 							<a class="btnset" href="${cpath}/DeletePage.do">회원탈퇴</a>
 						</div>

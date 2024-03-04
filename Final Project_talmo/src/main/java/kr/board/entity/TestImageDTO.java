@@ -1,6 +1,6 @@
 package kr.board.entity;
 
-public class TalmoTestDTO {
+public class TestImageDTO {
 	
 	public int result_id;
 	public int user_id;

@@ -4,8 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.board.mapper.TalmoTestMapper">
-    <insert id="insert" parameterType="kr.board.entity.TalmoTestDTO">
-        INSERT INTO result (selfcheck, frontpath, toppath)
-        VALUES (#{selfcheck}, #{frontpath}, #{toppath})
+    <insert id="TalmoResult" parameterType="kr.board.entity.TalmoResultDTO" keyProperty="result_id" useGeneratedKeys="true">
+        INSERT INTO result (user_id, result) VALUES (#{user_id}, #{result})
     </insert>
 </mapper>

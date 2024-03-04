@@ -1,7 +1,8 @@
 package kr.board.mapper;
 
-import kr.board.entity.TalmoTestDTO;
+import kr.board.entity.TalmoResultDTO;
+
 
 public interface TalmoTestMapper {
-    void insert(TalmoTestDTO talmoTestDTO);
+	void TalmoResult(TalmoResultDTO tdto);
 }

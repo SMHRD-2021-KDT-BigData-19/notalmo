@@ -1,6 +1,7 @@
 package kr.board.controller;
 
-import kr.board.entity.TalmoTestDTO;
+
+import kr.board.entity.TalmoResultDTO;
 import kr.board.mapper.TalmoTestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -15,17 +16,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.List;
+
 
 @Controller
 public class TalmoTestController {
 
     @Autowired
-    private TalmoTestMapper talmoTestMapper;
+    private TalmoTestMapper tmapper;
 
 
     @PostMapping("/TalmoTestResultPage.do/{user_id}")
@@ -61,6 +60,21 @@ public class TalmoTestController {
         );
         
         System.out.println(response.getBody());
+        
+        // 탈모 진단 결과 변수 저장
+        String talmoResult = response.getBody().substring(9, 10);
+        System.out.println("탈모 단계:" + talmoResult);
+        
+        // 탈모 진단 결과 DB 저장
+        TalmoResultDTO tdto = new TalmoResultDTO(user_id, talmoResult);
+        tmapper.TalmoResult(tdto);
+        
+        // 탈모 진단 result_id 가져오기
+        int result_id = tdto.getResult_id();
+        System.out.println(result_id);
+        
+        //
+        
 
 //        // 이미지 파일 서버에 저장
 //        for(int i = 0; i<talmoList.size(); i++) {
