@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
 <!DOCTYPE html>
@@ -58,7 +59,7 @@
 		<br>
 		
           <div class="contents-search">
-            <p class="contents-result"> 전체<span> 24</span>개 </p>
+            <p class="contents-result"> 전체<span> ${fn:length(PostList)}</span>개 </p>
             <div class="contents-form">
               <div class="selectset selectset-lg">
                 <button class="selectset-toggle btn" type="button">

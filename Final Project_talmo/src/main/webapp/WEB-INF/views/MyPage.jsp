@@ -6,61 +6,109 @@
 <html lang="ko">
 
 <head>
-  <title>MyPage</title>
+<title>MyPage</title>
 
-	<link rel="stylesheet" href="${cpath}/resources/postupload/css/style.css">
-	<link rel="stylesheet" href="${cpath}/resources/postupload/css/plugin.css">
-	<link rel="stylesheet" href="${cpath}/resources/postupload/css/template.css">
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<%-- <link rel="stylesheet" href="${cpath}/resources/mypageResources/css/style.css">
+	<link rel="stylesheet" href="${cpath}/resources/mypageResources/css/plugin.css">
+	<link rel="stylesheet" href="${cpath}/resources/mypageResources/css/template.css"> --%>
+
 </head>
 
 <style>
 
-  .cardset {
-    display: flex;
-    justify-content: space-between;
-    
-  }
 
-  .card {
-    width: 30%;
-    height: 0;
-    padding-bottom: 30%;
-    background-color: #eee;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .card p {
-    text-align: center;
+ .contents-container {
+
+}
+.cardset {
+ 	width: 100%;
+  	overflow-x: scroll;
+	display: flex;
+	transition: transform 0.5s ease;
+}
+
+.card {
+	flex: 0 0 auto;
+    margin-right: 20px;
+}
+
+.card p {
+	position: absolute;
+	text-align: center;
+	font-size: 20px;
+}
+
+.card span {
+	width: 30%;
+	text-align: center;
+	font-size: 20px;
+}
+
+.card img {
+	width: 300px;
+	height: 300px;
+	background-color: #eee;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 추가 */
+    margin-top: 10px;
+}
+.prev,.next {
+    margin-top: 10px;
+    width: 40px;	
+    padding: 10px;
+    cursor: pointer;
+ 	/* border-radius: 50%; */
+    background-color: #ffffff; /* 버튼 배경색 */
+    color: #000000; /* 버튼 텍스트 색상 */
     font-size: 20px;
-    margin-top: 60px;
-  }
-
-  .step-indicator {
-    text-align: center;
-    margin-top: 10px;
-  }
-	
-  .step-text {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .step-text span {
-    width: 30%;
-    text-align: center;
-    font-size: 18px;
-  }
+    margin-right: 10px;
+}
 </style>
 
 <body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        const cardset = $(".cardset");
+        const cardWidth = $(".card").outerWidth(true);
+        let currentIndex = 0;
+
+        function nextCard() {
+            console.log("Next button clicked");
+            console.log(cardset.children().length);
+            if (currentIndex < cardset.children().length - 1) {
+                currentIndex++;
+                updateCardsetPosition();
+            }
+        }
+
+        function prevCard() {
+            console.log("Prev button clicked");
+            if (currentIndex > 0) {
+            	 console.log("if");
+                currentIndex--;
+                updateCardsetPosition();
+            }
+        }
+
+        function updateCardsetPosition() {
+            const newPosition = (-1 * currentIndex) * cardWidth;
+            cardset.css("transform", `translateX(${newPosition}px)`);
+        }
+
+        $(".prev").on("click", prevCard);
+        $(".next").on("click", nextCard);
+    });
+</script>
 	
-	<%@ include file="Header.jsp" %>
+	<%@ include file="Header.jsp"%>
 
 	<main class="th-layout-main ">
 
@@ -68,7 +116,7 @@
 			<div class="contents-inner">
 				<div class="contents-container container-md">
 					<div class="textset textset-h2">
-						<h2 class="textset-tit" style="font-size:56px;">My Page</h2>
+						<h2 class="textset-tit" style="font-size: 56px;">My Page</h2>
 					</div>
 					<div class="contents-top">
 						<div class="contents-tit">
@@ -99,36 +147,60 @@
 				</div>
 			</div>
 		</div>
-		
-		
-	<div class="hooms-N48" data-bid="DrLsS6RTPl" id="">
-      <div class="contents-inner">
-        <div class="contents-container container-md">
-          <div class="textset">
-            <p class="textset-tit">진단 결과 사진</p>
-          </div>
-          <div class="cardset">
-		    <div class="card">
-		        <p><%= new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()) %></p>
-		    </div>
-		    <div class="card">
-		        <p><%= new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()) %></p>
-		    </div>
-		    <div class="card">
-		        <p><%= new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date()) %></p>
-		    </div>
-		</div>
 
-          <div class="step-text">
-            <span>1단계</span>
-            <span>2단계</span>
-            <span>3단계</span>
-          </div>
-        </div>
-      </div>
-    </div>
+
+		<div class="hooms-N48" data-bid="DrLsS6RTPl" id="">
+			<div class="contents-inner">
+				<div class="contents-container container-md">
+					<div class="textset">
+						<p class="textset-tit">진단 결과 사진</p>
+					</div>
+					<div class="cardset">
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>1단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>2단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>3단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>4단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>5단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>6단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>1단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>1단계</strong></span>
+						</div>
+						<div class="card">
+							<img src="${cpath}/resources/images/MainPage_talmo_img7.jpg">
+							<span><%=new java.text.SimpleDateFormat("yy.MM.dd HH:mm").format(new java.util.Date())%>&nbsp&nbsp&nbsp&nbsp<strong>1단계</strong></span>
+						</div>
+						          
+					</div>
+
+				</div>
+			</div>
+		</div>
 		
-		
+
+
 		<div class="hooms-N48" data-bid="DrLsS6RTPl" id="">
 			<div class="contents-inner">
 				<div class="contents-container container-md">
@@ -165,28 +237,28 @@
 									<td class="tableset-order04">홍**</td>
 									<td class="tableset-mobile">166</td>
 								</tr> -->
-								
+
 								<c:forEach items="${myPostList}" var="mb">
 									<tr>
 										<td class="tableset-mobile">${mb.category}</td>
-										<c:url var="contectLink" value="CommunityView.do/${mb.post_id}" />
-										<td class="tableset-tit tableset-order02">
-											<a class="tableset-ico" href="${contectLink}">
-				                      			<span>${mb.title}</span>
-				                   			</a>
-				                 		<td class="tableset-order05">
-										    <script>
-										        var createDate = new Date('${mb.create_date}');
-										        var formattedDate = createDate.toLocaleString('ko-KR', {
-										            year: 'numeric',
-										            month: 'numeric',
-										            day: 'numeric',
-										            hour: 'numeric',
-										            minute: 'numeric'
-										        });
-										        document.write(formattedDate);
-										    </script>
-										</td>
+										<c:url var="contectLink"
+											value="CommunityView.do/${mb.post_id}" />
+										<td class="tableset-tit tableset-order02"><a
+											class="tableset-ico" href="${contectLink}"> <span>${mb.title}</span>
+										</a>
+										<td class="tableset-order05"><script>
+											var createDate = new Date(
+													'${mb.create_date}');
+											var formattedDate = createDate
+													.toLocaleString('ko-KR', {
+														year : 'numeric',
+														month : 'numeric',
+														day : 'numeric',
+														hour : 'numeric',
+														minute : 'numeric'
+													});
+											document.write(formattedDate);
+										</script></td>
 										<td class="tableset-order04">${mb.nick}</td>
 										<td class="tableset-mobile">${mb.view_cnt}</td>
 									</tr>
@@ -198,21 +270,21 @@
 			</div>
 		</div>
 
-		</main>
-		
-	<%@ include file="Footer.jsp" %>
-	
-	
-	<script src="${cpath}/resources/js/setting.js"></script>
+	</main>
+
+	<%@ include file="Footer.jsp"%>
+
+
+	<%-- 	<script src="${cpath}/resources/js/setting.js"></script>
 	<script src="${cpath}/resources/js/plugin.js"></script>
 	<script src="${cpath}/resources/js/template.js"></script>
 	<script src="${cpath}/resources/js/common.js"></script>
-	<script src="${cpath}/resources/js/script.js"></script>
-	
-	<script src="${cpath}/resources/mypageResources/js/setting.js"></script>
+	<script src="${cpath}/resources/js/script.js"></script> --%>
+
+	<%-- 	<script src="${cpath}/resources/mypageResources/js/setting.js"></script>
 	<script src="${cpath}/resources/mypageResources/js/template.js"></script>
 	<script src="${cpath}/resources/mypageResources/js/script.js"></script>
-	
+	 --%>
 
 
 </body>

@@ -49,37 +49,40 @@ public class CommunityController {
 		// 이미지 파일 리스트에 저장
 		List<MultipartFile> list = postImg.getFiles("postImg");
 		
-		// 이미지 파일 서버에 저장
-		for(int i = 0; i<list.size(); i++) {
-			String fileRealName = list.get(i).getOriginalFilename();
-			
-			System.out.println("파일명 :" + fileRealName);
-			
-			// 폴더가 존재하지 않으면 생성
-			File folder = new File(uploadFolder);
-	        if (!folder.exists()) {
-	            folder.mkdirs();
-	        }
-			
-			File saveFile = new File(uploadFolder + "\\" + fileRealName);
-			try {
-				list.get(i).transferTo(saveFile);
-			} catch (IllegalStateException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		if(list != null && !list.isEmpty()) {
+			// 이미지 파일 서버에 저장	
+			for(int i = 0; i<list.size(); i++) {
+				String fileRealName = list.get(i).getOriginalFilename();
+				
+				System.out.println("파일명 :" + fileRealName);
+				
+				// 폴더가 존재하지 않으면 생성
+				File folder = new File(uploadFolder);
+		        if (!folder.exists()) {
+		            folder.mkdirs();
+		        }
+				
+				File saveFile = new File(uploadFolder + "\\" + fileRealName);
+				try {
+					list.get(i).transferTo(saveFile);
+				} catch (IllegalStateException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				// 게시물 이미지 DB에 저장
+				// picture_id = i+1, post_id = post_id, folder = uploadFolder, file_name = fileRealName
+				PostImageDTO Ivo = new PostImageDTO(post_id, uploadFolder, fileRealName);
+				System.out.println(Ivo.toString());
+				
+				cmapper.PostImgUploadmapper(Ivo);
+				
 			}
-			
-			// 게시물 이미지 DB에 저장
-			// picture_id = i+1, post_id = post_id, folder = uploadFolder, file_name = fileRealName
-			PostImageDTO Ivo = new PostImageDTO(post_id, uploadFolder, fileRealName);
-			System.out.println(Ivo.toString());
-			
-			cmapper.PostImgUploadmapper(Ivo);
-			
 		}
+		
 		return "redirect:/CommunityPage.do";
 	}
 	

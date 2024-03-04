@@ -309,7 +309,7 @@
 }
 
 /* hooms-N46 [WgLS88Y5X3] */
-.hooms-N46 .contents-inner { padding: 10rem 2.4rem; }
+.hooms-N46 .contents-inner { padding: 2.4rem 2.4rem 10rem; }
 .hooms-N46 .textset.textset-h2 .textset-tit { margin-bottom: 4rem; text-align: center; }
 .hooms-N46 .contents-top { display: flex; align-items: center; justify-content: space-between; padding: 4rem 0; border-top: 1px solid var(--primary); }
 .hooms-N46 .contents-tit h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 400; color: var(--text-color3); }
