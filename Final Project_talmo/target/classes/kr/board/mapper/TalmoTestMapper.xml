@@ -4,7 +4,13 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.board.mapper.TalmoTestMapper">
+    <!-- 탈모진단 결과 등록 -->
     <insert id="TalmoResult" parameterType="kr.board.entity.TalmoResultDTO" keyProperty="result_id" useGeneratedKeys="true">
         INSERT INTO result (user_id, result) VALUES (#{user_id}, #{result})
     </insert>
+    
+    <!-- 탈모진단 이미지 등록 -->
+	<insert id="TestImgUpload" parameterType="kr.board.entity.TestImageDTO">
+	    insert into pictures (result_id,folder,file_name) values(#{result_id}, #{folder}, #{file_name})
+	</insert>
 </mapper>

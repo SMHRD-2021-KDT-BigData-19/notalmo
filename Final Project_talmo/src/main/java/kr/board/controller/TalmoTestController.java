@@ -1,7 +1,9 @@
 package kr.board.controller;
 
 
+import kr.board.entity.PostImageDTO;
 import kr.board.entity.TalmoResultDTO;
+import kr.board.entity.TestImageDTO;
 import kr.board.mapper.TalmoTestMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -17,7 +19,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 
 @Controller
@@ -36,7 +40,7 @@ public class TalmoTestController {
         String fileRealName = file.getOriginalFilename();
         System.out.println(fileRealName);
 
-        // 파이썬 서버의 주소로 대체
+        // 파이썬 서버로 이미지 전송
         String pythonServerUrl = "http://127.0.0.1:5000/upload";
 
         HttpHeaders headers = new HttpHeaders();
@@ -59,6 +63,7 @@ public class TalmoTestController {
                 String.class
         );
         
+        // 파이썬 서버로부터 결과값 받기
         System.out.println(response.getBody());
         
         // 탈모 진단 결과 변수 저장
@@ -73,7 +78,32 @@ public class TalmoTestController {
         int result_id = tdto.getResult_id();
         System.out.println(result_id);
         
-        //
+        // 탈모 이미지 db 저장
+	    String uploadFolder = "C:\\notalmo\\talmotest\\" + result_id;
+     		
+		// 폴더가 존재하지 않으면 생성
+		File folder = new File(uploadFolder);
+	    if (!folder.exists()) {
+	        folder.mkdirs();
+	    }
+		
+		File saveFile = new File(uploadFolder + "\\" + fileRealName);
+		try {
+			file.transferTo(saveFile);
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		// 게시물 이미지 DB에 저장
+		// result_id = result_id, folder = uploadFolder, file_name = fileRealName
+		TestImageDTO timgdto = new TestImageDTO(result_id, uploadFolder, fileRealName);
+		System.out.println(timgdto.toString());
+		
+		tmapper.TestImgUpload(timgdto);
         
 
 //        // 이미지 파일 서버에 저장

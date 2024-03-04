@@ -2,32 +2,43 @@ package kr.board.entity;
 
 public class TestImageDTO {
 	
-	public int result_id;
-	public int user_id;
-	public int result;
-	public String create_date;
-	public String frontpath;
-	public String toppath;
-	public int selfcheck;
+	private int picture_id;
+	private int result_id;
+	private String folder;
+	private String file_name;
+	private String create_date;
 	
 	
+	public TestImageDTO(int result_id, String folder, String file_name) {
+		super();
+		this.result_id = result_id;
+		this.folder = folder;
+		this.file_name = file_name;
+	}
+	
+	public int getPicture_id() {
+		return picture_id;
+	}
+	public void setPicture_id(int picture_id) {
+		this.picture_id = picture_id;
+	}
 	public int getResult_id() {
 		return result_id;
 	}
 	public void setResult_id(int result_id) {
 		this.result_id = result_id;
 	}
-	public int getUser_id() {
-		return user_id;
+	public String getFolder() {
+		return folder;
 	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setFolder(String folder) {
+		this.folder = folder;
 	}
-	public int getResult() {
-		return result;
+	public String getFile_name() {
+		return file_name;
 	}
-	public void setResult(int result) {
-		this.result = result;
+	public void setFile_name(String file_name) {
+		this.file_name = file_name;
 	}
 	public String getCreate_date() {
 		return create_date;
@@ -35,37 +46,12 @@ public class TestImageDTO {
 	public void setCreate_date(String create_date) {
 		this.create_date = create_date;
 	}
-	public String getFrontpath() {
-		return frontpath;
-	}
-	public void setFrontpath(String frontpath) {
-		this.frontpath = frontpath;
-	}
-	public String getToppath() {
-		return toppath;
-	}
-	public void setToppath(String toppath) {
-		this.toppath = toppath;
-	}
-	public int getSelfcheck() {
-		return selfcheck;
-	}
-	public void setSelfcheck(int selfcheck) {
-		this.selfcheck = selfcheck;
+	@Override
+	public String toString() {
+		return "TestImageDTO [picture_id=" + picture_id + ", result_id=" + result_id + ", folder=" + folder
+				+ ", file_name=" + file_name + ", create_date=" + create_date + "]";
 	}
 	
 	
-	// TalmoTest에서 받아오는 데이터 임시 저장
-	public void createTemp(int selfcheck, String frontpath, String toppath) {
-	    this.selfcheck = selfcheck;
-	    this.frontpath = frontpath;
-	    this.toppath = toppath;
-	}
-
-	// 딥러닝 후 받아오는 정보 최종 저장
-	public void update(int result, String createDate) {
-	    this.result = result;
-	    this.create_date = createDate;
-	}
 	
 }
