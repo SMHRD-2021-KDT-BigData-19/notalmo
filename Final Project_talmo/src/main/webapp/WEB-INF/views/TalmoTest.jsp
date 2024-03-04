@@ -83,9 +83,7 @@
     </div>
   </div>
 
- <form id="uploadForm" action="${cpath}/TalmoTestResultPage.do" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="selfcheck" v-model="selfcheck">
-    <input type="hidden" name="user_id" value="${loginMember.user_id}">
+ 
     <div class="hooms-N45" data-bid="erLSpsQm8g" id="">
        <div class="contents-inner">
            <div class="contents-container container-md">
@@ -191,88 +189,84 @@
          </div>
       </div>
    </div>
-
-   <div class="hooms-N39" data-bid="hkLSPT0B60" id="">
-      <div class="contents-inner">
-         <div class="contents-requiredr container-md">
-            
-            <div class="contents-form">
-               <div class="contents-form-middle">
-                  <div class="fileset fileset-lg fileset-label">
-                     <label>
-                        <h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
-                        <div class="fileset-body">
-                           <div class="fileset-group">
-                              <input type="file" class="fileset-input" id="toppath" name="toppath">
-                              <button class="fileset-cancel"></button>
-                           </div>
-                           <span class="btnset btnset-line btnset-lg fileset-upload">파일 첨부하기</span>
-                           <br>
-                           <ul class="image-preview2"></ul>
-                        </div>
-                     </label>
-                  </div>
-               </div>
-            </div>
-               
-            <div class="contents-form-bottom">
-               <div class="inputset inputset-lg inputset-label">
-                  <label>
-                     <h6 class="inputset-tit">개인정보수집 및 이용동의</h6>
-                     <div class="inputset-board">
-                        - 수집하는 개인정보 항목 : 등록된 사진, 성별 <br> <br> 작성해주시는 개인 정보는 문의
-                        접수 및 고객 불만 해결을 위해 5년간 보관됩니다. 이용자는 본 동의를 거부할 수 있으나, 미동의시 문의 접수가
-                        불가능합니다.
-                     </div>
-                  </label>
-               </div>
-               <div class="checkset">
-                  <input id="checkset-q-1-1" class="checkset-input input-fill"
-                     type="checkbox" value=""> <label class="checkset-label"
-                     for="checkset-q-1-1"></label> <span class="checkset-text">위
-                     내용을 읽었으며, 내용에 동의합니다. (필수)</span>
-               </div>
-            </div>
-            <div class="contents-sign">
-               <button type="button" class="btnset modalset-btn">진단하기</button>
-            </div>
-            <div id="modalSet1" class="modalset">
-               <div class="modal-header">
-                  <h6 class="modal-title">진단 시작 안내</h6>
-               </div>
-               <div class="modal-body">
-                  <p>
-                     입력하신 내용으로 진단을 시작합니다.<br>계속 진행하시겠습니까?
-                  </p>
-               </div>
-               <div class="modal-footer">
-                  <button type="button" class="btnset btnset-confirm">확인</button>
-                  <button type="button" class="btnset btnset-ghost modal-close">취소</button>
-               </div>
-            </div>
-            <div id="modalSet2" class="modalset modalset2">
-               <div class="modal-header">
-                  <h6 class="modal-title">진단 시작</h6>
-               </div>
-               <div class="modal-body">
-                  <p>
-                     성공적으로 내역을 등록했습니다.<br>조금만 기다려주세요.
-                  </p>
-               </div>
-               <div class="modal-footer">
-                  <button type="submit" class="btnset btnset-confirm" >확인</button>
-               </div>
-            </div>
-            <div class="modalset-dim"></div>
-         </div>
-      </div>
-   </div>
-</form>
+	
+	<form id="uploadForm" action="${cpath}/TalmoTestResultPage.do/${loginMember.user_id}" method="post" enctype="multipart/form-data">
+    	<%-- <input type="hidden" name="user_id" value="${loginMember.user_id}"> --%>
+	   <div class="hooms-N39" data-bid="hkLSPT0B60" id="">
+	      <div class="contents-inner">
+	         <div class="contents-requiredr container-md">
+	            <div class="contents-form">
+	               <div class="contents-form-middle">
+	                  <div class="fileset fileset-lg fileset-label">
+	                     <label>
+	                        <h6 class="fileset-tit">정수리 사진을 올려주세요.</h6>
+	                        <div class="fileset-body">
+	                           <div class="fileset-group">
+	                              <input type="file" class="fileset-input" id="file" name="file" required>
+	                              <div class="fileset-cancel"></div>
+	                           </div>
+	                           <span class="btnset btnset-line btnset-lg fileset-upload">파일 첨부하기</span>
+	                           <br>
+	                           <ul class="image-preview2"></ul>
+	                        </div>
+	                     </label>
+	                  </div>
+	               </div>
+	            </div>
+	               
+	            <div class="contents-form-bottom">
+	               <div class="inputset inputset-lg inputset-label">
+	                  <label>
+	                     <h6 class="inputset-tit">개인정보수집 및 이용동의</h6>
+	                     <div class="inputset-board">
+	                        - 수집하는 개인정보 항목 : 등록된 사진, 성별 <br> <br> 작성해주시는 개인 정보는 문의
+	                        접수 및 고객 불만 해결을 위해 5년간 보관됩니다. 이용자는 본 동의를 거부할 수 있으나, 미동의시 문의 접수가
+	                        불가능합니다.
+	                     </div>
+	                  </label>
+	               </div>
+	               <div class="checkset">
+	                  <input id="checkset-q-1-1" class="checkset-input input-fill" type="checkbox" value="" required>
+	                  <label class="checkset-label" for="checkset-q-1-1"></label>
+	                  <span class="checkset-text">위 내용을 읽었으며, 내용에 동의합니다. (필수)</span>
+	               </div>
+	            </div>
+	            <div class="contents-sign">
+	               <button type="button" class="btnset modalset-btn">진단하기</button>
+	            </div>
+	            <div id="modalSet1" class="modalset">
+	               <div class="modal-header">
+	                  <h6 class="modal-title">진단 시작 안내</h6>
+	               </div>
+	               <div class="modal-body">
+	                  <p>입력하신 내용으로 진단을 시작합니다.<br>계속 진행하시겠습니까?</p>
+	               </div>
+	               <div class="modal-footer">
+	                  <button type="button" class="btnset btnset-ghost modal-close">취소</button>
+	                  <button type="submit" class="btnset btnset-confirm">확인</button>
+	               </div>
+	            </div>
+	            <!-- <div id="modalSet2" class="modalset modalset2">
+	               <div class="modal-header">
+	                  <h6 class="modal-title">진단 시작</h6>
+	               </div>
+	               <div class="modal-body">
+	                  <p> 성공적으로 내역을 등록했습니다.<br>조금만 기다려주세요.</p>
+	               </div>
+	               <div class="modal-footer">
+	                  <button type="submit" class="btnset btnset-confirm" >확인</button>
+	               </div>
+	            </div>
+	            <div class="modalset-dim"></div> -->
+	         </div>
+	      </div>
+	   </div>
+	</form>
 
 
    <script>
   
-   const filesetElements = document.querySelectorAll(".fileset");
+   /* const filesetElements = document.querySelectorAll(".fileset");
    filesetElements.forEach((filesetElement) => {
      const filesetInputs = filesetElement.querySelectorAll(".fileset-input");
      const filesetCancels = filesetElement.querySelectorAll(".fileset-cancel");
@@ -288,7 +282,7 @@
          filesetCancel.style.display = "none";
        });
      });
-   });
+   }); */
    
 
    window.app = new Vue({
@@ -324,7 +318,7 @@
    });
        
        
-   function validateForm() {
+   /* function validateForm() {
        var isAgreed = document.querySelector('.contents-form-bottom .checkset-input').checked;
 
        var frontpath = document.querySelector('input[name="frontpath"]').value;
@@ -344,7 +338,7 @@
        if (validateForm()) {
            document.getElementById('uploadForm').submit();
        }
-   });
+   }); */
    </script>
 
   <script src="${cpath}/resources/talmotest/js/setting.js"></script>
