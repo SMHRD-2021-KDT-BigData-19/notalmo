@@ -314,7 +314,7 @@
 }
 
 /* hooms-N45 [erLSpsQm8g] */
-.hooms-N45 .contents-inner { padding: 10rem 2.4rem; }
+.hooms-N45 .contents-inner { padding: 2.4rem 2.4rem; }
 .hooms-N45 .textset { margin-top: 0; padding: 0; }
 .hooms-N45 .textset-tit { margin-bottom: 2.4rem; text-align: center; }
 .hooms-N45 .tabset-item { width: 100%; }
@@ -348,7 +348,7 @@
 }
 
 /* hooms-N15 [HQLSPSyJyF] */
-.hooms-N15 .contents-inner { padding: 10rem 2.4rem; }
+.hooms-N15 .contents-inner { padding: 2.4rem 2.4rem; }
 .hooms-N15 .contents-subtitle { margin-top: 4rem; font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 500; color: var(--text-color1); }
 .hooms-N15 .contents-group { display: flex; }
 .hooms-N15 .cardset { width: 50%; }

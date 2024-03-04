@@ -163,7 +163,7 @@
 
 /* hooms-N8 [yuls87K0Un] */
 .hooms-N8 { position: relative; width: 100%; }
-.hooms-N8 .contents-inner { padding: 10rem 2.4rem; }
+.hooms-N8 .contents-inner { padding: 2.4rem 2.4rem; }
 .hooms-N8 .textset { margin-top: 0; margin-bottom: 4rem; }
 .hooms-N8 .contents-cardgroup { display: flex; justify-content: center; }
 .hooms-N8 .cardset { width: calc(100% / 3); }
@@ -392,7 +392,7 @@
 }
 
 /* hooms-N39 [izls89241e] */
-.hooms-N39 .contents-inner { padding: 10rem 2.4rem; }
+.hooms-N39 .contents-inner { padding: 2.4rem 2.4rem 10rem; }
 .hooms-N39 .textset { margin-top: 0; margin-bottom: 4rem; }
 .hooms-N39 .tabset.tabset-brick { margin-bottom: 4rem; }
 .hooms-N39 .contents-form-top { padding: 4rem 0; border-top: 1px solid var(--line-color4); }
