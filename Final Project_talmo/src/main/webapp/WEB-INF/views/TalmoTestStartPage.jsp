@@ -45,6 +45,7 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
   	<footer class="hooms-N57" data-bid="mDLs88964B">
 		<div class="footer-container container-lg">
 			<div class="footer-top">
@@ -108,5 +109,10 @@
   <script src="${cpath}/resources/talmotest/js/template.js"></script>
   <script src="${cpath}/resources/talmotest/js/common.js"></script>
   <script src="${cpath}/resources/talmotest/js/script.js"></script>
+=======
+  
+  	<%@ include file="Footer.jsp" %>
+
+>>>>>>> branch 'master' of https://github.com/SMHRD-2021-KDT-BigData-19/notalmo.git
 </body>
 </html>

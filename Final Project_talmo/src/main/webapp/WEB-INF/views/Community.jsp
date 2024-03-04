@@ -18,6 +18,7 @@
 </head>
 
 <style>
+
     .placeholder-text {
         color: #666;
         font-style: italic;
@@ -27,6 +28,10 @@
     
     .placeholder-text a.jaju {
         text-decoration: underline;
+    }
+    
+    .contents-btn {
+      text-align: right;
     }
     
 </style>
@@ -49,7 +54,6 @@
 		<div class="placeholder-text">
 			<a class="jaju" href="${cpath}/Jaju.do">자주 묻는 질문</a>
 		</div>
-		
 		
 		<br>
 		
@@ -155,7 +159,8 @@
               </tbody>
             </table>
           </div>
-          <div class="contents-btn">
+          
+          <div class="contents-btn" style="margin-left: 1100px; max-width: 0.5rem;" >
 			<c:choose>
 			    <c:when test="${empty loginMember}">
 			      <a class="btnset" href="${cpath}/LoginPage.do">글쓰기</a>
@@ -165,6 +170,7 @@
 			    </c:otherwise>
 		  	</c:choose>
           </div>
+          
           <nav class="pagiset pagiset-line">
             <div class="pagiset-ctrl">
               <a class="pagiset-link pagiset-first" href="javascript:void(0)">
