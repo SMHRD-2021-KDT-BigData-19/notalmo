@@ -31,7 +31,7 @@
         <div class="header-container container-lg">
             <div class="header-left">
                 <h1 class="header-title">
-                    <a href="${cpath}/MainPage.do"><img src="${cpath}/resources/images/img_logo_white.png" alt="로고"></a>
+                    <a href="${cpath}/MainPage.do"><img src="${cpath}/resources/images/logo_black.png" alt="로고" width="130" height="30"></a>
                 </h1>
             </div>
             <div class="header-center">

@@ -31,7 +31,7 @@
         <div class="footer-top">
             <h1 class="footer-logo">
             
-                <a href="javascript:void(0)"> <img src="${cpath}/resources/images/img_logo_white.png" alt="로고"></a>
+                <a href="javascript:void(0)"> <img src="${cpath}/resources/images/logo_white.png" alt="로고" width="130" height="30"></a>
             </h1>
             <ul class="footer-menulist">
             	<li class="footer-menuitem"><a href="javascript:void(0)"><span>회사소개</span></a></li>
