@@ -115,7 +115,7 @@
 							</div>
 							<figure>
 								<c:forEach items="${Ivo}" var="ivo">
-									<img class="cardset-imgT" src="http://172.30.1.59:8080/imgT/post/${vo.post_id}/${ivo.file_name}" alt="이미지">
+									<img class="cardset-imgT" src="http://172.30.1.15:8080/imgT/post/${vo.post_id}/${ivo.file_name}" alt="이미지">
 								</c:forEach>
 							</figure>
 						</a>

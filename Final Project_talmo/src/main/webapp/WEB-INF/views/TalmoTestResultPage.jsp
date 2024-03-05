@@ -51,7 +51,7 @@
           	<div class="swiper-slide contents-slide contents-price-active">
               <a class="contents-link" href="javascript:void(0)">
                 <div class="contents-productimg">
-                  <img src="${cpath}/resources/talmotest/images/result1.png" alt="이미지">
+                  <img src="${cpath}/resources/talmotest/images/result0.png" alt="이미지">
                 </div>
                 <div class="contents-price">
                   0단계
@@ -82,7 +82,7 @@
                 <div class="contents-price">
                   2단계
                   <span>
-                    Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요! 
+                    Full Fill만의 AI검진 결과입니다. 사이트에서 탈모관련 제품을 구경해보세요!
                   </span>
                 </div>
               </a>
@@ -198,7 +198,7 @@
 </div>
   <!-- [E]hooms-N11 -->
   <!-- [S]hooms-N41 -->
-  <div class="hooms-N41" data-bid="HELspU66Ix">
+<!--   <div class="hooms-N41" data-bid="HELspU66Ix">
     <div class="contents-inner">
       <div class="contents-container container-md">
         <div class="textset textset-h2">
@@ -380,7 +380,7 @@
         <a class="textset-link btnset btnset-mono" href="javascript:void(0)">View more</a>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- [E]hooms-N41 -->
   <!-- [S]blank-zmlSptfKvp -->
   <div class="blank-zmlSptfKvp" data-bid="zmlSptfKvp">

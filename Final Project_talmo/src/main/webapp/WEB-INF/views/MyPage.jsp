@@ -158,7 +158,7 @@
 					<div class="cardset">
 						<c:forEach items="${myTestList}" var="mtl">
 							<div class="card">
-								<img src="http://192.168.219.106:8080/imgT/talmotest/${mtl.result_id}/${mtl.file_name}">
+								<img src="http://172.30.1.15:8080/imgT/talmotest/${mtl.result_id}/${mtl.file_name}">
 								<span>${mtl.create_date}&nbsp&nbsp&nbsp&nbsp<strong>${mtl.result}단계</strong></span>
 							</div>
 						</c:forEach>
