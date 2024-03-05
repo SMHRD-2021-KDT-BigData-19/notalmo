@@ -59,9 +59,6 @@ if (navigator.geolocation) {
         userLatLng = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
         map.setCenter(userLatLng);
 
-        console.log("위도: ", position.coords.latitude);
-        console.log("경도: ", position.coords.longitude);
-
         // 키워드로 장소를 검색합니다
         searchPlaces();
 

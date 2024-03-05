@@ -192,7 +192,7 @@
       </div>
     </div>
     <div class="textset contents-link container-md">
-      <a class="textset-link btnset btnset-mono" href="ProductPage.do">View more</a>
+      <a class="textset-link btnset btnset-mono" href="${cpath}/ProductPage.do">View more</a>
     </div>
   </div>
 </div>

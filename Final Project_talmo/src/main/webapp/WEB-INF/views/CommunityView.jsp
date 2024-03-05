@@ -115,7 +115,10 @@
 							</div>
 							<figure>
 								<c:forEach items="${Ivo}" var="ivo">
-									<img class="cardset-imgT" src="http://172.30.1.15:8080/imgT/post/${vo.post_id}/${ivo.file_name}" alt="이미지">
+									<c:if test="${not empty ivo.file_name}">
+	                                	<img class="cardset-imgT" src="http://172.30.1.15:8080/imgT/post/${vo.post_id}/${ivo.file_name}" alt="이미지">
+            						</c:if>
+									
 								</c:forEach>
 							</figure>
 						</a>

@@ -18,7 +18,7 @@
     <meta property="og:description" content="웹사이트입니다">
     <meta property="og:image" content="https://웹사이트/images/opengraph.png">
     <meta property="og:url" content="https://웹사이트">
-    <title>진단 전 사전 안내</title>
+    <title>FULL FILL</title>
     <link rel="stylesheet" href="${cpath}/resources/css/setting.css">
     <link rel="stylesheet" href="${cpath}/resources/css/plugin.css">
     <link rel="stylesheet" href="${cpath}/resources/css/template.css">
